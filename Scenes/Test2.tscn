@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sprites/Props and Scenery/Sky base.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Props and Scenery/Sky overlay.png" type="Texture" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Iris.png" type="Texture" id=7]
 [ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=9]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=4]
 
 animations = [ {
 "frames": [ ExtResource( 7 ) ],
@@ -18,12 +19,51 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 37, 50 )
 
-[node name="Scene" type="Node2D"]
+[sub_resource type="ParticlesMaterial" id=6]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 50.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Scale" ]
+
+[node name="Scene" type="Node2D" index="0"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
@@ -35,7 +75,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Sky1" type="Sprite" parent="CanvasLayer" index="0"]
 
-modulate = Color( 1, 0.625, 0.976563, 1 )
+modulate = Color( 0.1875, 0.1875, 0.1875, 1 )
 position = Vector2( 320, 180 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -160,7 +200,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="Iris" type="AnimatedSprite" parent="." index="3"]
 
 position = Vector2( 841, 328 )
-frames = SubResource( 1 )
+frames = SubResource( 4 )
 animation = "default"
 __meta__ = {
 "_edit_lock_": true
@@ -182,7 +222,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Iris/Area2D" index="0"]
 
 position = Vector2( -11, -18 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -198,5 +238,29 @@ speed = 500.0
 position = Vector2( 535, 140 )
 collision_layer = 3
 speed = 500.0
+
+[node name="PartsWind" parent="." index="6" instance=ExtResource( 9 )]
+
+[node name="PartsRain" type="Particles2D" parent="." index="7"]
+
+emitting = true
+amount = 8
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 6 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material" ]
 
 
