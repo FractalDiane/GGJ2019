@@ -4,18 +4,16 @@
 [ext_resource path="res://Prefabs/Enemies/EnemyParachutist.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=3]
 
-[node name="Scene" type="Node2D"]
+[node name="Scene" type="Node2D" index="0"]
 
 [node name="EnemyBee" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 204.355, 169.071 )
-_sections_unfolded = [ "Collision", "Transform" ]
 speed = 0.5
 
 [node name="EnemyParachutist" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 351, 210 )
-_sections_unfolded = [ "Collision", "Transform" ]
 speed = 0.125
 
 [node name="EnemySeagull" parent="." index="2" instance=ExtResource( 3 )]
