@@ -28,6 +28,9 @@ func twirl():
 	spr.play("twirl")
 	target_angle = get_angle_to(Controller.get_player().get_position())
 	spr.set_rotation(target_angle + deg2rad(70))
+	#if rad2deg(target_angle) > -90 and rad2deg(target_angle) < 90:
+		#spr.set_flip_h(true)
+		#spr.rotation += 180
 	
 	rot_speed = 0.5
 	$TimerAttack.set_wait_time(delay_before_attack)
@@ -54,5 +57,7 @@ func _on_TimerAttack_timeout():
 
 func _on_TimerCooldown_timeout():
 	spr.play("idle")
+	spr.set_flip_h(false)
+	rot_speed = 0
 	spr.set_rotation(0)
 	attacking = false

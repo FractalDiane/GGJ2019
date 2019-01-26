@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://HotAirBalloon.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Enemies/EnemyHotAirBalloon.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/hotairballoon1.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/hotairballoon2.png" type="Texture" id=3]
 
@@ -14,23 +14,35 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="HotAirBalloon" type="KinematicBody2D" groups=[
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 40.094
+height = 9.81201
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 15.0
+height = 16.0
+
+[node name="EnemyHotAirBalloon" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 
-position = Vector2( 474.906, 422.458 )
 input_pickable = false
 collision_layer = 2
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Pickable" ]
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 speed = -50
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -38,6 +50,16 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( -1.90601, -17.458 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 4.09399, 40.542 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
