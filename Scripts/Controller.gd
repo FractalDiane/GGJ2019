@@ -4,7 +4,7 @@ var player
 
 func get_player():
     if player == null:
-        player = find_node("Player")
+        player = get_tree().get_root().find_node("Player")
     return player
 
 func change_scene(to):
