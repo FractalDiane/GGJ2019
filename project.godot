@@ -56,4 +56,5 @@ player_jump=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_nam
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"
