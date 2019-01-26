@@ -16,8 +16,8 @@ func _process(delta):
 		rot_speed = lerp(rot_speed - 0.1 * delta, 0, 0.05)
 	spr.rotation += rot_speed
 
-	if Input.is_action_just_pressed("ui_accept"):
-		twirl()
+	#if Input.is_action_just_pressed("ui_accept"):
+		#twirl()
 
 func _movement(delta):
 	motion.x = lerp(motion.x - (0.1 * sign(motion.x)) * delta, 0, 0.05)
