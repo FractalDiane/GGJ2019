@@ -9,4 +9,4 @@ extends Camera2D
 	# Initialization here
 
 func _physics_process(delta):
-	position.x = lerp(position.x, Controller.get_player().position.x - 320, 0.05)
+	position.x = Controller.get_player().position.x - 320

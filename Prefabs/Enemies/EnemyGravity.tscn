@@ -17,11 +17,11 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 15.0333
 
-[node name="EnemyGravity" type="RigidBody2D"]
+[node name="EnemyGravity" type="RigidBody2D" index="0"]
 
 input_pickable = false
-collision_layer = 1
-collision_mask = 0
+collision_layer = 2
+collision_mask = 1
 mode = 0
 mass = 1.0
 friction = 1.0
