@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/SabrinaTestScene.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Superman/superman1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Superman/superman2.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31.9022, 31.8577 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "fly",
+"speed": 2.0
+} ]
+
+[node name="SuperMan" type="KinematicBody2D" index="0" groups=[
+"Enemy",
+]]
+
+position = Vector2( 600, 100 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+x_speed = 40
+y_speed = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="1"]
+
+frames = SubResource( 2 )
+animation = "fly"
+playing = true
+
+

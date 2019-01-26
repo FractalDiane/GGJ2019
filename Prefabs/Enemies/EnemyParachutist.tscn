@@ -18,7 +18,7 @@ custom_solver_bias = 0.0
 radius = 15.0
 height = 24.0
 
-[node name="EnemyParachutist" type="KinematicBody2D" index="0" groups=[
+[node name="EnemyParachutist" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 
