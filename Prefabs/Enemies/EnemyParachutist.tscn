@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Enemies/EnemyParachutist.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/parachuter.png" type="Texture" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 15.0
+height = 24.0
+
+[node name="EnemyParachutist" type="KinematicBody2D" groups=[
+"Enemy",
+]]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 0
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+speed = 5
+horizontal = false
+amplitude = 100.0
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "default"
+_sections_unfolded = [ "Material", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0, 21 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+
