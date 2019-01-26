@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/PlayerCamera.gd" type="Script" id=1]
 
-[node name="PlayerCamera" type="Camera2D"]
+[node name="PlayerCamera" type="Camera2D" index="0"]
 
 anchor_mode = 1
 rotating = false
