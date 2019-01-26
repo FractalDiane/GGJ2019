@@ -42,7 +42,7 @@ radius = 13.1529
 custom_solver_bias = 0.0
 radius = 57.1402
 
-[node name="EnemySeagull" type="KinematicBody2D" index="0" groups=[
+[node name="EnemySeagull" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 
@@ -60,7 +60,7 @@ attack_cooldown = 0.75
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
+frame = 8
 playing = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {

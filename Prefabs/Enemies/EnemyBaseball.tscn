@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Enemies/EnemyBaseball.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/baseball.png" type="Texture" id=2]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -15,9 +15,9 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 29.0172
+radius = 9.05539
 
-[node name="EnemyBaseball" type="RigidBody2D" index="0"]
+[node name="EnemyBaseball" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
