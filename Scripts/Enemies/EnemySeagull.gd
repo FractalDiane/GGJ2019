@@ -1,13 +1,15 @@
 extends "res://Scripts/Enemies/EnemyAir.gd"
 
 export(float) var delay_before_attack = 0.75
+export(float) var attack_cooldown = 1.5
 
 var rot_speed = 0
 var target_angle = 0
+var attacking = false
+
 
 func _ready():
 	pass
-
 
 func _process(delta):
 	if rot_speed > 0:
@@ -25,7 +27,8 @@ func _movement(delta):
 
 
 func twirl():
-	target_angle = get_angle_to(get_global_mouse_position())
+	#target_angle = get_angle_to(get_global_mouse_position())
+	target_angle = get_angle_to(Controller.get_player().get_position())
 	spr.set_rotation(target_angle + deg2rad(70))
 	
 	rot_speed = 0.5
@@ -36,8 +39,21 @@ func twirl():
 func attack(direction):
 	motion.x = speed * cos(direction)
 	motion.y = speed * sin(direction)
+	$TimerCooldown.set_wait_time(attack_cooldown)
+	$TimerCooldown.start()
+
+
+func _on_AttackRadius_body_entered(body):
+	if body.is_in_group("Player") and not attacking:
+		twirl()
+		attacking = true
 
 
 func _on_TimerAttack_timeout():
 	#attack(get_angle_to(Controller.get_player().get_position()))
 	attack(target_angle)
+
+
+func _on_TimerCooldown_timeout():
+	attacking = false
+

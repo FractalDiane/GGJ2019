@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Enemies/EnemySeagull.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Seagull/seagull1.png" type="Texture" id=2]
@@ -23,7 +23,12 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 9.0
+radius = 13.1529
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 57.1402
 
 [node name="EnemySeagull" type="KinematicBody2D" groups=[
 "Enemy",
@@ -37,13 +42,13 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 speed = 5
 delay_before_attack = 0.75
+attack_cooldown = 1.5
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
-scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 8
+frame = 7
 playing = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -57,13 +62,44 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="TimerAttack" type="Timer" parent="." index="2"]
+[node name="AttackRadius" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRadius" index="0"]
+
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TimerAttack" type="Timer" parent="." index="3"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = false
 
+[node name="TimerCooldown" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="body_entered" from="AttackRadius" to="." method="_on_AttackRadius_body_entered"]
+
 [connection signal="timeout" from="TimerAttack" to="." method="_on_TimerAttack_timeout"]
+
+[connection signal="timeout" from="TimerCooldown" to="." method="_on_TimerCooldown_timeout"]
 
 
