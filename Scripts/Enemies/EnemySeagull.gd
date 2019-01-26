@@ -28,7 +28,9 @@ func _movement(delta):
 
 func twirl():
 	#target_angle = get_angle_to(get_global_mouse_position())
+	spr.play("twirl")
 	target_angle = get_angle_to(Controller.get_player().get_position())
+	print(target_angle)
 	spr.set_rotation(target_angle + deg2rad(70))
 	
 	rot_speed = 0.5
@@ -37,6 +39,7 @@ func twirl():
 
 
 func attack(direction):
+	spr.play("attack")
 	motion.x = speed * cos(direction)
 	motion.y = speed * sin(direction)
 	$TimerCooldown.set_wait_time(attack_cooldown)
@@ -50,10 +53,10 @@ func _on_AttackRadius_body_entered(body):
 
 
 func _on_TimerAttack_timeout():
-	#attack(get_angle_to(Controller.get_player().get_position()))
 	attack(target_angle)
 
 
 func _on_TimerCooldown_timeout():
+	spr.play("idle")
+	spr.set_rotation(0)
 	attacking = false
-

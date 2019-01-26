@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Enemies/EnemySeagull.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Seagull/seagull1.png" type="Texture" id=2]
@@ -10,14 +10,26 @@
 [ext_resource path="res://Sprites/Seagull/seagull7.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Seagull/seagull8.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Seagull/seagull9.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Seagull/seagull straight.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Seagull/seagull loop.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
-"name": "default",
+"name": "idle",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "twirl",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -30,7 +42,7 @@ radius = 13.1529
 custom_solver_bias = 0.0
 radius = 57.1402
 
-[node name="EnemySeagull" type="KinematicBody2D" groups=[
+[node name="EnemySeagull" type="KinematicBody2D" index="0" groups=[
 "Enemy",
 ]]
 
@@ -41,14 +53,14 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 speed = 5
-delay_before_attack = 0.75
-attack_cooldown = 1.5
+delay_before_attack = 0.25
+attack_cooldown = 0.75
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
-animation = "default"
-frame = 7
+animation = "idle"
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -93,7 +105,7 @@ autostart = false
 
 process_mode = 1
 wait_time = 1.0
-one_shot = false
+one_shot = true
 autostart = false
 
 [connection signal="body_entered" from="AttackRadius" to="." method="_on_AttackRadius_body_entered"]
