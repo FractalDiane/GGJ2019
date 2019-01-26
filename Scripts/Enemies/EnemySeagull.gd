@@ -1,8 +1,9 @@
-extends "res://Scripts/EnemyAir.gd"
+extends "res://Scripts/Enemies/EnemyAir.gd"
 
-export(float) var delay = 0.75
+export(float) var delay_before_attack = 0.75
 
 var rot_speed = 0
+var target_angle = 0
 
 func _ready():
 	pass
@@ -24,8 +25,11 @@ func _movement(delta):
 
 
 func twirl():
-	rot_speed = 1
-	$TimerAttack.set_wait_time(delay)
+	target_angle = get_angle_to(get_global_mouse_position())
+	spr.set_rotation(target_angle + deg2rad(70))
+	
+	rot_speed = 0.5
+	$TimerAttack.set_wait_time(delay_before_attack)
 	$TimerAttack.start()
 
 
@@ -36,4 +40,4 @@ func attack(direction):
 
 func _on_TimerAttack_timeout():
 	#attack(get_angle_to(Controller.get_player().get_position()))
-	attack(get_angle_to(get_global_mouse_position()))
+	attack(target_angle)
