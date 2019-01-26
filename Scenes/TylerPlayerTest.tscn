@@ -7,13 +7,15 @@
 custom_solver_bias = 0.0
 extents = Vector2( 203.689, 10 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 235.61, 561.939 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1" groups=[
+"Enemy",
+]]
 
 position = Vector2( 397.787, 44.1985 )
 input_pickable = false

@@ -4,10 +4,14 @@ extends RigidBody2D
 const JUMP_BUTTON = "player_jump"
 enum State {STATE_NO_INPUT, STATE_IN_GAME, STATE_DEAD}
 
-
 # Exports
 export var jump_force = 100
+export var right_move_speed = 100
+export var right_move_force = 100
 export(State) var state = State.STATE_IN_GAME
+
+# Variables
+onready var sprite = $Sprite
 
 # Signals
 signal on_player_death
@@ -21,6 +25,11 @@ func _process(delta):
 		State.STATE_IN_GAME:
 			poll_for_input()
 
+func _physics_process(delta):
+	match state:
+		State.STATE_IN_GAME:
+			move_right(delta)
+
 func _on_Player_body_entered(body):
 	if "Enemy" in body.get_groups():
 		die()
@@ -32,6 +41,10 @@ func jump():
 	else:
 		apply_impulse(global_position, Vector2(0, jump_force))
 
+func move_right(delta):
+	if linear_velocity.x <= right_move_speed:
+		apply_impulse(global_position, Vector2(right_move_force * delta, 0))
+
 func poll_for_input():
 	if Input.is_action_just_pressed(JUMP_BUTTON):
 		jump()
@@ -39,3 +52,5 @@ func poll_for_input():
 func die():
 	state = State.STATE_DEAD
 	emit_signal("on_player_death")
+
+	sprite.visible = false
