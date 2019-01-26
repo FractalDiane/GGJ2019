@@ -11,6 +11,7 @@ config_version=3
 [application]
 
 config/name="Global Game Jam 2019"
+run/main_scene="res://Scenes/Test.tscn"
 config/icon="res://icon.png"
 
 [importer_defaults]
