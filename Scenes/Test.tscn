@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Prefabs/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/EnemyFloat.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/EnemyUpDown.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/EnemyHoming.gd" type="Script" id=5]
+[ext_resource path="res://Sprites/parachuter.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/EnemyHoming.gd" type="Script" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -23,16 +24,17 @@ radius = 23.0217
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=7]
 
 custom_solver_bias = 0.0
-radius = 23.1948
+radius = 12.0
+height = 24.0
 
 [sub_resource type="SpriteFrames" id=5]
 
@@ -54,7 +56,7 @@ radius = 24.0832
 "Enemy",
 ] instance=ExtResource( 1 )]
 
-position = Vector2( 967, 473 )
+position = Vector2( 519, 267 )
 collision_mask = 0
 _sections_unfolded = [ "Collision", "Transform" ]
 
@@ -62,7 +64,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 "Enemy",
 ]]
 
-position = Vector2( 897.082, 187.504 )
+position = Vector2( 497.082, 90.4501 )
 rotation = -0.0141669
 input_pickable = false
 collision_layer = 1
@@ -95,13 +97,13 @@ __meta__ = {
 "Enemy",
 ]]
 
-position = Vector2( 541, 371 )
+position = Vector2( 141, 273.946 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 4 )
-speed = 0.5
+speed = 0.25
 horizontal = false
 amplitude = 100.0
 
@@ -117,7 +119,8 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyUpDown" index="1"]
 
-shape = SubResource( 4 )
+position = Vector2( 0, 13 )
+shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -131,7 +134,7 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 speed = 1000.0
 delay = 0.5
 
