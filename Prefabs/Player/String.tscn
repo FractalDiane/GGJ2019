@@ -17,6 +17,8 @@ section_node = ExtResource( 3 )
 [node name="String_Root" parent="." index="0" instance=ExtResource( 2 )]
 
 _sections_unfolded = [ "Collision", "Transform" ]
+horizontal_force = 1
+vertical_force = 10
 
 [node name="PinJoint2D" type="PinJoint2D" parent="String_Root" index="2"]
 
@@ -30,6 +32,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="String_Section" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 0, 5 )
+horizontal_force = 1
+vertical_force = 10
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="String_Section" index="2"]
 
@@ -50,6 +54,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="String_Section2" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 0, 10 )
+horizontal_force = 1
+vertical_force = 10
 
 [node name="PinJoint2D3" type="PinJoint2D" parent="String_Section2" index="2"]
 
@@ -63,6 +69,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="String_Section3" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 0, 15 )
+horizontal_force = 1
+vertical_force = 10
 
 [node name="PinJoint2D3" type="PinJoint2D" parent="String_Section3" index="2"]
 
@@ -76,6 +84,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="String_Section4" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 0, 20 )
+horizontal_force = 1
+vertical_force = 10
 
 [node name="PinJoint2D3" type="PinJoint2D" parent="String_Section4" index="2"]
 
@@ -89,5 +99,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="String_Section5" parent="." index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 0, 25 )
+horizontal_force = 1
+vertical_force = 10
 
 

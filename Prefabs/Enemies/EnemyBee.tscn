@@ -17,14 +17,14 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 8.06226
 
-[node name="EnemyBee" type="KinematicBody2D" groups=[
+[node name="EnemyBee" type="KinematicBody2D" index="0" groups=[
 "Enemy",
 ]]
 
 rotation = -0.0141669
 input_pickable = false
-collision_layer = 1
-collision_mask = 0
+collision_layer = 2
+collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
