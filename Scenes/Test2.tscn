@@ -23,7 +23,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 37, 50 )
 
-[node name="Scene" type="Node2D" index="0"]
+[node name="Scene" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 

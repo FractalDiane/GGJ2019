@@ -1,53 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/Player/String.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/HappyFloaty2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Particles/Pop parts full.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 12.1867
 
-[sub_resource type="Animation" id=2]
-
-resource_name = "idle"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=3]
-
-resource_name = "jump"
-length = 0.4
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 4, 5, 6, 0 ]
-}
-
-[node name="Player" type="RigidBody2D" index="0" groups=[
+[node name="Player" type="RigidBody2D" groups=[
 "Player",
 ]]
 
@@ -104,6 +67,28 @@ anims/idle = SubResource( 2 )
 anims/jump = SubResource( 3 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="PartsPop" type="Particles2D" parent="." index="3"]
+
+emitting = false
+amount = 20
+lifetime = 4.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 1.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = ExtResource( 4 )
+normal_map = null
+h_frames = 2
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 
