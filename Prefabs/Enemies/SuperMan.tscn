@@ -18,7 +18,7 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[node name="SuperMan" type="KinematicBody2D" index="0" groups=[
+[node name="SuperMan" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 
