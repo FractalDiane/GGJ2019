@@ -1,4 +1,4 @@
-extends "res://Scripts/EnemyAir.gd"
+extends "res://Scripts/Enemies/EnemyAir.gd"
 
 export(int) var radius = 20
 export(int) var petal_constant = 2
