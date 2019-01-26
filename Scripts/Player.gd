@@ -57,6 +57,8 @@ func die():
 	state = State.STATE_DEAD
 	emit_signal("on_player_death")
 
+	$PartsPop.set_emitting(true)
+	mode = MODE_STATIC
 	sprite.visible = false
 	collider.disabled = true
 	string_root.mode = MODE_RIGID
