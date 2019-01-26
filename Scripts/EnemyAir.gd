@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 export(float) var speed
-export(bool) var wander = true
 var motion = Vector2(0, 0)
 var movement
 
