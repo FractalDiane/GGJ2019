@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D" index="0"]
+
+position = Vector2( 434.895, 75.8752 )
+
+
