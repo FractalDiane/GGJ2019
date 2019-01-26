@@ -13,14 +13,15 @@ export(State) var state = State.STATE_IN_GAME
 # Variables
 onready var sprite = $Sprite
 onready var collider = $CollisionShape2D
-onready var string_root = $Node2D/String_Root
+onready var string_root = $Node2D/String_Root 
+onready var animator = sprite.get_node("AnimationPlayer")
 
 # Signals
 signal on_player_death
 
 # Overrides
 func _ready():
-	pass
+	animator.play("idle")
 
 func _process(delta):
 	match state:
@@ -38,6 +39,7 @@ func _on_Player_body_entered(body):
 
 # Functions
 func jump():
+	animator.play("jump")
 	if linear_velocity.y < 0:
 		linear_velocity.y = jump_force
 	else:
