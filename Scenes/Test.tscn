@@ -55,6 +55,8 @@ radius = 24.0832
 ] instance=ExtResource( 1 )]
 
 position = Vector2( 967, 473 )
+collision_mask = 0
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="EnemyFloat" type="KinematicBody2D" parent="." index="1" groups=[
 "Enemy",
@@ -68,7 +70,6 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 2 )
 speed = 2.0
-wander = true
 radius = 100
 petal_constant = 3
 
@@ -94,14 +95,13 @@ __meta__ = {
 "Enemy",
 ]]
 
-position = Vector2( 114, 517 )
+position = Vector2( 541, 371 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 4 )
-speed = 1.0
-wander = true
+speed = 0.5
 horizontal = false
 amplitude = 100.0
 
@@ -133,7 +133,6 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 5 )
 speed = 1000.0
-wander = true
 delay = 0.5
 
 [node name="Sprite" type="AnimatedSprite" parent="EnemyHoming" index="0"]

@@ -16,9 +16,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		twirl()
 
-	#print(get_position())
-
-
 func _movement(delta):
 	motion.x = lerp(motion.x - (0.1 * sign(motion.x)) * delta, 0, 0.05)
 	motion.y = lerp(motion.y - (0.1 * sign(motion.y)) * delta, 0, 0.05)
