@@ -37,7 +37,7 @@ texture = ExtResource( 1 )
 
 shape = SubResource( 1 )
 
-[node name="PinJoint2D2" type="PinJoint2D" parent="." index="2"]
+[node name="PinJoint2D" type="PinJoint2D" parent="." index="2"]
 
 node_a = NodePath("..")
 node_b = NodePath("../../RigidBody2D3")
