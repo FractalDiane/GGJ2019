@@ -1,12 +1,165 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Sprites/Lippo DR.png" type="Texture" id=1]
+[ext_resource path="res://Prefabs/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/EnemyFloat.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/EnemyUpDown.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/EnemyHoming.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 23.0217
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 23.1948
+
+[sub_resource type="SpriteFrames" id=5]
+
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=6]
+
+custom_solver_bias = 0.0
+radius = 24.0832
 
 [node name="Scene" type="Node2D" index="0"]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="EnemyAir" parent="." index="0" groups=[
+"Enemy",
+] instance=ExtResource( 1 )]
 
-position = Vector2( 421.716, 314.246 )
-texture = ExtResource( 1 )
+position = Vector2( 967, 473 )
+
+[node name="EnemyFloat" type="KinematicBody2D" parent="." index="1" groups=[
+"Enemy",
+]]
+
+position = Vector2( 897.082, 187.504 )
+rotation = -0.0141669
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 2 )
+speed = 2.0
+wander = true
+radius = 100
+petal_constant = 3
+
+[node name="Sprite" type="AnimatedSprite" parent="EnemyFloat" index="0"]
+
+rotation = 0.00308305
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 1 )
+animation = "default"
+_sections_unfolded = [ "Material", "Transform", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyFloat" index="1"]
+
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EnemyUpDown" type="KinematicBody2D" parent="." index="2" groups=[
+"Enemy",
+]]
+
+position = Vector2( 114, 517 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 4 )
+speed = 1.0
+wander = true
+horizontal = false
+amplitude = 100.0
+
+[node name="Sprite" type="AnimatedSprite" parent="EnemyUpDown" index="0"]
+
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 3 )
+animation = "default"
+_sections_unfolded = [ "Material", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyUpDown" index="1"]
+
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EnemyHoming" type="KinematicBody2D" parent="." index="3" groups=[
+"Enemy",
+]]
+
+position = Vector2( 173, 143 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 5 )
+speed = 1000.0
+wander = true
+delay = 0.5
+
+[node name="Sprite" type="AnimatedSprite" parent="EnemyHoming" index="0"]
+
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 5 )
+animation = "default"
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHoming" index="1"]
+
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TimerAttack" type="Timer" parent="EnemyHoming" index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="EnemyHoming/TimerAttack" to="EnemyHoming" method="_on_TimerAttack_timeout"]
 
 
