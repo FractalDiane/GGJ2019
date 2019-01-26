@@ -8,7 +8,6 @@ func _ready():
 	pass
 
 func _process(delta):
-	print(position.y)
 	check_moving()
 	if moving_up == false:
 		translate(Vector2(-x_speed*delta, y_speed*delta))
@@ -16,7 +15,6 @@ func _process(delta):
 		translate(Vector2(-x_speed*delta, -y_speed*delta))
 
 func check_moving():
-	print(moving_up)
 	if position.y >= 100 and position.y <= 101:
 		moving_up = false
 	elif position.y >= 120 and position.y <= 121:

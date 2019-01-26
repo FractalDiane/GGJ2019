@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/PlayerCamera.gd" type="Script" id=1]
 
-[node name="PlayerCamera" type="Camera2D" index="0"]
+[node name="PlayerCamera" type="Camera2D"]
 
 position = Vector2( 0, 180 )
 anchor_mode = 1
