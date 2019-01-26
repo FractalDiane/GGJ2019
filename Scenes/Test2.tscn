@@ -1,20 +1,19 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/Props and Scenery/Sky base.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Props and Scenery/Sky overlay.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Utility/ParallaxBackground.gd" type="Script" id=3]
-[ext_resource path="res://Sprites/clouds2.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/clouds1.png" type="Texture" id=5]
-[ext_resource path="res://Prefabs/Enemies/EnemyFish.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Prefabs/PlayerCamera.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Sprites/Iris.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Props and Scenery/clouds2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Props and Scenery/clouds1.png" type="Texture" id=5]
+[ext_resource path="res://Prefabs/PlayerCamera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/Iris.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -25,13 +24,40 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 37, 50 )
 
-[ext_resource path="res://Sprites/Props and Scenery/Sky 1.png" type="Texture" id=1]
-[ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Prefabs/Enemies/EnemyFish.tscn" type="PackedScene" id=3]
+[node name="Scene" type="Node2D" index="0"]
 
-[node name="Scene" type="Node2D"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
+layer = -2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Sky1" type="Sprite" parent="CanvasLayer" index="0"]
+
+modulate = Color( 1, 0.625, 0.976563, 1 )
+position = Vector2( 320, 180 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2880, 360 )
+_sections_unfolded = [ "Region", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sky2" type="Sprite" parent="CanvasLayer" index="1"]
+
+position = Vector2( 320, 180 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2880, 360 )
+_sections_unfolded = [ "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer" index="2"]
 
 layer = -1
 offset = Vector2( 0, 0 )
@@ -44,47 +70,104 @@ scroll_base_scale = Vector2( 1, 1 )
 scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = true
+script = ExtResource( 3 )
+_sections_unfolded = [ "Scroll" ]
 
-[node name="Background" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+[node name="Background" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="0"]
 
-motion_scale = Vector2( 1, 1 )
+motion_scale = Vector2( 1, 0 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background" index="0"]
-
-position = Vector2( 320, 180 )
-texture = ExtResource( 1 )
+_sections_unfolded = [ "Motion" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Foreground" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/Background" index="0"]
 
-motion_scale = Vector2( 1, 1 )
+position = Vector2( 320, 180 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Midground" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="1"]
+
+motion_scale = Vector2( 2, 0 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
+_sections_unfolded = [ "Motion" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="EnemyFish" parent="CanvasLayer/ParallaxBackground/Foreground" index="0" instance=ExtResource( 6 )]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="0"]
 
-position = Vector2( 454, 182 )
-mode = 2
+position = Vector2( 118, 152 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="PlayerCamera" parent="." index="1" instance=ExtResource( 7 )]
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="1"]
 
-[node name="Player" parent="." index="2" instance=ExtResource( 8 )]
+position = Vector2( 407.147, 56.7037 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="2"]
+
+position = Vector2( 385, 174 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Foreground" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="2"]
+
+motion_scale = Vector2( 3, 0 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+_sections_unfolded = [ "Motion" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="0"]
+
+position = Vector2( 165, 86 )
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="1"]
+
+position = Vector2( 313, 211 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="2"]
+
+position = Vector2( 484.352, 134.429 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PlayerCamera" parent="." index="1" instance=ExtResource( 6 )]
+
+[node name="Player" parent="." index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 187, 180 )
 z_index = 1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="EnemySeagull" parent="." index="3" instance=ExtResource( 9 )]
+[node name="EnemySeagull" parent="." index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 584, 164 )
 speed = 250.0
 delay_before_attack = 0.35
 
-[node name="Iris" type="StaticBody2D" parent="." index="4"]
+[node name="EnemySeagull2" parent="." index="4" instance=ExtResource( 8 )]
+
+position = Vector2( 613, 141 )
+speed = 250.0
+delay_before_attack = 0.35
+
+[node name="Iris" type="StaticBody2D" parent="." index="5"]
 
 position = Vector2( 841, 328 )
 input_pickable = false

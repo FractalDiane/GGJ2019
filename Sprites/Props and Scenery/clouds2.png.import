@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/clouds2.png-132be504a18690bf17a229975a8bf214.stex"
+path="res://.import/clouds2.png-67146118e48e021309e63a4fb6d9448c.stex"
 
 [deps]
 
-source_file="res://Sprites/clouds2.png"
-dest_files=[ "res://.import/clouds2.png-132be504a18690bf17a229975a8bf214.stex" ]
+source_file="res://Sprites/Props and Scenery/clouds2.png"
+dest_files=[ "res://.import/clouds2.png-67146118e48e021309e63a4fb6d9448c.stex" ]
 
 [params]
 
