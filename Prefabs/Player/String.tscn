@@ -1,17 +1,105 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/String.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/Player/String_Root.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Prefabs/Player/String_Section.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Lippo DR.png" type="Texture" id=4]
 
+[node name="Node2D" type="Node2D"]
 
-[node name="Node2D" type="Node2D" index="0"]
-
-position = Vector2( 434.895, 75.8752 )
 script = ExtResource( 1 )
-offset = 5
+_sections_unfolded = [ "Transform", "Z Index" ]
+offset = 4000
 sections = 4
 root_node = ExtResource( 2 )
 section_node = ExtResource( 3 )
+
+[node name="String_Root" parent="." index="0" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "Collision", "Transform" ]
+horizontal_force = 1
+vertical_force = 10
+
+[node name="PinJoint2D" type="PinJoint2D" parent="String_Root" index="2"]
+
+node_a = NodePath("..")
+node_b = NodePath("../../String_Section")
+bias = 0.0
+disable_collision = true
+softness = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="String_Section" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 5 )
+horizontal_force = 1
+vertical_force = 10
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="String_Section" index="2"]
+
+node_a = NodePath("..")
+node_b = NodePath("../../String_Section2")
+bias = 0.0
+disable_collision = true
+softness = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="String_Section" index="3"]
+
+visible = false
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="String_Section2" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 10 )
+horizontal_force = 1
+vertical_force = 10
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="String_Section2" index="2"]
+
+node_a = NodePath("..")
+node_b = NodePath("../../String_Section3")
+bias = 0.0
+disable_collision = true
+softness = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="String_Section3" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 15 )
+horizontal_force = 1
+vertical_force = 10
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="String_Section3" index="2"]
+
+node_a = NodePath("..")
+node_b = NodePath("../../String_Section4")
+bias = 0.0
+disable_collision = true
+softness = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="String_Section4" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 20 )
+horizontal_force = 1
+vertical_force = 10
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="String_Section4" index="2"]
+
+node_a = NodePath("..")
+node_b = NodePath("../../String_Section5")
+bias = 0.0
+disable_collision = true
+softness = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="String_Section5" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 25 )
+horizontal_force = 1
+vertical_force = 10
 
 

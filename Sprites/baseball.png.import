@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/clouds1.png-b5ce9da456abe958abd99a8396bc8f20.stex"
+path="res://.import/baseball.png-d6db067f300c87befd6e90e6e206f632.stex"
 
 [deps]
 
-source_file="res://Sprites/clouds1.png"
-dest_files=[ "res://.import/clouds1.png-b5ce9da456abe958abd99a8396bc8f20.stex" ]
+source_file="res://Sprites/baseball.png"
+dest_files=[ "res://.import/baseball.png-d6db067f300c87befd6e90e6e206f632.stex" ]
 
 [params]
 

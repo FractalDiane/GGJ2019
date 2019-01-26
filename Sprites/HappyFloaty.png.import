@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/clouds2.png-132be504a18690bf17a229975a8bf214.stex"
+path="res://.import/HappyFloaty.png-d8525803c68bc3a2bc3b94ce13ab4094.stex"
 
 [deps]
 
-source_file="res://Sprites/clouds2.png"
-dest_files=[ "res://.import/clouds2.png-132be504a18690bf17a229975a8bf214.stex" ]
+source_file="res://Sprites/HappyFloaty.png"
+dest_files=[ "res://.import/HappyFloaty.png-d8525803c68bc3a2bc3b94ce13ab4094.stex" ]
 
 [params]
 

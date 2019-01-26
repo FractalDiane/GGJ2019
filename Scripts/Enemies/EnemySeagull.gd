@@ -16,8 +16,6 @@ func _process(delta):
 		rot_speed = lerp(rot_speed - 0.1 * delta, 0, 0.05)
 	spr.rotation += rot_speed
 
-	#if Input.is_action_just_pressed("ui_accept"):
-		#twirl()
 
 func _movement(delta):
 	motion.x = lerp(motion.x - (0.1 * sign(motion.x)) * delta, 0, 0.05)
@@ -27,10 +25,8 @@ func _movement(delta):
 
 
 func twirl():
-	#target_angle = get_angle_to(get_global_mouse_position())
 	spr.play("twirl")
 	target_angle = get_angle_to(Controller.get_player().get_position())
-	print(target_angle)
 	spr.set_rotation(target_angle + deg2rad(70))
 	
 	rot_speed = 0.5

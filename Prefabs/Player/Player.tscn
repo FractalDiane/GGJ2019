@@ -1,14 +1,53 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Prefabs/Player/String.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/HappyFloaty2.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 35.2345
+radius = 12.1867
 
-[node name="Player" type="RigidBody2D" groups=[
+[sub_resource type="Animation" id=2]
+
+resource_name = "idle"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "jump"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 0 ]
+}
+
+[node name="Player" type="RigidBody2D" index="0" groups=[
 "Player",
 ]]
 
@@ -31,17 +70,41 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 jump_force = 100
 right_move_speed = 100
 right_move_force = 100
 state = 1
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
+position = Vector2( 0, -2 )
 shape = SubResource( 1 )
+
+[node name="Node2D" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 0, 13 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+
+position = Vector2( 0, -1 )
+texture = ExtResource( 3 )
+hframes = 14
+region_rect = Rect2( 0, 0, 32, 29 )
+_sections_unfolded = [ "Animation", "Material", "Region", "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/idle = SubResource( 2 )
+anims/jump = SubResource( 3 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 
 
