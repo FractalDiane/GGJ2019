@@ -12,6 +12,8 @@ export(State) var state = State.STATE_IN_GAME
 
 # Variables
 onready var sprite = $Sprite
+onready var collider = $CollisionShape2D
+onready var string_root = $Node2D/String_Root
 
 # Signals
 signal on_player_death
@@ -54,3 +56,6 @@ func die():
 	emit_signal("on_player_death")
 
 	sprite.visible = false
+	collider.disabled = true
+	string_root.mode = MODE_RIGID
+	string_root.gravity_scale = 1

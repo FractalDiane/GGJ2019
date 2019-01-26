@@ -53,7 +53,7 @@ position = Vector2( 0, -1 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 29 )
-_sections_unfolded = [ "Region", "Transform" ]
+_sections_unfolded = [ "Material", "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 
