@@ -150,7 +150,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 584, 164 )
 speed = 250.0
 delay_before_attack = 0.35
-attack_cooldown = 0.75
 
 [node name="Iris" type="StaticBody2D" parent="." index="4"]
 
