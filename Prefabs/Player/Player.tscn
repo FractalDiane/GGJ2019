@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/Player/String.tscn" type="PackedScene" id=2]
@@ -98,6 +98,11 @@ anim_offset_random = 1.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Radial Accel", "Scale", "Spread", "Tangential Accel" ]
 
+[sub_resource type="CircleShape2D" id=7]
+
+custom_solver_bias = 0.0
+radius = 46.2385
+
 [node name="Player" type="RigidBody2D" index="0" groups=[
 "Player",
 ]]
@@ -178,6 +183,28 @@ h_frames = 2
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
 
+[node name="AreaDanger" type="Area2D" parent="." index="4"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDanger" index="0"]
+
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
+
+[connection signal="body_entered" from="AreaDanger" to="." method="_on_AreaDanger_body_entered"]
 
 
