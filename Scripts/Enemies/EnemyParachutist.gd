@@ -1,4 +1,4 @@
-extends "res://Scripts/EnemyAir.gd"
+extends "res://Scripts/Enemies/EnemyAir.gd"
 
 export(bool) var horizontal = false
 export(float) var amplitude = 10

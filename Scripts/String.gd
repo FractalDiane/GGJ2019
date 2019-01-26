@@ -14,8 +14,8 @@ func _process(delta):
 	pass
 
 func spawn_nodes():
-	total_offset = 0
-	root = root_node.instance()
+	var total_offset = 0
+	var root = root_node.instance()
 	add_child(root)
 	sections_list.append(root)
 	var previous_section = root
