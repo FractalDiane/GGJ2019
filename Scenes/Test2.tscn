@@ -5,10 +5,10 @@
 [ext_resource path="res://Scripts/Utility/ParallaxBackground.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/clouds2.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/clouds1.png" type="Texture" id=5]
-[ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Prefabs/Enemies/EnemyFish.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Prefabs/PlayerCamera.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Prefabs/Enemies/EnemyFish.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Prefabs/PlayerCamera.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Sprites/Iris.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -25,7 +25,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 37, 50 )
 
-[node name="Scene" type="Node2D"]
+[node name="Scene" type="Node2D" index="0"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
@@ -132,24 +132,27 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="EnemySeagull" parent="CanvasLayer/ParallaxBackground/Foreground" index="0" instance=ExtResource( 6 )]
-
-position = Vector2( 584, 164 )
-
-[node name="EnemyFish" parent="CanvasLayer/ParallaxBackground/Foreground" index="1" instance=ExtResource( 7 )]
+[node name="EnemyFish" parent="CanvasLayer/ParallaxBackground/Foreground" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 454, 182 )
 mode = 2
 
-[node name="PlayerCamera" parent="." index="1" instance=ExtResource( 8 )]
+[node name="PlayerCamera" parent="." index="1" instance=ExtResource( 7 )]
 
-[node name="Player" parent="." index="2" instance=ExtResource( 9 )]
+[node name="Player" parent="." index="2" instance=ExtResource( 8 )]
 
 position = Vector2( 187, 180 )
 z_index = 1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Iris" type="StaticBody2D" parent="." index="3"]
+[node name="EnemySeagull" parent="." index="3" instance=ExtResource( 9 )]
+
+position = Vector2( 584, 164 )
+speed = 250.0
+delay_before_attack = 0.35
+attack_cooldown = 0.75
+
+[node name="Iris" type="StaticBody2D" parent="." index="4"]
 
 position = Vector2( 841, 328 )
 input_pickable = false
