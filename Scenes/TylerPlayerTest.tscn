@@ -13,7 +13,9 @@ extents = Vector2( 203.689, 10 )
 
 position = Vector2( 235.61, 561.939 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1" groups=[
+"Enemy",
+]]
 
 position = Vector2( 397.787, 44.1985 )
 input_pickable = false

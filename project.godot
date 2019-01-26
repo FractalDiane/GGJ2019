@@ -14,6 +14,10 @@ config/name="Global Game Jam 2019"
 run/main_scene="res://Scenes/Test.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Controller="*res://Scripts/Controller.gd"
+
 [importer_defaults]
 
 texture={

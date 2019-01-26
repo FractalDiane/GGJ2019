@@ -22,8 +22,8 @@ bounce = 0.0
 gravity_scale = -1.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 5
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
@@ -32,6 +32,8 @@ angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
 jump_force = 100
+right_move_speed = 100
+right_move_force = 100
 state = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
