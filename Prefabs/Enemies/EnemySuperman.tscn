@@ -18,17 +18,17 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[node name="SuperMan" type="KinematicBody2D" groups=[
+[node name="SuperMan" type="KinematicBody2D" index="0" groups=[
 "Enemy",
 ]]
 
 position = Vector2( 600, 100 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 2
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 x_speed = 40
 y_speed = 20
 
