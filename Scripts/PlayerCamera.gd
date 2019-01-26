@@ -8,5 +8,5 @@ extends Camera2D
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 
-func _process(delta):
-	position.x = Controller.get_player().position.x
+func _physics_process(delta):
+	position.x = lerp(position.x, Controller.get_player().position.x - 320, 0.05)
