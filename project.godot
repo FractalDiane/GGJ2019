@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Controller="*res://Scripts/Controller.gd"
+DebugObject="*res://Scripts/DebugObject.gd"
 
 [display]
 
@@ -61,9 +62,6 @@ ui_gamepad_click=[ Object(InputEventJoypadButton,"resource_local_to_scene":false
 [physics]
 
 common/physics_fps=144
-
-[physics]
-
 2d/thread_model=2
 
 [rendering]
