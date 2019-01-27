@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/Props and Scenery/Sky base.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Props and Scenery/Sky overlay.png" type="Texture" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Iris.png" type="Texture" id=7]
 [ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=9]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=4]
 
 animations = [ {
 "frames": [ ExtResource( 7 ) ],
@@ -18,7 +19,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 37, 50 )
@@ -35,7 +36,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Sky1" type="Sprite" parent="CanvasLayer" index="0"]
 
-modulate = Color( 1, 0.625, 0.976563, 1 )
+modulate = Color( 1, 0.722656, 0.950165, 1 )
 position = Vector2( 320, 180 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -147,7 +148,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PlayerCamera" parent="." index="1" instance=ExtResource( 5 )]
 
-anchor_mode = 0
 smoothing_enabled = true
 _sections_unfolded = [ "Smoothing", "Transform" ]
 
@@ -157,26 +157,16 @@ position = Vector2( 187, 180 )
 z_index = 1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Iris" type="StaticBody2D" parent="." index="3"]
+[node name="Iris" type="AnimatedSprite" parent="." index="3"]
 
 position = Vector2( 841, 328 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Sprite" type="AnimatedSprite" parent="Iris" index="0"]
-
-frames = SubResource( 1 )
+frames = SubResource( 4 )
 animation = "default"
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Area2D" type="Area2D" parent="Iris" index="1"]
+[node name="Area2D" type="Area2D" parent="Iris" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -192,7 +182,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Iris/Area2D" index="0"]
 
 position = Vector2( -11, -18 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -208,5 +198,7 @@ speed = 500.0
 position = Vector2( 535, 140 )
 collision_layer = 3
 speed = 500.0
+
+[node name="PartsWind" parent="." index="6" instance=ExtResource( 9 )]
 
 

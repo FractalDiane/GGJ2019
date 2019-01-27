@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BIGWIND.png-755e300194cbd535e0ed6475d1358ccb.stex"
+path="res://.import/helicopter1.png-bc0f256a2e4fe628b4c3cb306c4ced07.stex"
 
 [deps]
 
-source_file="res://Sprites/BIGWIND.png"
-dest_files=[ "res://.import/BIGWIND.png-755e300194cbd535e0ed6475d1358ccb.stex" ]
+source_file="res://Sprites/helicopter/helicopter1.png"
+dest_files=[ "res://.import/helicopter1.png-bc0f256a2e4fe628b4c3cb306c4ced07.stex" ]
 
 [params]
 
