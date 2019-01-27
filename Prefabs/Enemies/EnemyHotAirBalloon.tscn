@@ -28,6 +28,7 @@ height = 16.0
 
 [node name="EnemyHotAirBalloon" type="KinematicBody2D" groups=[
 "Enemy",
+"HotAirBalloon",
 ]]
 
 input_pickable = false
@@ -42,6 +43,7 @@ speed = -50
 
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true

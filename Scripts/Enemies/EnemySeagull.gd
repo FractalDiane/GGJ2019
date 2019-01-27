@@ -1,6 +1,6 @@
 extends "res://Scripts/Enemies/EnemyAir.gd"
 
-export(float) var delay_before_attack = 0.75
+export(float) var delay_before_attack = 2
 export(float) var attack_cooldown = 1.5
 
 var rot_speed = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Sprites/Props and Scenery/Sky base.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Props and Scenery/Sky overlay.png" type="Texture" id=2]
@@ -7,7 +7,12 @@
 [ext_resource path="res://Prefabs/PlayerCamera.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Iris.png" type="Texture" id=7]
-[ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/Enemies/EnemyCrow.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/Enemies/EnemyHotAirBalloon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Prefabs/DebugObject.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Prefabs/Enemies/EnemyBee.tscn" type="PackedScene" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -23,7 +28,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 37, 50 )
 
-[node name="Scene" type="Node2D"]
+[node name="Scene" type="Node2D" index="0"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
@@ -36,10 +41,10 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 [node name="Sky1" type="Sprite" parent="CanvasLayer" index="0"]
 
 modulate = Color( 1, 0.625, 0.976563, 1 )
-position = Vector2( 320, 180 )
+position = Vector2( 3481, 175 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 2880, 360 )
+region_rect = Rect2( 0, 0, 7000, 360 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
@@ -47,10 +52,10 @@ __meta__ = {
 
 [node name="Sky2" type="Sprite" parent="CanvasLayer" index="1"]
 
-position = Vector2( 320, 180 )
+position = Vector2( 3499, 176 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 2880, 360 )
+region_rect = Rect2( 0, 0, 7000, 360 )
 _sections_unfolded = [ "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -147,13 +152,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PlayerCamera" parent="." index="1" instance=ExtResource( 5 )]
 
-anchor_mode = 0
 smoothing_enabled = true
 _sections_unfolded = [ "Smoothing", "Transform" ]
 
 [node name="Player" parent="." index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 187, 180 )
+position = Vector2( 172, 206 )
 z_index = 1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -197,16 +201,81 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="EnemySeagull" parent="." index="4" instance=ExtResource( 8 )]
+[node name="EnemyCrow" parent="." index="4" instance=ExtResource( 8 )]
 
-position = Vector2( 491, 157 )
-collision_layer = 3
+position = Vector2( 739, 49 )
+
+[node name="EnemyCrow2" parent="." index="5" instance=ExtResource( 8 )]
+
+position = Vector2( 795, 100 )
+
+[node name="EnemyCrow3" parent="." index="6" instance=ExtResource( 8 )]
+
+position = Vector2( 853, 150 )
+
+[node name="EnemyCrow4" parent="." index="7" instance=ExtResource( 8 )]
+
+position = Vector2( 916, 188 )
+
+[node name="EnemyCrow5" parent="." index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 3073, 309 )
+
+[node name="EnemyCrow6" parent="." index="9" instance=ExtResource( 8 )]
+
+position = Vector2( 3128, 270 )
+
+[node name="EnemyCrow7" parent="." index="10" instance=ExtResource( 8 )]
+
+position = Vector2( 3192, 226 )
+
+[node name="EnemyCrow8" parent="." index="11" instance=ExtResource( 8 )]
+
+position = Vector2( 3262, 180 )
+
+[node name="EnemyCrow9" parent="." index="12" instance=ExtResource( 8 )]
+
+position = Vector2( 3720, 66 )
+
+[node name="EnemyCrow10" parent="." index="13" instance=ExtResource( 8 )]
+
+position = Vector2( 3645, 129 )
+
+[node name="EnemyCrow11" parent="." index="14" instance=ExtResource( 8 )]
+
+position = Vector2( 3575, 185 )
+
+[node name="EnemyHotAirBalloon" parent="." index="15" instance=ExtResource( 9 )]
+
+position = Vector2( 1310, 295 )
+
+[node name="PartsWind" parent="." index="16" instance=ExtResource( 10 )]
+
+[node name="DebugObject" parent="." index="17" instance=ExtResource( 11 )]
+
+[node name="EnemySeagull" parent="." index="18" instance=ExtResource( 12 )]
+
+position = Vector2( 1823, 200 )
 speed = 500.0
 
-[node name="EnemySeagull2" parent="." index="5" instance=ExtResource( 8 )]
+[node name="EnemySeagull2" parent="." index="19" instance=ExtResource( 12 )]
 
-position = Vector2( 535, 140 )
-collision_layer = 3
+position = Vector2( 2222, 103 )
 speed = 500.0
+
+[node name="EnemyBee" parent="EnemySeagull2" index="5" instance=ExtResource( 13 )]
+
+position = Vector2( 461.845, 58.4958 )
+speed = 1.0
+
+[node name="EnemyBee2" parent="EnemySeagull2" index="6" instance=ExtResource( 13 )]
+
+position = Vector2( 1960.97, 87.0635 )
+speed = 1.0
+
+[node name="EnemyBee3" parent="EnemySeagull2" index="7" instance=ExtResource( 13 )]
+
+position = Vector2( 2360.92, 85.7032 )
+speed = 1.0
 
 
