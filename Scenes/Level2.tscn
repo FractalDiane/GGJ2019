@@ -121,6 +121,9 @@ texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 18000, 360 )
 _sections_unfolded = [ "Region", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Midground" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="2"]
 
@@ -164,85 +167,85 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite24" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="4"]
 
-position = Vector2( 6813, 220 )
+position = Vector2( 6910, 215 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite26" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="5"]
 
-position = Vector2( 7141, 187 )
+position = Vector2( 7238, 182 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite27" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="6"]
 
-position = Vector2( 7664, 100 )
+position = Vector2( 7761, 95 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite28" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="7"]
 
-position = Vector2( 8018, 290 )
+position = Vector2( 8115, 285 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite29" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="8"]
 
-position = Vector2( 8194, 201 )
+position = Vector2( 8291, 196 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite35" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="9"]
 
-position = Vector2( 8412, 280 )
+position = Vector2( 8509, 275 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite36" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="10"]
 
-position = Vector2( 8441, 161 )
+position = Vector2( 8538, 156 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite37" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="11"]
 
-position = Vector2( 8426, 215 )
+position = Vector2( 8523, 210 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite30" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="12"]
 
-position = Vector2( 8637, 167 )
+position = Vector2( 8734, 162 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite31" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="13"]
 
-position = Vector2( 8719, 324 )
+position = Vector2( 8816, 319 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite32" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="14"]
 
-position = Vector2( 8948, 246 )
+position = Vector2( 9045, 241 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite33" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="15"]
 
-position = Vector2( 9019, 205 )
+position = Vector2( 9116, 200 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite38" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="16"]
 
-position = Vector2( 9209, 215 )
+position = Vector2( 9306, 210 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite39" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="17"]
 
-position = Vector2( 9450, 256 )
+position = Vector2( 9547, 251 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
@@ -410,7 +413,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite34" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="45"]
 
-position = Vector2( 8925, 121 )
+position = Vector2( 9022, 116 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
@@ -446,73 +449,73 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite24" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="3"]
 
-position = Vector2( 6748.58, 229.574 )
+position = Vector2( 6845.58, 224.574 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite27" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="4"]
 
-position = Vector2( 7051, 93 )
+position = Vector2( 7148, 88 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite28" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="5"]
 
-position = Vector2( 7199, 72 )
+position = Vector2( 7296, 67 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite29" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="6"]
 
-position = Vector2( 7476, 182 )
+position = Vector2( 7573, 177 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite30" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="7"]
 
-position = Vector2( 7764, 227 )
+position = Vector2( 7861, 222 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite31" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="8"]
 
-position = Vector2( 8025, 151 )
+position = Vector2( 8122, 146 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite32" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="9"]
 
-position = Vector2( 8185, 100 )
+position = Vector2( 8282, 95 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite33" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="10"]
 
-position = Vector2( 8293, 182 )
+position = Vector2( 8390, 177 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite34" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="11"]
 
-position = Vector2( 8561, 226 )
+position = Vector2( 8658, 221 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite35" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="12"]
 
-position = Vector2( 8797, 164 )
+position = Vector2( 8894, 159 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite36" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="13"]
 
-position = Vector2( 9082, 114 )
+position = Vector2( 9179, 109 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite37" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="14"]
 
-position = Vector2( 9389, 162 )
+position = Vector2( 9486, 157 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
@@ -754,83 +757,83 @@ position = Vector2( 816, 251 )
 
 [node name="EnemyCrow9" parent="." index="9" instance=ExtResource( 12 )]
 
-position = Vector2( 5091, 27 )
+position = Vector2( 5188, 22 )
 
 [node name="EnemyCrow10" parent="." index="10" instance=ExtResource( 12 )]
 
-position = Vector2( 5267, 82 )
+position = Vector2( 5364, 77 )
 
 [node name="EnemyCrow24" parent="." index="11" instance=ExtResource( 12 )]
 
-position = Vector2( 5213, 63 )
+position = Vector2( 5310, 58 )
 
 [node name="EnemyCrow20" parent="." index="12" instance=ExtResource( 12 )]
 
-position = Vector2( 5160, 45 )
+position = Vector2( 5257, 40 )
 
 [node name="EnemyCrow11" parent="." index="13" instance=ExtResource( 12 )]
 
-position = Vector2( 5392, 117 )
+position = Vector2( 5489, 112 )
 
 [node name="EnemyCrow21" parent="." index="14" instance=ExtResource( 12 )]
 
-position = Vector2( 5332, 98 )
+position = Vector2( 5429, 93 )
 
 [node name="EnemyCrow12" parent="." index="15" instance=ExtResource( 12 )]
 
-position = Vector2( 5503, 153 )
+position = Vector2( 5600, 148 )
 
 [node name="EnemyCrow25" parent="." index="16" instance=ExtResource( 12 )]
 
-position = Vector2( 5441, 133 )
+position = Vector2( 5538, 128 )
 
 [node name="EnemyCrow13" parent="." index="17" instance=ExtResource( 12 )]
 
-position = Vector2( 5603, 194 )
+position = Vector2( 5700, 189 )
 
 [node name="EnemyCrow22" parent="." index="18" instance=ExtResource( 12 )]
 
-position = Vector2( 5555, 174 )
+position = Vector2( 5652, 169 )
 
 [node name="EnemyCrow14" parent="." index="19" instance=ExtResource( 12 )]
 
-position = Vector2( 5997, 241 )
+position = Vector2( 6094, 236 )
 
 [node name="EnemyCrow27" parent="." index="20" instance=ExtResource( 12 )]
 
-position = Vector2( 5954, 259 )
+position = Vector2( 6051, 254 )
 
 [node name="EnemyCrow19" parent="." index="21" instance=ExtResource( 12 )]
 
-position = Vector2( 6044, 218 )
+position = Vector2( 6141, 213 )
 
 [node name="EnemyCrow26" parent="." index="22" instance=ExtResource( 12 )]
 
-position = Vector2( 6093, 199 )
+position = Vector2( 6190, 194 )
 
 [node name="EnemyCrow16" parent="." index="23" instance=ExtResource( 12 )]
 
-position = Vector2( 6144, 178 )
+position = Vector2( 6241, 173 )
 
 [node name="EnemyCrow17" parent="." index="24" instance=ExtResource( 12 )]
 
-position = Vector2( 6194, 155 )
+position = Vector2( 6291, 150 )
 
 [node name="EnemyCrow23" parent="." index="25" instance=ExtResource( 12 )]
 
-position = Vector2( 6243, 139 )
+position = Vector2( 6340, 134 )
 
 [node name="EnemyCrow15" parent="." index="26" instance=ExtResource( 12 )]
 
-position = Vector2( 5859, 293 )
+position = Vector2( 5956, 288 )
 
 [node name="EnemyCrow28" parent="." index="27" instance=ExtResource( 12 )]
 
-position = Vector2( 5810, 305 )
+position = Vector2( 5907, 300 )
 
 [node name="EnemyCrow18" parent="." index="28" instance=ExtResource( 12 )]
 
-position = Vector2( 5906, 276 )
+position = Vector2( 6003, 271 )
 
 [node name="EnemyCrow3" parent="." index="29" instance=ExtResource( 12 )]
 
@@ -874,99 +877,103 @@ position = Vector2( 785, 104 )
 
 [node name="EnemySeagull2" parent="." index="39" instance=ExtResource( 13 )]
 
-position = Vector2( 2125, 101 )
+position = Vector2( 2222, 96 )
 speed = 600.0
 
 [node name="EnemySeagull3" parent="." index="40" instance=ExtResource( 13 )]
 
-position = Vector2( 2245, 99 )
+position = Vector2( 2342, 94 )
 speed = 600.0
 
 [node name="EnemySeagull4" parent="." index="41" instance=ExtResource( 13 )]
 
-position = Vector2( 2377, 98 )
+position = Vector2( 2474, 93 )
 speed = 600.0
 
 [node name="EnemySeagull5" parent="." index="42" instance=ExtResource( 13 )]
 
-position = Vector2( 2731, 232 )
+position = Vector2( 2828, 227 )
 speed = 600.0
 
 [node name="EnemySeagull6" parent="." index="43" instance=ExtResource( 13 )]
 
-position = Vector2( 2866, 217 )
+position = Vector2( 2963, 212 )
 speed = 600.0
 
 [node name="EnemySeagull14" parent="." index="44" instance=ExtResource( 13 )]
 
-position = Vector2( 2799, 295 )
+position = Vector2( 2896, 290 )
 speed = 600.0
 
 [node name="EnemySeagull13" parent="." index="45" instance=ExtResource( 13 )]
 
-position = Vector2( 2828, 193 )
+position = Vector2( 2925, 188 )
 speed = 600.0
 
 [node name="EnemySeagull12" parent="." index="46" instance=ExtResource( 13 )]
 
-position = Vector2( 2929, 163 )
+position = Vector2( 3026, 158 )
 speed = 600.0
 
 [node name="EnemySeagull7" parent="." index="47" instance=ExtResource( 13 )]
 
-position = Vector2( 2995, 215 )
+position = Vector2( 3092, 210 )
 speed = 600.0
 
 [node name="EnemySeagull15" parent="." index="48" instance=ExtResource( 13 )]
 
-position = Vector2( 2936, 298 )
+position = Vector2( 3033, 293 )
 speed = 600.0
 
 [node name="EnemySeagull11" parent="." index="49" instance=ExtResource( 13 )]
 
-position = Vector2( 3057, 161 )
+position = Vector2( 3154, 156 )
 speed = 600.0
 
 [node name="EnemySeagull8" parent="." index="50" instance=ExtResource( 13 )]
 
-position = Vector2( 3121, 218 )
+position = Vector2( 3218, 213 )
 speed = 600.0
 
 [node name="EnemySeagull16" parent="." index="51" instance=ExtResource( 13 )]
 
-position = Vector2( 3058, 285 )
+position = Vector2( 3155, 280 )
 speed = 600.0
 
 [node name="EnemySeagull9" parent="." index="52" instance=ExtResource( 13 )]
 
-position = Vector2( 5281, 284 )
+position = Vector2( 5378, 279 )
 speed = 600.0
 
 [node name="EnemySeagull10" parent="." index="53" instance=ExtResource( 13 )]
 
-position = Vector2( 5813, 101 )
+position = Vector2( 5910, 96 )
 speed = 600.0
 
 [node name="Helicopter" parent="." index="54" instance=ExtResource( 14 )]
 
-position = Vector2( 4328, 65 )
+position = Vector2( 4425, 60 )
 speed = 5
 
 [node name="Helicopter2" parent="." index="55" instance=ExtResource( 14 )]
 
-position = Vector2( 3797, 67 )
+position = Vector2( 3894, 62 )
 speed = 5
 
 [node name="SuperMan" parent="." index="56" instance=ExtResource( 15 )]
 
-position = Vector2( 1653, 180 )
+position = Vector2( 1686, 174 )
 
 [node name="EnemyBaseball" parent="." index="57" instance=ExtResource( 16 )]
 
-position = Vector2( 746, 159 )
+position = Vector2( 6821, 126 )
 
-[node name="KinematicBody2D" parent="." index="58" instance=ExtResource( 17 )]
+[node name="EnemyBaseball2" parent="." index="58" instance=ExtResource( 16 )]
 
-position = Vector2( 753, 182 )
+position = Vector2( 6914, 226 )
+
+[node name="KinematicBody2D" parent="." index="59" instance=ExtResource( 17 )]
+
+position = Vector2( 7174, 126 )
 
 
