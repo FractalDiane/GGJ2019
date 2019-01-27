@@ -1,0 +1,29 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/HOUSE2 PLATFORM.png-cf7e2ac38a34399a8d3dc2b0c7e370aa.stex"
+
+[deps]
+
+source_file="res://Sprites/HOUSE2 PLATFORM.png"
+dest_files=[ "res://.import/HOUSE2 PLATFORM.png-cf7e2ac38a34399a8d3dc2b0c7e370aa.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
