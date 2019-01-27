@@ -22,3 +22,10 @@ func _on_TimerFade_timeout():
 
 func _on_Timer_timeout():
 	Controller.change_scene("res://Scenes/Level1.tscn")
+
+
+
+func _on_Timer2_timeout():
+	get_node("Sprite2/AnimationPlayer").play("New Anim")
+	$Player.visible = true
+	$Player.mode = $Player.MODE_RIGID

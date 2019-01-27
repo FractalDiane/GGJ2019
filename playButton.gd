@@ -52,9 +52,14 @@ func _process(delta):
 		if over_credits and not credits_open:
 			if Input.is_action_just_pressed("ui_click") and not buffer:
 				credits()
+		if Input.is_action_just_pressed("credits_gamepad") and not credits_open:
+			credits()
 
 		if Input.is_action_just_pressed("ui_gamepad_click") and not credits_open:
 			start()
+		
+		if Input.is_action_just_pressed("ui_cancel") and not credits_open:
+			get_tree().quit()
 
 	if credits_open and not buffer:
 		if Input.is_action_just_pressed("ui_click") or Input.is_action_just_pressed("ui_gamepad_click"):
