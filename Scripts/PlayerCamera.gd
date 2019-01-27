@@ -15,6 +15,8 @@ func _physics_process(delta):
 func _on_StaticBody2D_body_entered(body):
 	if "Player" in body.get_groups():
 		body.linear_velocity.y = 100
+		body.animator.play("jump")
+		body.get_node("SoundBounce").play()
 
 
 func _on_CameraView_body_entered(body):
