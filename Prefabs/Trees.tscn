@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Sprites/Background Tree (Front).png" type="Texture" id=1]
 
-[node name="Trees" type="StaticBody2D" groups=[
+[node name="Trees" type="StaticBody2D" index="0" groups=[
 "Enemy",
+"Trees",
 ]]
 
 input_pickable = false
@@ -16,30 +17,35 @@ bounce = 0.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+modulate = Color( 0.315903, 0.752162, 0.785156, 1 )
 position = Vector2( 60, 46 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 60, 0, 540, 360 )
-_sections_unfolded = [ "Offset", "Region", "Transform" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." index="1"]
 
+visible = false
 build_mode = 0
 polygon = PoolVector2Array( 124, 341, 147, 362, 157, 365, 182, 342, 210, 362, 242, 362, 235, 358, 236, 355, 248, 349, 258, 335, 271, 351, 283, 357, 281, 370, 300, 375, 322, 356, 358, 383, 343, 385, 351, 390, 356, 405, 95, 406, 100, 399, 95, 399, 99, 394, 99, 387, 96, 387, 104, 377, 98, 376, 106, 366, 99, 362, 116, 351 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="." index="2"]
 
+visible = false
 build_mode = 0
 polygon = PoolVector2Array( 399, 351, 391, 367, 378, 375, 384, 382, 385, 399, 379, 406, 427, 406, 422, 399, 417, 389, 421, 387, 416, 378, 415, 375, 422, 375, 406, 362 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="." index="3"]
 
+visible = false
 build_mode = 0
 polygon = PoolVector2Array( 467, 349, 448, 366, 455, 369, 446, 384, 450, 387, 444, 397, 442, 406, 492, 406, 485, 387, 489, 384, 481, 369, 485, 367 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="." index="4"]
 
+visible = false
 build_mode = 0
 polygon = PoolVector2Array( 530, 337, 507, 368, 511, 375, 506, 386, 507, 400, 506, 406, 558, 406, 553, 384, 555, 367 )
 
