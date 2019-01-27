@@ -50,9 +50,11 @@ func credits():
 	Controller.change_scene("res://Scenes/Credits.tscn")
 
 func _on_ClickArea_mouse_entered():
+	modulate = Color(1, .75, .75)
 	over_start = true
 
 func _on_ClickArea_mouse_exited():
+	modulate = Color(1, 1, 1)
 	over_start = false
 
 

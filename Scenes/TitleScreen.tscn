@@ -24,7 +24,7 @@ tracks/0/keys = {
 "values": [ Vector2( 321.062, 212.789 ), Vector2( 321.011, 158.549 ), Vector2( 321.011, 158.549 ), Vector2( 321.062, 212.789 ), Vector2( 321.062, 212.789 ), Vector2( 321.011, 158.549 ) ]
 }
 
-[node name="TitleScreen" type="Node2D"]
+[node name="TitleScreen" type="Node2D" index="0"]
 
 [node name="bgSprite" type="Sprite" parent="." index="0"]
 
@@ -37,7 +37,7 @@ _sections_unfolded = [ "Offset", "Region", "Transform" ]
 position = Vector2( 321.008, 155.47 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="playButton" index="0"]
 
