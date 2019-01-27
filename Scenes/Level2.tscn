@@ -24,7 +24,7 @@
 [ext_resource path="res://Prefabs/Iris.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Prefabs/LevelStartOverlay.tscn" type="PackedScene" id=23]
 
-[node name="Scene" type="Node2D"]
+[node name="Scene" type="Node2D" index="0"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
@@ -578,9 +578,10 @@ bus = "Master"
 
 [node name="Sprite" type="Sprite" parent="." index="95"]
 
+modulate = Color( 0.465775, 0.577497, 0.644531, 1 )
 position = Vector2( 9557, 243 )
 texture = ExtResource( 21 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Iris" parent="." index="96" instance=ExtResource( 22 )]
 
