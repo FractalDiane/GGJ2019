@@ -42,6 +42,7 @@ speed = -50
 
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
