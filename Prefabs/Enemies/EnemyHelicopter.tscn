@@ -13,7 +13,7 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[node name="Helicopter" type="KinematicBody2D" index="0" groups=[
+[node name="Helicopter" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 
