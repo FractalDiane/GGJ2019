@@ -50,22 +50,22 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 [node name="Sky1" type="Sprite" parent="CanvasLayer" index="0"]
 
 modulate = Color( 0.273608, 0.436549, 0.884431, 1 )
-position = Vector2( 6981, 175 )
 texture = ExtResource( 1 )
+centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 14000, 360 )
-_sections_unfolded = [ "Region", "Transform", "Visibility" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Sky2" type="Sprite" parent="CanvasLayer" index="1"]
 
-position = Vector2( 6981, 175 )
 texture = ExtResource( 2 )
+centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 14000, 360 )
-_sections_unfolded = [ "Region", "Transform" ]
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -87,7 +87,7 @@ _sections_unfolded = [ "Scroll" ]
 
 [node name="Background" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="0"]
 
-motion_scale = Vector2( 1, 0 )
+motion_scale = Vector2( 0.25, 0 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
 _sections_unfolded = [ "Motion" ]
@@ -117,7 +117,7 @@ __meta__ = {
 
 [node name="MidBackground" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="1"]
 
-motion_scale = Vector2( 1.5, 0 )
+motion_scale = Vector2( 0.5, 0 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
 _sections_unfolded = [ "Motion" ]
@@ -148,7 +148,7 @@ __meta__ = {
 
 [node name="Midground" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="2"]
 
-motion_scale = Vector2( 2, 0 )
+motion_scale = Vector2( 0.75, 0 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
 _sections_unfolded = [ "Motion" ]
@@ -168,7 +168,7 @@ _sections_unfolded = [ "Offset", "Region", "Visibility" ]
 
 [node name="Foreground" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="3"]
 
-motion_scale = Vector2( 3, 0 )
+motion_scale = Vector2( 1, 0 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
 _sections_unfolded = [ "Motion" ]
