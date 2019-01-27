@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Global Game Jam 2019"
+config/name="Float Home"
 run/main_scene="res://Scenes/TitleScreen.tscn"
 config/icon="res://icon.png"
 
