@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/playbutton.png" type="Texture" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://Audio/Select.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Audio/Intro.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Sprites/creditsbutton.png" type="Texture" id=7]
-[ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Fonts/font_credits.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -47,7 +48,11 @@ tracks/0/keys = {
 "values": [ 0.0, -80.0 ]
 }
 
-[node name="TitleScreen" type="Node2D"]
+[node name="TitleScreen" type="Node2D" index="0"]
+
+__meta__ = {
+"_edit_vertical_guides_": [ 320.0 ]
+}
 
 [node name="bgSprite" type="Sprite" parent="." index="0"]
 
@@ -172,46 +177,101 @@ size_flags_vertical = 1
 color = Color( 1, 1, 1, 1 )
 _sections_unfolded = [ "Mouse" ]
 
-[node name="PartsWind" parent="." index="4" instance=ExtResource( 8 )]
-
-scale = Vector2( 2, 2 )
-emitting = false
-follow_player = false
-
-[node name="TimerFade" type="Timer" parent="." index="5"]
+[node name="TimerFade" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 0.75
 one_shot = true
 autostart = true
 
-[node name="TimerMusic" type="Timer" parent="." index="6"]
+[node name="TimerMusic" type="Timer" parent="." index="5"]
 
 process_mode = 1
 wait_time = 1.5
 one_shot = true
 autostart = false
 
-[node name="TimerEndWind" type="Timer" parent="." index="7"]
+[node name="TimerEndWind" type="Timer" parent="." index="6"]
 
 process_mode = 1
 wait_time = 2.0
 one_shot = true
 autostart = false
 
-[node name="TimerWind2" type="Timer" parent="." index="8"]
+[node name="TimerWind2" type="Timer" parent="." index="7"]
 
 process_mode = 1
 wait_time = 0.55
 one_shot = true
 autostart = false
 
-[node name="TimerStartGame" type="Timer" parent="." index="9"]
+[node name="TimerStartGame" type="Timer" parent="." index="8"]
 
 process_mode = 1
 wait_time = 3.0
 one_shot = true
 autostart = false
+
+[node name="TimerBuffer" type="Timer" parent="." index="9"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = true
+autostart = false
+
+[node name="Credits" type="ColorRect" parent="." index="10"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 640.0
+margin_bottom = 360.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.619608, 0.796078, 0.87451, 1 )
+_sections_unfolded = [ "Mouse" ]
+
+[node name="Label" type="Label" parent="Credits" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 175.0
+margin_top = 5.0
+margin_right = 465.0
+margin_bottom = 332.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 8 )
+text = "Ramie Shreim
+Tyler Witten
+Benjamin Sheh
+Duncan Sparks
+Sabrina
+Shirley
+[FILL THE REST IN LATER]"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "Visibility", "custom_fonts" ]
+
+[node name="PartsWind" parent="." index="11" instance=ExtResource( 9 )]
+
+scale = Vector2( 2, 2 )
+emitting = false
+follow_player = false
 
 [connection signal="mouse_entered" from="playButton/ClickArea" to="playButton" method="_on_ClickArea_mouse_entered"]
 
@@ -230,5 +290,7 @@ autostart = false
 [connection signal="timeout" from="TimerWind2" to="playButton" method="_on_TimerWind2_timeout"]
 
 [connection signal="timeout" from="TimerStartGame" to="playButton" method="_on_TimerStartGame_timeout"]
+
+[connection signal="timeout" from="TimerBuffer" to="playButton" method="_on_TimerBuffer_timeout"]
 
 

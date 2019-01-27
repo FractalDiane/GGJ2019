@@ -25,11 +25,14 @@ extends Sprite
 
 var over_start = false
 var over_credits = false
+var credits_open = false
 
 var fade = false
 var can_click = false
+var buffer = false
 
 onready var overlay = get_tree().get_root().get_node("TitleScreen").get_node("Overlay")
+onready var credits = get_tree().get_root().get_node("TitleScreen").get_node("Credits")
 
 func _ready():
 	overlay.show()
@@ -41,17 +44,23 @@ func _process(delta):
 	else:
 		overlay.modulate.a = min(overlay.modulate.a + 0.75 * delta, 1)
 	
-	#if can_click:
-	if over_start:
-		if Input.is_action_just_pressed("ui_click"):
+	if can_click and not credits_open:
+		if over_start:
+			if Input.is_action_just_pressed("ui_click"):
+				start()
+
+		if over_credits:
+			if Input.is_action_just_pressed("ui_click") and not buffer:
+				credits()
+
+		if Input.is_action_just_pressed("ui_gamepad_click"):
 			start()
 
-	if over_credits:
-		if Input.is_action_just_pressed("ui_click"):
-			credits()
-
-	if Input.is_action_just_pressed("ui_gamepad_click"):
-		start()
+	if credits_open and not buffer:
+		if Input.is_action_just_pressed("ui_click") or Input.is_action_just_pressed("ui_gamepad_click"):
+			$SoundClick.play()
+			get_tree().get_root().get_node("TitleScreen").get_node("Credits").hide()
+			credits_open = false
 
 
 func start():
@@ -69,8 +78,12 @@ func start():
 
 
 func credits():
-	#$SoundClick.play()
-	Controller.change_scene("res://Scenes/Credits.tscn")
+	$SoundClick.play()
+	#Controller.change_scene("res://Scenes/Credits.tscn")
+	credits.show()
+	credits_open = true
+	buffer = true
+	get_tree().get_root().get_node("TitleScreen").get_node("TimerBuffer").start()
 
 func _on_ClickArea_mouse_entered():
 	if can_click:
@@ -120,3 +133,7 @@ func _on_TimerWind2_timeout():
 
 func _on_TimerStartGame_timeout():
 	Controller.change_scene("res://Scenes/Level1.tscn")
+
+
+func _on_TimerBuffer_timeout():
+	buffer = false
