@@ -26,6 +26,11 @@ extends Sprite
 var over_start = false
 var over_credits = false
 
+var fade = false
+var can_click = false
+
+onready var overlay = get_tree().get_root().get_node("Overlay")
+
 func _ready():
 	$AnimationPlayer.play("idle")
 
@@ -39,7 +44,6 @@ func _process(delta):
 			credits()
 
 	if Input.is_action_just_pressed("ui_gamepad_click"):
-		$SoundClick.play()
 		start()
 
 
@@ -67,3 +71,18 @@ func _on_ClickAreaCredits_mouse_entered():
 
 func _on_ClickAreaCredits_mouse_exited():
 	over_credits = false 
+
+
+func _on_TimerFade_timeout():
+	$SoundGust.play()
+	fade = true
+	get_tree().get_root().get_node("PartsWind").set_emitting(true)
+	$TimerMusic.start()
+
+
+func _on_TimerMusic_timeout():
+	$Music.play()
+
+
+func _on_TimerEndWind_timeout():
+	get_tree().get_root().get_node("PartsWind").set_emitting(false)
