@@ -13,6 +13,9 @@ func _ready():
 
 func _process(delta):
 	translate(Vector2(-30*delta,100*delta))
+	t += delta
+	if t > 5:
+		queue_free()
 #	t += 10 * delta * speed
 
 func _movement(delta):
