@@ -1,31 +1,24 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Sprites/Props and Scenery/Sky base.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Props and Scenery/Sky overlay.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Storm Cloud (Back).png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Storm Cloud (Front).png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Props and Scenery/clouds2.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Props and Scenery/clouds1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/BACK BUILDING.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/BUILDINGS TOP.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Storm Cloud (Back).png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Storm Cloud (Front).png" type="Texture" id=6]
 [ext_resource path="res://Prefabs/PlayerCamera.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Sprites/Iris.png" type="Texture" id=9]
-[ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Prefabs/DebugObject.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Prefabs/Enemies/EnemyCrow.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Prefabs/Enemies/EnemyHelicopter.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Prefabs/Enemies/EnemySuperman.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Prefabs/Enemies/EnemyBaseball.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Prefabs/Enemies/EnemyTennisBall.tscn" type="PackedScene" id=17]
-
-[sub_resource type="SpriteFrames" id=3]
-
-animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[ext_resource path="res://Prefabs/DebugObject.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Prefabs/Enemies/EnemyCrow.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Prefabs/Enemies/EnemyHelicopter.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Prefabs/Enemies/EnemySuperman.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Prefabs/Enemies/EnemyBaseball.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Prefabs/Enemies/EnemyTennisBall.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Prefabs/Enemies/EnemyLightning.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Prefabs/PartsRain.tscn" type="PackedScene" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -99,7 +92,20 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/Background" index="0"]
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/ParallaxBackground/Background" index="0"]
+
+modulate = Color( 0.101961, 0.34902, 0.494118, 0.44502 )
+position = Vector2( -121, 87 )
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 18000, 360 )
+_sections_unfolded = [ "Region", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/Background" index="1"]
 
 position = Vector2( 320, 180 )
 __meta__ = {
@@ -113,11 +119,23 @@ motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
 _sections_unfolded = [ "Motion" ]
 
-[node name="Sprite8" type="Sprite" parent="CanvasLayer/ParallaxBackground/MidBackground" index="0"]
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/ParallaxBackground/MidBackground" index="0"]
 
-modulate = Color( 0.761176, 0.913725, 1, 0.66502 )
+modulate = Color( 0.293529, 0.208157, 0.346745, 0.74 )
+position = Vector2( 8984, 353 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 24000, 360 )
+_sections_unfolded = [ "Region", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/ParallaxBackground/MidBackground" index="1"]
+
+modulate = Color( 0.761176, 0.913725, 1, 0.56 )
 position = Vector2( 8635, 174 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 18000, 360 )
 _sections_unfolded = [ "Region", "Visibility" ]
@@ -139,560 +157,24 @@ __meta__ = {
 
 modulate = Color( 0.761176, 0.883255, 1, 1 )
 position = Vector2( -361, -3 )
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 18000, 360 )
 _sections_unfolded = [ "Offset", "Region", "Visibility" ]
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="1"]
-
-position = Vector2( 118, 152 )
-scale = Vector2( -1, 1 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite3" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="2"]
-
-position = Vector2( 407.147, 56.7037 )
-scale = Vector2( -1, 1 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite2" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="3"]
-
-position = Vector2( 385, 174 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite24" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="4"]
-
-position = Vector2( 6910, 215 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite26" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="5"]
-
-position = Vector2( 7238, 182 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite27" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="6"]
-
-position = Vector2( 7761, 95 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite28" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="7"]
-
-position = Vector2( 8115, 285 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite29" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="8"]
-
-position = Vector2( 8291, 196 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite35" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="9"]
-
-position = Vector2( 8509, 275 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite36" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="10"]
-
-position = Vector2( 8538, 156 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite37" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="11"]
-
-position = Vector2( 8523, 210 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite30" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="12"]
-
-position = Vector2( 8734, 162 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite31" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="13"]
-
-position = Vector2( 8816, 319 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite32" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="14"]
-
-position = Vector2( 9045, 241 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite33" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="15"]
-
-position = Vector2( 9116, 200 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite38" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="16"]
-
-position = Vector2( 9306, 210 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite39" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="17"]
-
-position = Vector2( 9547, 251 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite40" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="18"]
-
-position = Vector2( 9563, 110 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite41" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="19"]
-
-position = Vector2( 9805, 172 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite42" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="20"]
-
-position = Vector2( 9830, 212 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite43" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="21"]
-
-position = Vector2( 9842, 127 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite44" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="22"]
-
-position = Vector2( 10054, 203 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite45" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="23"]
-
-position = Vector2( 10308, 92 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite48" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="24"]
-
-position = Vector2( 10561, 119 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite49" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="25"]
-
-position = Vector2( 10871, 174 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite50" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="26"]
-
-position = Vector2( 11227, 251 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite51" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="27"]
-
-position = Vector2( 11363, 84 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite52" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="28"]
-
-position = Vector2( 11412, 323 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite54" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="29"]
-
-position = Vector2( 11782, 258 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite55" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="30"]
-
-position = Vector2( 12284, 242 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite56" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="31"]
-
-position = Vector2( 12649, 63 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite57" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="32"]
-
-position = Vector2( 12858, 105 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite58" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="33"]
-
-position = Vector2( 12993, 171 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite59" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="34"]
-
-position = Vector2( 13384, 328 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite61" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="35"]
-
-position = Vector2( 13616, 230 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite62" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="36"]
-
-position = Vector2( 14096, 269 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite63" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="37"]
-
-position = Vector2( 14447, 87 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite64" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="38"]
-
-position = Vector2( 14737, 273 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite65" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="39"]
-
-position = Vector2( 15071, 140 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite66" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="40"]
-
-position = Vector2( 15175, 198 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite60" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="41"]
-
-position = Vector2( 13162, 264 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite53" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="42"]
-
-position = Vector2( 11122, 322 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite46" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="43"]
-
-position = Vector2( 10235, 332 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite47" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="44"]
-
-position = Vector2( 10376, 338 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite34" type="Sprite" parent="CanvasLayer/ParallaxBackground/Midground" index="45"]
-
-position = Vector2( 9022, 116 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="lightning" type="AnimatedSprite" parent="CanvasLayer/ParallaxBackground/Midground" index="46"]
-
-frames = SubResource( 3 )
-animation = "default"
-
 [node name="Foreground" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="3"]
 
-editor/display_folded = true
 motion_scale = Vector2( 3, 0 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
 _sections_unfolded = [ "Motion" ]
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="0"]
-
-position = Vector2( 165, 86 )
-texture = ExtResource( 6 )
-
-[node name="Sprite2" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="1"]
-
-position = Vector2( 313, 211 )
-texture = ExtResource( 6 )
-
-[node name="Sprite3" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="2"]
-
-position = Vector2( 484.352, 134.429 )
-scale = Vector2( -1, 1 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite24" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="3"]
-
-position = Vector2( 6845.58, 224.574 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite27" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="4"]
-
-position = Vector2( 7148, 88 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite28" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="5"]
-
-position = Vector2( 7296, 67 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite29" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="6"]
-
-position = Vector2( 7573, 177 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite30" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="7"]
-
-position = Vector2( 7861, 222 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite31" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="8"]
-
-position = Vector2( 8122, 146 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite32" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="9"]
-
-position = Vector2( 8282, 95 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite33" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="10"]
-
-position = Vector2( 8390, 177 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite34" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="11"]
-
-position = Vector2( 8658, 221 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite35" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="12"]
-
-position = Vector2( 8894, 159 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite36" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="13"]
-
-position = Vector2( 9179, 109 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite37" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="14"]
-
-position = Vector2( 9486, 157 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite38" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="15"]
-
-position = Vector2( 9651, 208 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite39" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="16"]
-
-position = Vector2( 9981, 107 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite40" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="17"]
-
-position = Vector2( 10020, 300 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite41" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="18"]
-
-position = Vector2( 10282, 229 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite42" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="19"]
-
-position = Vector2( 10611, 305 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite43" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="20"]
-
-position = Vector2( 10893, 113 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite44" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="21"]
-
-position = Vector2( 11240, 181 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite45" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="22"]
-
-position = Vector2( 11450, 151 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite46" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="23"]
-
-position = Vector2( 11656, 141 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite47" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="24"]
-
-position = Vector2( 12006, 312 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite48" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="25"]
-
-position = Vector2( 12264, 125 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite49" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="26"]
-
-position = Vector2( 12688, 168 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite51" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="27"]
-
-position = Vector2( 12536, 292 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite50" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="28"]
-
-position = Vector2( 12928, 242 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite52" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="29"]
-
-position = Vector2( 13212, 127 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite53" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="30"]
-
-position = Vector2( 13412, 223 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite54" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="31"]
-
-position = Vector2( 13817, 254 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite56" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="32"]
-
-position = Vector2( 13631, 144 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite55" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="33"]
-
-position = Vector2( 14079, 128 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite57" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="34"]
-
-position = Vector2( 14549, 202 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite60" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="35"]
-
-position = Vector2( 14923, 228 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite61" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="36"]
-
-position = Vector2( 15122, 287 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite62" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="37"]
-
-position = Vector2( 15390, 158 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite65" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="38"]
-
-position = Vector2( 15546, 323 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite63" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="39"]
-
-position = Vector2( 15845, 270 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite64" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="40"]
-
-position = Vector2( 16091, 130 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite58" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="41"]
-
-position = Vector2( 14406, 311 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite59" type="Sprite" parent="CanvasLayer/ParallaxBackground/Foreground" index="42"]
-
-position = Vector2( 14302, 186 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
 [node name="PlayerCamera" parent="." index="1" instance=ExtResource( 7 )]
 
-position = Vector2( 0, -5 )
+position = Vector2( 1, 2 )
 smoothing_enabled = true
 _sections_unfolded = [ "Smoothing", "Transform" ]
-camera_offset = 160
 
 [node name="Player" parent="." index="2" instance=ExtResource( 8 )]
 
@@ -741,239 +223,293 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="PartsWind" parent="." index="4" instance=ExtResource( 10 )]
+[node name="DebugObject" parent="." index="4" instance=ExtResource( 10 )]
 
-[node name="DebugObject" parent="." index="5" instance=ExtResource( 11 )]
+[node name="DebugObject2" parent="." index="5" instance=ExtResource( 10 )]
 
-[node name="DebugObject2" parent="." index="6" instance=ExtResource( 11 )]
-
-[node name="EnemyCrow" parent="." index="7" instance=ExtResource( 12 )]
+[node name="EnemyCrow" parent="." index="6" instance=ExtResource( 11 )]
 
 position = Vector2( 717, 209 )
 
-[node name="EnemyCrow2" parent="." index="8" instance=ExtResource( 12 )]
+[node name="EnemyCrow2" parent="." index="7" instance=ExtResource( 11 )]
 
 position = Vector2( 816, 251 )
 
-[node name="EnemyCrow9" parent="." index="9" instance=ExtResource( 12 )]
+[node name="EnemyCrow9" parent="." index="8" instance=ExtResource( 11 )]
 
 position = Vector2( 5188, 22 )
 
-[node name="EnemyCrow10" parent="." index="10" instance=ExtResource( 12 )]
+[node name="EnemyCrow10" parent="." index="9" instance=ExtResource( 11 )]
 
 position = Vector2( 5364, 77 )
 
-[node name="EnemyCrow24" parent="." index="11" instance=ExtResource( 12 )]
+[node name="EnemyCrow24" parent="." index="10" instance=ExtResource( 11 )]
 
 position = Vector2( 5310, 58 )
 
-[node name="EnemyCrow20" parent="." index="12" instance=ExtResource( 12 )]
+[node name="EnemyCrow20" parent="." index="11" instance=ExtResource( 11 )]
 
 position = Vector2( 5257, 40 )
 
-[node name="EnemyCrow11" parent="." index="13" instance=ExtResource( 12 )]
+[node name="EnemyCrow11" parent="." index="12" instance=ExtResource( 11 )]
 
 position = Vector2( 5489, 112 )
 
-[node name="EnemyCrow21" parent="." index="14" instance=ExtResource( 12 )]
+[node name="EnemyCrow21" parent="." index="13" instance=ExtResource( 11 )]
 
 position = Vector2( 5429, 93 )
 
-[node name="EnemyCrow12" parent="." index="15" instance=ExtResource( 12 )]
+[node name="EnemyCrow12" parent="." index="14" instance=ExtResource( 11 )]
 
 position = Vector2( 5600, 148 )
 
-[node name="EnemyCrow25" parent="." index="16" instance=ExtResource( 12 )]
+[node name="EnemyCrow25" parent="." index="15" instance=ExtResource( 11 )]
 
 position = Vector2( 5538, 128 )
 
-[node name="EnemyCrow13" parent="." index="17" instance=ExtResource( 12 )]
+[node name="EnemyCrow13" parent="." index="16" instance=ExtResource( 11 )]
 
 position = Vector2( 5700, 189 )
 
-[node name="EnemyCrow22" parent="." index="18" instance=ExtResource( 12 )]
+[node name="EnemyCrow22" parent="." index="17" instance=ExtResource( 11 )]
 
 position = Vector2( 5652, 169 )
 
-[node name="EnemyCrow14" parent="." index="19" instance=ExtResource( 12 )]
+[node name="EnemyCrow14" parent="." index="18" instance=ExtResource( 11 )]
 
 position = Vector2( 6094, 236 )
 
-[node name="EnemyCrow27" parent="." index="20" instance=ExtResource( 12 )]
+[node name="EnemyCrow27" parent="." index="19" instance=ExtResource( 11 )]
 
 position = Vector2( 6051, 254 )
 
-[node name="EnemyCrow19" parent="." index="21" instance=ExtResource( 12 )]
+[node name="EnemyCrow19" parent="." index="20" instance=ExtResource( 11 )]
 
 position = Vector2( 6141, 213 )
 
-[node name="EnemyCrow26" parent="." index="22" instance=ExtResource( 12 )]
+[node name="EnemyCrow26" parent="." index="21" instance=ExtResource( 11 )]
 
 position = Vector2( 6190, 194 )
 
-[node name="EnemyCrow16" parent="." index="23" instance=ExtResource( 12 )]
+[node name="EnemyCrow16" parent="." index="22" instance=ExtResource( 11 )]
 
 position = Vector2( 6241, 173 )
 
-[node name="EnemyCrow17" parent="." index="24" instance=ExtResource( 12 )]
+[node name="EnemyCrow17" parent="." index="23" instance=ExtResource( 11 )]
 
 position = Vector2( 6291, 150 )
 
-[node name="EnemyCrow23" parent="." index="25" instance=ExtResource( 12 )]
+[node name="EnemyCrow23" parent="." index="24" instance=ExtResource( 11 )]
 
 position = Vector2( 6340, 134 )
 
-[node name="EnemyCrow15" parent="." index="26" instance=ExtResource( 12 )]
+[node name="EnemyCrow15" parent="." index="25" instance=ExtResource( 11 )]
 
 position = Vector2( 5956, 288 )
 
-[node name="EnemyCrow28" parent="." index="27" instance=ExtResource( 12 )]
+[node name="EnemyCrow28" parent="." index="26" instance=ExtResource( 11 )]
 
 position = Vector2( 5907, 300 )
 
-[node name="EnemyCrow18" parent="." index="28" instance=ExtResource( 12 )]
+[node name="EnemyCrow18" parent="." index="27" instance=ExtResource( 11 )]
 
 position = Vector2( 6003, 271 )
 
-[node name="EnemyCrow3" parent="." index="29" instance=ExtResource( 12 )]
+[node name="EnemyCrow3" parent="." index="28" instance=ExtResource( 11 )]
 
 position = Vector2( 845, 76 )
 
-[node name="EnemyCrow30" parent="." index="30" instance=ExtResource( 12 )]
+[node name="EnemyCrow30" parent="." index="29" instance=ExtResource( 11 )]
 
 position = Vector2( 892, 44 )
 
-[node name="EnemyCrow31" parent="." index="31" instance=ExtResource( 12 )]
+[node name="EnemyCrow31" parent="." index="30" instance=ExtResource( 11 )]
 
 position = Vector2( 950, 24 )
 
-[node name="EnemyCrow5" parent="." index="32" instance=ExtResource( 12 )]
+[node name="EnemyCrow5" parent="." index="31" instance=ExtResource( 11 )]
 
 position = Vector2( 995, 164 )
 
-[node name="EnemyCrow7" parent="." index="33" instance=ExtResource( 12 )]
+[node name="EnemyCrow7" parent="." index="32" instance=ExtResource( 11 )]
 
 position = Vector2( 1054, 252 )
 
-[node name="EnemyCrow32" parent="." index="34" instance=ExtResource( 12 )]
+[node name="EnemyCrow32" parent="." index="33" instance=ExtResource( 11 )]
 
 position = Vector2( 1095, 275 )
 
-[node name="EnemyCrow6" parent="." index="35" instance=ExtResource( 12 )]
+[node name="EnemyCrow6" parent="." index="34" instance=ExtResource( 11 )]
 
 position = Vector2( 1041, 129 )
 
-[node name="EnemyCrow8" parent="." index="36" instance=ExtResource( 12 )]
+[node name="EnemyCrow8" parent="." index="35" instance=ExtResource( 11 )]
 
 position = Vector2( 1233, 73 )
 
-[node name="EnemyCrow29" parent="." index="37" instance=ExtResource( 12 )]
+[node name="EnemyCrow29" parent="." index="36" instance=ExtResource( 11 )]
 
 position = Vector2( 1210, 27 )
 
-[node name="EnemyCrow4" parent="." index="38" instance=ExtResource( 12 )]
+[node name="EnemyCrow4" parent="." index="37" instance=ExtResource( 11 )]
 
 position = Vector2( 785, 104 )
 
-[node name="EnemySeagull2" parent="." index="39" instance=ExtResource( 13 )]
+[node name="EnemySeagull2" parent="." index="38" instance=ExtResource( 12 )]
 
 position = Vector2( 2222, 96 )
 speed = 600.0
 
-[node name="EnemySeagull3" parent="." index="40" instance=ExtResource( 13 )]
+[node name="EnemySeagull3" parent="." index="39" instance=ExtResource( 12 )]
 
 position = Vector2( 2342, 94 )
 speed = 600.0
 
-[node name="EnemySeagull4" parent="." index="41" instance=ExtResource( 13 )]
+[node name="EnemySeagull4" parent="." index="40" instance=ExtResource( 12 )]
 
 position = Vector2( 2474, 93 )
 speed = 600.0
 
-[node name="EnemySeagull5" parent="." index="42" instance=ExtResource( 13 )]
+[node name="EnemySeagull5" parent="." index="41" instance=ExtResource( 12 )]
 
 position = Vector2( 2828, 227 )
 speed = 600.0
 
-[node name="EnemySeagull6" parent="." index="43" instance=ExtResource( 13 )]
+[node name="EnemySeagull6" parent="." index="42" instance=ExtResource( 12 )]
 
 position = Vector2( 2963, 212 )
 speed = 600.0
 
-[node name="EnemySeagull14" parent="." index="44" instance=ExtResource( 13 )]
+[node name="EnemySeagull14" parent="." index="43" instance=ExtResource( 12 )]
 
 position = Vector2( 2896, 290 )
 speed = 600.0
 
-[node name="EnemySeagull13" parent="." index="45" instance=ExtResource( 13 )]
+[node name="EnemySeagull13" parent="." index="44" instance=ExtResource( 12 )]
 
 position = Vector2( 2925, 188 )
 speed = 600.0
 
-[node name="EnemySeagull12" parent="." index="46" instance=ExtResource( 13 )]
+[node name="EnemySeagull12" parent="." index="45" instance=ExtResource( 12 )]
 
 position = Vector2( 3026, 158 )
 speed = 600.0
 
-[node name="EnemySeagull7" parent="." index="47" instance=ExtResource( 13 )]
+[node name="EnemySeagull7" parent="." index="46" instance=ExtResource( 12 )]
 
 position = Vector2( 3092, 210 )
 speed = 600.0
 
-[node name="EnemySeagull15" parent="." index="48" instance=ExtResource( 13 )]
+[node name="EnemySeagull15" parent="." index="47" instance=ExtResource( 12 )]
 
 position = Vector2( 3033, 293 )
 speed = 600.0
 
-[node name="EnemySeagull11" parent="." index="49" instance=ExtResource( 13 )]
+[node name="EnemySeagull11" parent="." index="48" instance=ExtResource( 12 )]
 
 position = Vector2( 3154, 156 )
 speed = 600.0
 
-[node name="EnemySeagull8" parent="." index="50" instance=ExtResource( 13 )]
+[node name="EnemySeagull8" parent="." index="49" instance=ExtResource( 12 )]
 
 position = Vector2( 3218, 213 )
 speed = 600.0
 
-[node name="EnemySeagull16" parent="." index="51" instance=ExtResource( 13 )]
+[node name="EnemySeagull16" parent="." index="50" instance=ExtResource( 12 )]
 
 position = Vector2( 3155, 280 )
 speed = 600.0
 
-[node name="EnemySeagull9" parent="." index="52" instance=ExtResource( 13 )]
+[node name="EnemySeagull9" parent="." index="51" instance=ExtResource( 12 )]
 
 position = Vector2( 5378, 279 )
 speed = 600.0
 
-[node name="EnemySeagull10" parent="." index="53" instance=ExtResource( 13 )]
+[node name="EnemySeagull10" parent="." index="52" instance=ExtResource( 12 )]
 
 position = Vector2( 5910, 96 )
 speed = 600.0
 
-[node name="Helicopter" parent="." index="54" instance=ExtResource( 14 )]
+[node name="Helicopter" parent="." index="53" instance=ExtResource( 13 )]
 
-position = Vector2( 4425, 60 )
+position = Vector2( 4583, 64 )
 speed = 5
 
-[node name="Helicopter2" parent="." index="55" instance=ExtResource( 14 )]
+[node name="Helicopter2" parent="." index="54" instance=ExtResource( 13 )]
 
 position = Vector2( 3894, 62 )
 speed = 5
 
-[node name="SuperMan" parent="." index="56" instance=ExtResource( 15 )]
+[node name="SuperMan" parent="." index="55" instance=ExtResource( 14 )]
 
 position = Vector2( 1686, 174 )
 
-[node name="EnemyBaseball" parent="." index="57" instance=ExtResource( 16 )]
+[node name="EnemyBaseball" parent="." index="56" instance=ExtResource( 15 )]
 
-position = Vector2( 6821, 126 )
+position = Vector2( 6934, 128 )
 
-[node name="EnemyBaseball2" parent="." index="58" instance=ExtResource( 16 )]
+[node name="EnemyBaseball9" parent="." index="57" instance=ExtResource( 15 )]
 
-position = Vector2( 6914, 226 )
+position = Vector2( 6737, 158 )
 
-[node name="KinematicBody2D" parent="." index="59" instance=ExtResource( 17 )]
+[node name="EnemyBaseball2" parent="." index="58" instance=ExtResource( 15 )]
 
-position = Vector2( 7174, 126 )
+position = Vector2( 7033, 224 )
+
+[node name="EnemyBaseball3" parent="." index="59" instance=ExtResource( 15 )]
+
+position = Vector2( 7686, 144 )
+
+[node name="EnemyBaseball7" parent="." index="60" instance=ExtResource( 15 )]
+
+position = Vector2( 7661, 192 )
+
+[node name="EnemyBaseball4" parent="." index="61" instance=ExtResource( 15 )]
+
+position = Vector2( 7814, 108 )
+
+[node name="EnemyBaseball5" parent="." index="62" instance=ExtResource( 15 )]
+
+position = Vector2( 7856, 127 )
+
+[node name="EnemyBaseball6" parent="." index="63" instance=ExtResource( 15 )]
+
+position = Vector2( 8092, 280 )
+
+[node name="EnemyBaseball8" parent="." index="64" instance=ExtResource( 15 )]
+
+position = Vector2( 8006, 202 )
+
+[node name="KinematicBody2D" parent="." index="65" instance=ExtResource( 16 )]
+
+position = Vector2( 7263, 125 )
+
+[node name="KinematicBody2D2" parent="." index="66" instance=ExtResource( 16 )]
+
+position = Vector2( 7473, 201 )
+
+[node name="KinematicBody2D3" parent="." index="67" instance=ExtResource( 16 )]
+
+position = Vector2( 8154, 233 )
+
+[node name="KinematicBody2D4" parent="." index="68" instance=ExtResource( 16 )]
+
+position = Vector2( 8235, 180 )
+
+[node name="KinematicBody2D5" parent="." index="69" instance=ExtResource( 16 )]
+
+position = Vector2( 8320, 143 )
+
+[node name="KinematicBody2D6" parent="." index="70" instance=ExtResource( 17 )]
+
+position = Vector2( 1397, 56 )
+
+[node name="KinematicBody2D7" parent="." index="71" instance=ExtResource( 17 )]
+
+position = Vector2( 1846, 60 )
+
+[node name="PartsWind" parent="." index="72" instance=ExtResource( 18 )]
+
+[node name="PartsRain" parent="." index="73" instance=ExtResource( 19 )]
 
 

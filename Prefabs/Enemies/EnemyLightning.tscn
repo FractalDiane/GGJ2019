@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/lightning/frame0000.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/lightning/frame0002.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/lightning/frame0004.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D" groups=[
+"Enemy",
+]]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+position = Vector2( 1, 0 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 1
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -7, -64, 0, 65, 7, -67 )
+
+
