@@ -67,6 +67,7 @@ func poll_for_input():
 		jump()
 
 func die():
+	$SoundPop.play()
 	state = State.STATE_DEAD
 	emit_signal("on_player_death")
 

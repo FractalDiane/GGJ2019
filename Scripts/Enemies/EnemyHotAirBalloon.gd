@@ -12,4 +12,4 @@ func _ready():
 
 func _process(delta):
 	if start:
-		translate(Vector2(0,speed*delta))
+		translate(Vector2(0,-speed*delta))

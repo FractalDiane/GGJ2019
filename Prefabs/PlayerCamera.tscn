@@ -10,9 +10,9 @@ extents = Vector2( 320, 2 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 319, 181 )
+extents = Vector2( 320, 180 )
 
-[node name="PlayerCamera" type="Camera2D"]
+[node name="PlayerCamera" type="Camera2D" index="0"]
 
 anchor_mode = 0
 rotating = false
@@ -58,6 +58,7 @@ shape = SubResource( 1 )
 
 [node name="CameraView" type="Area2D" parent="." index="1"]
 
+position = Vector2( 320, 180 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -65,17 +66,11 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-__meta__ = {
-"_edit_lock_": true
-}
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraView" index="0"]
 
-position = Vector2( 320, 181 )
 shape = SubResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [connection signal="body_entered" from="StaticBody2D" to="." method="_on_StaticBody2D_body_entered"]
 
