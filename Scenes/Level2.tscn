@@ -581,5 +581,6 @@ bus = "Master"
 
 position = Vector2( 9502, 310 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+second_level = true
 
 
