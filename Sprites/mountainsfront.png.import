@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mountainsback.png-c780aad8ee939068f8093935305a59ce.stex"
+path="res://.import/mountainsfront.png-0c9f61504c8ae493c623b7ac86887f5b.stex"
 
 [deps]
 
-source_file="res://Sprites/mountainsback.png"
-dest_files=[ "res://.import/mountainsback.png-c780aad8ee939068f8093935305a59ce.stex" ]
+source_file="res://Sprites/mountainsfront.png"
+dest_files=[ "res://.import/mountainsfront.png-0c9f61504c8ae493c623b7ac86887f5b.stex" ]
 
 [params]
 
