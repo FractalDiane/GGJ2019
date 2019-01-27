@@ -7,9 +7,11 @@ var rot_speed = 0
 var target_angle = 0
 var attacking = false
 
+var start_pos
 
 func _ready():
-	pass
+	Controller.connect("level_reset", self, "_on_game_reset")
+	start_pos = global_position
 
 func _process(delta):
 	if rot_speed > 0:
@@ -63,3 +65,7 @@ func _on_TimerCooldown_timeout():
 	rot_speed = 0
 	spr.set_rotation(0)
 	attacking = false
+
+func _on_game_reset():
+	global_position = start_pos
+	rotation = 0
