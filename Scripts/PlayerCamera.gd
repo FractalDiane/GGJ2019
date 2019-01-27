@@ -26,3 +26,5 @@ func _on_StaticBody2D_body_entered(body):
 func _on_CameraView_body_entered(body):
 	if "HotAirBalloon" in body.get_groups():
 		body.start = true
+	if "Ball" in body.groups():
+		body.throw()
