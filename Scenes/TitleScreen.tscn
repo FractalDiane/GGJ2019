@@ -24,7 +24,7 @@ tracks/0/keys = {
 "values": [ Vector2( 321.062, 212.789 ), Vector2( 321.011, 158.549 ), Vector2( 321.011, 158.549 ), Vector2( 321.062, 212.789 ), Vector2( 321.062, 212.789 ), Vector2( 321.011, 158.549 ) ]
 }
 
-[node name="TitleScreen" type="Node2D" index="0"]
+[node name="TitleScreen" type="Node2D"]
 
 [node name="bgSprite" type="Sprite" parent="." index="0"]
 

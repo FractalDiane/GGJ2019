@@ -32,7 +32,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 37, 50 )
 
-[node name="Scene" type="Node2D"]
+[node name="Scene" type="Node2D" index="0"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
@@ -1030,7 +1030,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Iris" type="StaticBody2D" parent="." index="3"]
 
-position = Vector2( 1700, 326 )
+position = Vector2( 6858, 320 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -1144,7 +1144,7 @@ speed = 1.0
 
 [node name="EnemyBee2" parent="EnemySeagull2" index="6" instance=ExtResource( 16 )]
 
-position = Vector2( 1960.97, 87.0635 )
+position = Vector2( 1967.77, 125.154 )
 speed = 1.0
 
 [node name="EnemyBee3" parent="EnemySeagull2" index="7" instance=ExtResource( 16 )]
