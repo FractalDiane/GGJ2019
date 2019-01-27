@@ -47,7 +47,7 @@ tracks/0/keys = {
 "values": [ 0.0, -80.0 ]
 }
 
-[node name="TitleScreen" type="Node2D" index="0"]
+[node name="TitleScreen" type="Node2D"]
 
 [node name="bgSprite" type="Sprite" parent="." index="0"]
 
