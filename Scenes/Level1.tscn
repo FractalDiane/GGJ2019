@@ -570,8 +570,6 @@ position = Vector2( 3575, 185 )
 position = Vector2( 1256, 254 )
 speed = 200
 
-[node name="EnemyHotAirBalloon2" parent="." index="16" instance=ExtResource( 11 )]
-
 [node name="PartsWind" parent="." index="16" instance=ExtResource( 10 )]
 
 [node name="PartsWind" parent="." index="17" instance=ExtResource( 12 )]
@@ -733,4 +731,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 5769, -22 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="EnemyHotAirBalloon2" parent="." index="42" instance=ExtResource( 11 )]
+
 

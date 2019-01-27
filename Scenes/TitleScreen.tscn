@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/playbutton.png" type="Texture" id=2]
 [ext_resource path="res://playButton.gd" type="Script" id=3]
-[ext_resource path="res://Sprites/creditsbutton.png" type="Texture" id=4]
+[ext_resource path="res://Audio/Select.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Sprites/creditsbutton.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -37,7 +38,7 @@ _sections_unfolded = [ "Offset", "Region", "Transform" ]
 position = Vector2( 321.008, 155.47 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="playButton" index="0"]
 
@@ -71,10 +72,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="SoundClick" type="AudioStreamPlayer" parent="playButton" index="2"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
 [node name="creditsButton" type="Sprite" parent="." index="2"]
 
 position = Vector2( 73, 314 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="ClickAreaCredits" type="Area2D" parent="creditsButton" index="0"]
 
