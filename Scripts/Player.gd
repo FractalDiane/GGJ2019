@@ -38,6 +38,7 @@ func _physics_process(delta):
 			move_right(delta)
 
 func _on_Player_body_entered(body):
+	print(body.get_groups())
 	if "Enemy" in body.get_groups():
 		die()
 
@@ -48,7 +49,10 @@ func _on_AreaDanger_body_entered(body):
 
 # Functions
 func jump():
-	animator.play("jump")
+	if expression == Expression.EXPRESSION_NEUTRAL:
+		animator.play("jump")
+	elif expression == Expression.EXPRESSION_SCARED:
+		animator.play("scared_jump")
 	if linear_velocity.y < 0:
 		linear_velocity.y = jump_force
 	else:
@@ -72,3 +76,15 @@ func die():
 	collider.disabled = true
 	string_root.mode = MODE_RIGID
 	string_root.gravity_scale = 1
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == 'jump' or anim_name == 'scared_jump':
+		if expression == Expression.EXPRESSION_NEUTRAL:
+			animator.play("idle")
+		elif expression == Expression.EXPRESSION_SCARED:
+			animator.play("scared_idle")
+
+
+func _on_AreaDanger_body_exited(body):
+	if "Enemy" in body.get_groups():
+		expression = Expression.EXPRESSION_NEUTRAL

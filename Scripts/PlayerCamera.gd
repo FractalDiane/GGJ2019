@@ -10,3 +10,8 @@ extends Camera2D
 
 func _physics_process(delta):
 	position.x = Controller.get_player().position.x - 320
+
+
+func _on_StaticBody2D_body_entered(body):
+	if "Player" in body.get_groups():
+		body.linear_velocity.y = 100
