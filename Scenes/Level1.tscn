@@ -28,10 +28,11 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 37, 50 )
 
-[node name="Scene" type="Node2D" index="0"]
+[node name="Scene" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
+editor/display_folded = true
 layer = -2
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -41,22 +42,22 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 [node name="Sky1" type="Sprite" parent="CanvasLayer" index="0"]
 
 modulate = Color( 1, 0.625, 0.976563, 1 )
-position = Vector2( 3481, 175 )
 texture = ExtResource( 1 )
+centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 7000, 360 )
-_sections_unfolded = [ "Region", "Transform", "Visibility" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Sky2" type="Sprite" parent="CanvasLayer" index="1"]
 
-position = Vector2( 3499, 176 )
 texture = ExtResource( 2 )
+centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 7000, 360 )
-_sections_unfolded = [ "Region", "Transform" ]
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
