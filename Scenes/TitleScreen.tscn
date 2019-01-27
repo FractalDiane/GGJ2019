@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/playbutton.png" type="Texture" id=2]
 [ext_resource path="res://playButton.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/creditsbutton.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -33,7 +34,7 @@ _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="playButton" type="Sprite" parent="." index="1"]
 
-position = Vector2( 321.005, 151.774 )
+position = Vector2( 321.008, 155.47 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
@@ -70,8 +71,35 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="creditsButton" type="Sprite" parent="." index="2"]
+
+position = Vector2( 73, 314 )
+texture = ExtResource( 4 )
+
+[node name="ClickAreaCredits" type="Area2D" parent="creditsButton" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="creditsButton/ClickAreaCredits" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 46, -37, 53, 34, -42, 42, -49, 25, -46, -30, -40, -35 )
+
 [connection signal="mouse_entered" from="playButton/ClickArea" to="playButton" method="_on_ClickArea_mouse_entered"]
 
 [connection signal="mouse_exited" from="playButton/ClickArea" to="playButton" method="_on_ClickArea_mouse_exited"]
+
+[connection signal="mouse_entered" from="creditsButton/ClickAreaCredits" to="playButton" method="_on_ClickAreaCredits_mouse_entered"]
+
+[connection signal="mouse_exited" from="creditsButton/ClickAreaCredits" to="playButton" method="_on_ClickAreaCredits_mouse_exited"]
 
 

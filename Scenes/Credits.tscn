@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Fonts/font_credits.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Credits.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/font_credits.tres" type="DynamicFont" id=2]
 
-[node name="Scene" type="Node2D"]
+[node name="Scene" type="Node2D" index="0"]
 
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_vertical_guides_": [ 320.0 ]
 }
@@ -43,7 +45,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "Ramie Shreim
 Tyler Witten
 Benjamin Sheh
