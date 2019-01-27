@@ -48,7 +48,7 @@ tracks/0/keys = {
 "values": [ 0.0, -80.0 ]
 }
 
-[node name="TitleScreen" type="Node2D"]
+[node name="TitleScreen" type="Node2D" index="0"]
 
 __meta__ = {
 "_edit_vertical_guides_": [ 320.0 ]
