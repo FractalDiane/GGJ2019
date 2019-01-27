@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Sprites/Props and Scenery/Sky base.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Props and Scenery/Sky overlay.png" type="Texture" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Prefabs/Enemies/EnemyBee.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Prefabs/Trees.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scripts/Trees.gd" type="Script" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -668,7 +667,72 @@ position = Vector2( 4985, 73 )
 
 [node name="Trees" parent="." index="28" instance=ExtResource( 16 )]
 
-script = ExtResource( 17 )
+position = Vector2( -97, -40 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees14" parent="." index="29" instance=ExtResource( 16 )]
+
+position = Vector2( -583, -42 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees2" parent="." index="30" instance=ExtResource( 16 )]
+
+position = Vector2( 387, -39 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees3" parent="." index="31" instance=ExtResource( 16 )]
+
+position = Vector2( 863, -41 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees4" parent="." index="32" instance=ExtResource( 16 )]
+
+position = Vector2( 1353, -39 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees5" parent="." index="33" instance=ExtResource( 16 )]
+
+position = Vector2( 1843, -32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees6" parent="." index="34" instance=ExtResource( 16 )]
+
+position = Vector2( 2340, -32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees7" parent="." index="35" instance=ExtResource( 16 )]
+
+position = Vector2( 2829, -28 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees8" parent="." index="36" instance=ExtResource( 16 )]
+
+position = Vector2( 3321, -26 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees9" parent="." index="37" instance=ExtResource( 16 )]
+
+position = Vector2( 3810, -19 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees10" parent="." index="38" instance=ExtResource( 16 )]
+
+position = Vector2( 4303, -26 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees11" parent="." index="39" instance=ExtResource( 16 )]
+
+position = Vector2( 4790, -23 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees12" parent="." index="40" instance=ExtResource( 16 )]
+
+position = Vector2( 5277, -23 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trees13" parent="." index="41" instance=ExtResource( 16 )]
+
+position = Vector2( 5769, -22 )
 _sections_unfolded = [ "Transform" ]
 
 
