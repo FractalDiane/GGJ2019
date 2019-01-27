@@ -1,15 +1,12 @@
 extends Node2D
 
-onready var balloon = get_node("Position2D")
-onready var moveChecker = false
+onready var player = $Player
 
 func _ready():
-	pass
+	player.linear_velocity.x = -50
 
 func _process(delta):
-	if moveChecker == true:
-		balloon.translate(Vector2(-80*delta,-50*delta))
-	
+	pass
 
 func _on_Timer_timeout():
-	moveChecker = true
+	Controller.change_scene("res://Scenes/Level1.tscn")

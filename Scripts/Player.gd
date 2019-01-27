@@ -12,7 +12,7 @@ export var right_move_force = 100
 export(State) var state = State.STATE_IN_GAME
 
 # Variables
-var expression = Expression.EXPRESSION_NEUTRAL
+export(Expression) var expression = Expression.EXPRESSION_NEUTRAL
 var gamepad_pressed = false
 
 onready var sprite = $Sprite
@@ -29,7 +29,10 @@ signal on_player_death
 # Overrides
 func _ready():
 	Controller.set_player(self)
-	animator.play("idle")
+	if expression == Expression.EXPRESSION_NEUTRAL:
+		animator.play("idle")
+	elif expression == Expression.EXPRESSION_SCARED:
+		animator.play("scared_idle")
 
 func _process(delta):
 	match state:
@@ -112,7 +115,7 @@ func _input(ev):
 			if ev.pressed and not ev.echo:
 				if state == State.STATE_IN_GAME or state == State.STATE_NEAR_GIRL:
 					jump()
-				else:
+				elif state != State.STATE_NO_INPUT:
 					Controller.reset()
 	if ev is InputEventJoypadButton:
 		if ev.button_index == JOY_START:
@@ -122,7 +125,7 @@ func _input(ev):
 				if state == State.STATE_IN_GAME or state == State.STATE_NEAR_GIRL:
 					gamepad_pressed = true
 					jump()
-				else:
+				elif state != State.STATE_NO_INPUT:
 					Controller.reset()
 		if not ev.pressed:
 			gamepad_pressed = false
