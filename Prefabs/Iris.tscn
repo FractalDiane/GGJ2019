@@ -31,7 +31,7 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 normal_map = ExtResource( 2 )
 hframes = 6
-frame = 1
+frame = 4
 _sections_unfolded = [ "Animation", "Region" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
