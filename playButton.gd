@@ -39,14 +39,17 @@ func _process(delta):
 			credits()
 
 	if Input.is_action_just_pressed("ui_gamepad_click"):
+		$SoundClick.play()
 		start()
 
 
 func start():
+	$SoundClick.play()
 	Controller.change_scene("res://Scenes/Level1.tscn")
 
 
 func credits():
+	$SoundClick.play()
 	Controller.change_scene("res://Scenes/Credits.tscn")
 
 func _on_ClickArea_mouse_entered():

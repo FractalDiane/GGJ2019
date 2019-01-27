@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/Player/String.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/HappyFloaty2.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/ScaredFloaty.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Particles/Pop parts full.png" type="Texture" id=5]
+[ext_resource path="res://Audio/Balloon pop.ogg" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -387,6 +388,15 @@ shape = SubResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="SoundPop" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 
