@@ -152,7 +152,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PlayerCamera" parent="." index="1" instance=ExtResource( 5 )]
 
-anchor_mode = 0
 smoothing_enabled = true
 _sections_unfolded = [ "Smoothing", "Transform" ]
 

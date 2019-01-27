@@ -26,7 +26,7 @@ custom_solver_bias = 0.0
 radius = 15.0
 height = 16.0
 
-[node name="EnemyHotAirBalloon" type="KinematicBody2D" index="0" groups=[
+[node name="EnemyHotAirBalloon" type="KinematicBody2D" groups=[
 "Enemy",
 "HotAirBalloon",
 ]]

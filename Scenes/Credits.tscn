@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Fonts/font_credits.tres" type="DynamicFont" id=1]
 
-[node name="Scene" type="Node2D" index="0"]
+[node name="Scene" type="Node2D"]
 
 __meta__ = {
 "_edit_vertical_guides_": [ 320.0 ]
