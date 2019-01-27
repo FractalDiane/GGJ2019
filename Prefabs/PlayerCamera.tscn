@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 320, 2 )
+extents = Vector2( 320, 80 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -55,6 +55,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 
+position = Vector2( 0, -79 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D2" type="Area2D" parent="." index="1" groups=[
@@ -73,6 +74,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
 
+position = Vector2( 0, 80 )
 shape = SubResource( 1 )
 
 [node name="CameraView" type="Area2D" parent="." index="2"]
