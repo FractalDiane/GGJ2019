@@ -8,8 +8,12 @@ extends Camera2D
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 
+export var camera_offset = 160
+
 func _physics_process(delta):
-	position.x = Controller.get_player().position.x - 320
+	var player = Controller.get_player()
+	if player != null:
+		position.x = lerp(position.x, Controller.get_player().position.x - camera_offset, 1)
 
 
 func _on_StaticBody2D_body_entered(body):
