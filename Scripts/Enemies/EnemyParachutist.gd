@@ -12,7 +12,7 @@ func _ready():
 	start_y = get_position().y
 
 func _process(delta):
-	translate(Vector2(-20*delta,30*delta))
+	translate(Vector2(-30*delta,100*delta))
 #	t += 10 * delta * speed
 
 func _movement(delta):
