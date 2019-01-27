@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/Player/String.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/HappyFloaty2.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/ScaredFloaty.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/ScaredFloaty.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/HappyFloaty2.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Particles/Pop parts full.png" type="Texture" id=5]
 [ext_resource path="res://Audio/Balloon pop.ogg" type="AudioStream" id=6]
 
@@ -40,7 +40,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:vframes")
@@ -83,7 +83,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 6, 6, 6, 0 ]
+"values": [ 4, 5, 6, 0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:texture")
@@ -95,7 +95,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:vframes")
@@ -138,7 +138,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:vframes")
@@ -205,7 +205,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:vframes")
@@ -323,13 +323,13 @@ shape = SubResource( 1 )
 
 [node name="Node2D" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 0, 12 )
+position = Vector2( 0, 13 )
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
 position = Vector2( 0, -1 )
 texture = ExtResource( 3 )
-hframes = 15
+hframes = 14
 region_rect = Rect2( 0, 0, 32, 29 )
 _sections_unfolded = [ "Animation", "Material", "Region", "Transform" ]
 
