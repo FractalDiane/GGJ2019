@@ -179,377 +179,455 @@ expression = null
 
 [node name="EnemyCrow" parent="." index="5" instance=ExtResource( 10 )]
 
-position = Vector2( 717, 209 )
+position = Vector2( 723, 207 )
 
-[node name="EnemyCrow2" parent="." index="6" instance=ExtResource( 10 )]
+[node name="EnemyCrow51" parent="." index="6" instance=ExtResource( 10 )]
+
+position = Vector2( 705, 237 )
+
+[node name="EnemyCrow52" parent="." index="7" instance=ExtResource( 10 )]
+
+position = Vector2( 686, 274 )
+
+[node name="EnemyCrow53" parent="." index="8" instance=ExtResource( 10 )]
+
+position = Vector2( 671, 311 )
+
+[node name="EnemyCrow54" parent="." index="9" instance=ExtResource( 10 )]
+
+position = Vector2( 657, 344 )
+
+[node name="EnemyCrow2" parent="." index="10" instance=ExtResource( 10 )]
 
 position = Vector2( 816, 251 )
 
-[node name="EnemyCrow9" parent="." index="7" instance=ExtResource( 10 )]
+[node name="EnemyCrow55" parent="." index="11" instance=ExtResource( 10 )]
+
+position = Vector2( 771, 226 )
+
+[node name="EnemyCrow9" parent="." index="12" instance=ExtResource( 10 )]
 
 position = Vector2( 5188, 22 )
 
-[node name="EnemyCrow10" parent="." index="8" instance=ExtResource( 10 )]
+[node name="EnemyCrow10" parent="." index="13" instance=ExtResource( 10 )]
 
 position = Vector2( 5364, 77 )
 
-[node name="EnemyCrow24" parent="." index="9" instance=ExtResource( 10 )]
+[node name="EnemyCrow24" parent="." index="14" instance=ExtResource( 10 )]
 
 position = Vector2( 5310, 58 )
 
-[node name="EnemyCrow20" parent="." index="10" instance=ExtResource( 10 )]
+[node name="EnemyCrow20" parent="." index="15" instance=ExtResource( 10 )]
 
 position = Vector2( 5257, 40 )
 
-[node name="EnemyCrow11" parent="." index="11" instance=ExtResource( 10 )]
+[node name="EnemyCrow11" parent="." index="16" instance=ExtResource( 10 )]
 
 position = Vector2( 5489, 112 )
 
-[node name="EnemyCrow21" parent="." index="12" instance=ExtResource( 10 )]
+[node name="EnemyCrow21" parent="." index="17" instance=ExtResource( 10 )]
 
 position = Vector2( 5429, 93 )
 
-[node name="EnemyCrow12" parent="." index="13" instance=ExtResource( 10 )]
+[node name="EnemyCrow12" parent="." index="18" instance=ExtResource( 10 )]
 
 position = Vector2( 5600, 148 )
 
-[node name="EnemyCrow25" parent="." index="14" instance=ExtResource( 10 )]
+[node name="EnemyCrow25" parent="." index="19" instance=ExtResource( 10 )]
 
 position = Vector2( 5538, 128 )
 
-[node name="EnemyCrow13" parent="." index="15" instance=ExtResource( 10 )]
+[node name="EnemyCrow13" parent="." index="20" instance=ExtResource( 10 )]
 
 position = Vector2( 5700, 189 )
 
-[node name="EnemyCrow22" parent="." index="16" instance=ExtResource( 10 )]
+[node name="EnemyCrow22" parent="." index="21" instance=ExtResource( 10 )]
 
 position = Vector2( 5652, 169 )
 
-[node name="EnemyCrow14" parent="." index="17" instance=ExtResource( 10 )]
+[node name="EnemyCrow14" parent="." index="22" instance=ExtResource( 10 )]
 
 position = Vector2( 6094, 236 )
 
-[node name="EnemyCrow27" parent="." index="18" instance=ExtResource( 10 )]
+[node name="EnemyCrow27" parent="." index="23" instance=ExtResource( 10 )]
 
 position = Vector2( 6051, 254 )
 
-[node name="EnemyCrow19" parent="." index="19" instance=ExtResource( 10 )]
+[node name="EnemyCrow19" parent="." index="24" instance=ExtResource( 10 )]
 
 position = Vector2( 6141, 213 )
 
-[node name="EnemyCrow26" parent="." index="20" instance=ExtResource( 10 )]
+[node name="EnemyCrow26" parent="." index="25" instance=ExtResource( 10 )]
 
 position = Vector2( 6190, 194 )
 
-[node name="EnemyCrow16" parent="." index="21" instance=ExtResource( 10 )]
+[node name="EnemyCrow16" parent="." index="26" instance=ExtResource( 10 )]
 
 position = Vector2( 6241, 173 )
 
-[node name="EnemyCrow17" parent="." index="22" instance=ExtResource( 10 )]
+[node name="EnemyCrow17" parent="." index="27" instance=ExtResource( 10 )]
 
 position = Vector2( 6291, 150 )
 
-[node name="EnemyCrow23" parent="." index="23" instance=ExtResource( 10 )]
+[node name="EnemyCrow23" parent="." index="28" instance=ExtResource( 10 )]
 
 position = Vector2( 6340, 134 )
 
-[node name="EnemyCrow15" parent="." index="24" instance=ExtResource( 10 )]
+[node name="EnemyCrow15" parent="." index="29" instance=ExtResource( 10 )]
 
 position = Vector2( 5956, 288 )
 
-[node name="EnemyCrow28" parent="." index="25" instance=ExtResource( 10 )]
+[node name="EnemyCrow28" parent="." index="30" instance=ExtResource( 10 )]
 
 position = Vector2( 5907, 300 )
 
-[node name="EnemyCrow18" parent="." index="26" instance=ExtResource( 10 )]
+[node name="EnemyCrow56" parent="." index="31" instance=ExtResource( 10 )]
+
+position = Vector2( 5867, 321 )
+
+[node name="EnemyCrow57" parent="." index="32" instance=ExtResource( 10 )]
+
+position = Vector2( 5828, 345 )
+
+[node name="EnemyCrow18" parent="." index="33" instance=ExtResource( 10 )]
 
 position = Vector2( 6003, 271 )
 
-[node name="EnemyCrow3" parent="." index="27" instance=ExtResource( 10 )]
+[node name="EnemyCrow3" parent="." index="34" instance=ExtResource( 10 )]
 
 position = Vector2( 845, 76 )
 
-[node name="EnemyCrow30" parent="." index="28" instance=ExtResource( 10 )]
+[node name="EnemyCrow30" parent="." index="35" instance=ExtResource( 10 )]
 
 position = Vector2( 892, 44 )
 
-[node name="EnemyCrow31" parent="." index="29" instance=ExtResource( 10 )]
+[node name="EnemyCrow31" parent="." index="36" instance=ExtResource( 10 )]
 
 position = Vector2( 932, 24 )
 
-[node name="EnemyCrow5" parent="." index="30" instance=ExtResource( 10 )]
+[node name="EnemyCrow5" parent="." index="37" instance=ExtResource( 10 )]
 
 position = Vector2( 994, 183 )
 
-[node name="EnemyCrow7" parent="." index="31" instance=ExtResource( 10 )]
+[node name="EnemyCrow7" parent="." index="38" instance=ExtResource( 10 )]
 
-position = Vector2( 1063, 253 )
+position = Vector2( 1081, 258 )
 
-[node name="EnemyCrow32" parent="." index="32" instance=ExtResource( 10 )]
+[node name="EnemyCrow32" parent="." index="39" instance=ExtResource( 10 )]
 
-position = Vector2( 1095, 275 )
+position = Vector2( 1110, 286 )
 
-[node name="EnemyCrow6" parent="." index="33" instance=ExtResource( 10 )]
+[node name="EnemyCrow6" parent="." index="40" instance=ExtResource( 10 )]
 
 position = Vector2( 1032, 150 )
 
-[node name="EnemyCrow8" parent="." index="34" instance=ExtResource( 10 )]
+[node name="EnemyCrow8" parent="." index="41" instance=ExtResource( 10 )]
 
 position = Vector2( 1233, 73 )
 
-[node name="EnemyCrow33" parent="." index="35" instance=ExtResource( 10 )]
+[node name="EnemyCrow33" parent="." index="42" instance=ExtResource( 10 )]
 
 position = Vector2( 1341, 319 )
 
-[node name="EnemyCrow34" parent="." index="36" instance=ExtResource( 10 )]
+[node name="EnemyCrow41" parent="." index="43" instance=ExtResource( 10 )]
 
-position = Vector2( 1395, 277 )
+position = Vector2( 1311, 346 )
 
-[node name="EnemyCrow35" parent="." index="37" instance=ExtResource( 10 )]
+[node name="EnemyCrow34" parent="." index="44" instance=ExtResource( 10 )]
+
+position = Vector2( 1409, 263 )
+
+[node name="EnemyCrow42" parent="." index="45" instance=ExtResource( 10 )]
+
+position = Vector2( 1374, 287 )
+
+[node name="EnemyCrow35" parent="." index="46" instance=ExtResource( 10 )]
 
 position = Vector2( 1459, 250 )
 
-[node name="EnemyCrow39" parent="." index="38" instance=ExtResource( 10 )]
+[node name="EnemyCrow39" parent="." index="47" instance=ExtResource( 10 )]
 
 position = Vector2( 1834, 275 )
 
-[node name="EnemyCrow40" parent="." index="39" instance=ExtResource( 10 )]
+[node name="EnemyCrow46" parent="." index="48" instance=ExtResource( 10 )]
+
+position = Vector2( 1796, 257 )
+
+[node name="EnemyCrow49" parent="." index="49" instance=ExtResource( 10 )]
+
+position = Vector2( 1763, 242 )
+
+[node name="EnemyCrow47" parent="." index="50" instance=ExtResource( 10 )]
+
+position = Vector2( 1657, 221 )
+
+[node name="EnemyCrow40" parent="." index="51" instance=ExtResource( 10 )]
 
 position = Vector2( 1908, 321 )
 
-[node name="EnemyCrow36" parent="." index="40" instance=ExtResource( 10 )]
+[node name="EnemyCrow50" parent="." index="52" instance=ExtResource( 10 )]
+
+position = Vector2( 1936, 347 )
+
+[node name="EnemyCrow48" parent="." index="53" instance=ExtResource( 10 )]
+
+position = Vector2( 1873, 295 )
+
+[node name="EnemyCrow36" parent="." index="54" instance=ExtResource( 10 )]
 
 position = Vector2( 1532, 231 )
 
-[node name="EnemyCrow37" parent="." index="41" instance=ExtResource( 10 )]
+[node name="EnemyCrow44" parent="." index="55" instance=ExtResource( 10 )]
 
-position = Vector2( 1620, 219 )
+position = Vector2( 1570, 223 )
 
-[node name="EnemyCrow38" parent="." index="42" instance=ExtResource( 10 )]
+[node name="EnemyCrow43" parent="." index="56" instance=ExtResource( 10 )]
 
-position = Vector2( 1732, 228 )
+position = Vector2( 1498, 240 )
 
-[node name="EnemyCrow29" parent="." index="43" instance=ExtResource( 10 )]
+[node name="EnemyCrow37" parent="." index="57" instance=ExtResource( 10 )]
+
+position = Vector2( 1615, 219 )
+
+[node name="EnemyCrow38" parent="." index="58" instance=ExtResource( 10 )]
+
+position = Vector2( 1730, 228 )
+
+[node name="EnemyCrow45" parent="." index="59" instance=ExtResource( 10 )]
+
+position = Vector2( 1694, 223 )
+
+[node name="EnemyCrow29" parent="." index="60" instance=ExtResource( 10 )]
 
 position = Vector2( 1210, 27 )
 
-[node name="EnemyCrow4" parent="." index="44" instance=ExtResource( 10 )]
+[node name="EnemyCrow4" parent="." index="61" instance=ExtResource( 10 )]
 
 position = Vector2( 772, 73 )
 
-[node name="EnemySeagull2" parent="." index="45" instance=ExtResource( 11 )]
+[node name="EnemySeagull2" parent="." index="62" instance=ExtResource( 11 )]
 
 position = Vector2( 2222, 96 )
 speed = 600.0
 
-[node name="EnemySeagull3" parent="." index="46" instance=ExtResource( 11 )]
+[node name="EnemySeagull3" parent="." index="63" instance=ExtResource( 11 )]
 
 position = Vector2( 2342, 94 )
 speed = 600.0
 
-[node name="EnemySeagull4" parent="." index="47" instance=ExtResource( 11 )]
+[node name="EnemySeagull4" parent="." index="64" instance=ExtResource( 11 )]
 
 position = Vector2( 2474, 93 )
 speed = 600.0
 
-[node name="EnemySeagull5" parent="." index="48" instance=ExtResource( 11 )]
+[node name="EnemySeagull5" parent="." index="65" instance=ExtResource( 11 )]
 
 position = Vector2( 2828, 227 )
 speed = 600.0
 
-[node name="EnemySeagull6" parent="." index="49" instance=ExtResource( 11 )]
+[node name="EnemySeagull6" parent="." index="66" instance=ExtResource( 11 )]
 
 position = Vector2( 2963, 212 )
 speed = 600.0
 
-[node name="EnemySeagull14" parent="." index="50" instance=ExtResource( 11 )]
+[node name="EnemySeagull14" parent="." index="67" instance=ExtResource( 11 )]
 
 position = Vector2( 2896, 290 )
 speed = 600.0
 
-[node name="EnemySeagull13" parent="." index="51" instance=ExtResource( 11 )]
+[node name="EnemySeagull13" parent="." index="68" instance=ExtResource( 11 )]
 
 position = Vector2( 2925, 188 )
 speed = 600.0
 
-[node name="EnemySeagull12" parent="." index="52" instance=ExtResource( 11 )]
+[node name="EnemySeagull12" parent="." index="69" instance=ExtResource( 11 )]
 
 position = Vector2( 3039, 174 )
 speed = 600.0
 
-[node name="EnemySeagull7" parent="." index="53" instance=ExtResource( 11 )]
+[node name="EnemySeagull7" parent="." index="70" instance=ExtResource( 11 )]
 
 position = Vector2( 3092, 210 )
 speed = 600.0
 
-[node name="EnemySeagull15" parent="." index="54" instance=ExtResource( 11 )]
+[node name="EnemySeagull15" parent="." index="71" instance=ExtResource( 11 )]
 
 position = Vector2( 3033, 293 )
 speed = 600.0
 
-[node name="EnemySeagull11" parent="." index="55" instance=ExtResource( 11 )]
+[node name="EnemySeagull18" parent="." index="72" instance=ExtResource( 11 )]
+
+position = Vector2( 2950, 337 )
+speed = 600.0
+
+[node name="EnemySeagull11" parent="." index="73" instance=ExtResource( 11 )]
 
 position = Vector2( 3172, 182 )
 speed = 600.0
 
-[node name="EnemySeagull8" parent="." index="56" instance=ExtResource( 11 )]
+[node name="EnemySeagull8" parent="." index="74" instance=ExtResource( 11 )]
 
 position = Vector2( 3218, 213 )
 speed = 600.0
 
-[node name="EnemySeagull16" parent="." index="57" instance=ExtResource( 11 )]
+[node name="EnemySeagull16" parent="." index="75" instance=ExtResource( 11 )]
 
 position = Vector2( 3155, 280 )
 speed = 600.0
 
-[node name="EnemySeagull9" parent="." index="58" instance=ExtResource( 11 )]
+[node name="EnemySeagull17" parent="." index="76" instance=ExtResource( 11 )]
+
+position = Vector2( 3112, 334 )
+speed = 600.0
+
+[node name="EnemySeagull9" parent="." index="77" instance=ExtResource( 11 )]
 
 position = Vector2( 5378, 279 )
 speed = 600.0
 
-[node name="EnemySeagull10" parent="." index="59" instance=ExtResource( 11 )]
+[node name="EnemySeagull10" parent="." index="78" instance=ExtResource( 11 )]
 
-position = Vector2( 5813, 63 )
+position = Vector2( 5751, 90 )
 speed = 600.0
 
-[node name="Helicopter" parent="." index="60" instance=ExtResource( 12 )]
+[node name="Helicopter" parent="." index="79" instance=ExtResource( 12 )]
 
 position = Vector2( 4444, 70 )
 speed = 5
 
-[node name="Helicopter2" parent="." index="61" instance=ExtResource( 12 )]
+[node name="Helicopter2" parent="." index="80" instance=ExtResource( 12 )]
 
 position = Vector2( 3894, 68 )
 speed = 5
 
-[node name="EnemyBaseball" parent="." index="62" instance=ExtResource( 13 )]
+[node name="EnemyBaseball" parent="." index="81" instance=ExtResource( 13 )]
 
 position = Vector2( 6948, 67 )
 
-[node name="EnemyBaseball9" parent="." index="63" instance=ExtResource( 13 )]
+[node name="EnemyBaseball9" parent="." index="82" instance=ExtResource( 13 )]
 
 position = Vector2( 6860, 135 )
 
-[node name="EnemyBaseball2" parent="." index="64" instance=ExtResource( 13 )]
+[node name="EnemyBaseball2" parent="." index="83" instance=ExtResource( 13 )]
 
 position = Vector2( 7047, 163 )
 
-[node name="EnemyBaseball3" parent="." index="65" instance=ExtResource( 13 )]
+[node name="EnemyBaseball3" parent="." index="84" instance=ExtResource( 13 )]
 
 position = Vector2( 7766, 215 )
 
-[node name="EnemyBaseball7" parent="." index="66" instance=ExtResource( 13 )]
+[node name="EnemyBaseball7" parent="." index="85" instance=ExtResource( 13 )]
 
 position = Vector2( 7699, 163 )
 
-[node name="EnemyBaseball4" parent="." index="67" instance=ExtResource( 13 )]
+[node name="EnemyBaseball4" parent="." index="86" instance=ExtResource( 13 )]
 
 position = Vector2( 7922, 316 )
 
-[node name="EnemyBaseball5" parent="." index="68" instance=ExtResource( 13 )]
+[node name="EnemyBaseball5" parent="." index="87" instance=ExtResource( 13 )]
 
 position = Vector2( 7946, 314 )
 
-[node name="EnemyBaseball6" parent="." index="69" instance=ExtResource( 13 )]
+[node name="EnemyBaseball6" parent="." index="88" instance=ExtResource( 13 )]
 
 position = Vector2( 8116, 234 )
 
-[node name="EnemyBaseball10" parent="." index="70" instance=ExtResource( 13 )]
+[node name="EnemyBaseball10" parent="." index="89" instance=ExtResource( 13 )]
 
 position = Vector2( 8679, 234 )
 
-[node name="EnemyBaseball11" parent="." index="71" instance=ExtResource( 13 )]
+[node name="EnemyBaseball11" parent="." index="90" instance=ExtResource( 13 )]
 
 position = Vector2( 8646, 344 )
 
-[node name="EnemyBaseball12" parent="." index="72" instance=ExtResource( 13 )]
+[node name="EnemyBaseball12" parent="." index="91" instance=ExtResource( 13 )]
 
 position = Vector2( 8686, 327 )
 
-[node name="EnemyBaseball14" parent="." index="73" instance=ExtResource( 13 )]
+[node name="EnemyBaseball14" parent="." index="92" instance=ExtResource( 13 )]
 
 position = Vector2( 8844, 265 )
 
-[node name="EnemyBaseball15" parent="." index="74" instance=ExtResource( 13 )]
+[node name="EnemyBaseball15" parent="." index="93" instance=ExtResource( 13 )]
 
 position = Vector2( 8898, 243 )
 
-[node name="EnemyBaseball8" parent="." index="75" instance=ExtResource( 13 )]
+[node name="EnemyBaseball8" parent="." index="94" instance=ExtResource( 13 )]
 
 position = Vector2( 8020, 141 )
 
-[node name="KinematicBody2D" parent="." index="76" instance=ExtResource( 14 )]
+[node name="KinematicBody2D" parent="." index="95" instance=ExtResource( 14 )]
 
 position = Vector2( 7296, 173 )
 speed = 400.0
 
-[node name="KinematicBody2D2" parent="." index="77" instance=ExtResource( 14 )]
+[node name="KinematicBody2D2" parent="." index="96" instance=ExtResource( 14 )]
 
 position = Vector2( 7489, 145 )
 speed = 400.0
 
-[node name="KinematicBody2D9" parent="." index="78" instance=ExtResource( 14 )]
+[node name="KinematicBody2D9" parent="." index="97" instance=ExtResource( 14 )]
 
 position = Vector2( 7407, 258 )
 speed = 400.0
 
-[node name="KinematicBody2D3" parent="." index="79" instance=ExtResource( 14 )]
+[node name="KinematicBody2D3" parent="." index="98" instance=ExtResource( 14 )]
 
 position = Vector2( 8280, 184 )
 speed = 400.0
 
-[node name="KinematicBody2D4" parent="." index="80" instance=ExtResource( 14 )]
+[node name="KinematicBody2D4" parent="." index="99" instance=ExtResource( 14 )]
 
 position = Vector2( 8350, 275 )
 speed = 400.0
 
-[node name="KinematicBody2D11" parent="." index="81" instance=ExtResource( 14 )]
+[node name="KinematicBody2D11" parent="." index="100" instance=ExtResource( 14 )]
 
 position = Vector2( 9136, 216 )
 speed = 400.0
 
-[node name="KinematicBody2D12" parent="." index="82" instance=ExtResource( 14 )]
+[node name="KinematicBody2D12" parent="." index="101" instance=ExtResource( 14 )]
 
 position = Vector2( 9267, 287 )
 speed = 400.0
 
-[node name="KinematicBody2D6" parent="." index="83" instance=ExtResource( 15 )]
+[node name="KinematicBody2D6" parent="." index="102" instance=ExtResource( 15 )]
 
 position = Vector2( 1470, 55 )
 
-[node name="KinematicBody2D7" parent="." index="84" instance=ExtResource( 15 )]
+[node name="KinematicBody2D7" parent="." index="103" instance=ExtResource( 15 )]
 
 position = Vector2( 1794, 58 )
 
-[node name="KinematicBody2D8" parent="." index="85" instance=ExtResource( 15 )]
+[node name="KinematicBody2D8" parent="." index="104" instance=ExtResource( 15 )]
 
 position = Vector2( 3480, 61 )
 
-[node name="KinematicBody2D10" parent="." index="86" instance=ExtResource( 15 )]
+[node name="KinematicBody2D10" parent="." index="105" instance=ExtResource( 15 )]
 
 position = Vector2( 7131, 60 )
 scale = Vector2( 1, 0.984375 )
 
-[node name="KinematicBody2D13" parent="." index="87" instance=ExtResource( 15 )]
+[node name="KinematicBody2D13" parent="." index="106" instance=ExtResource( 15 )]
 
 position = Vector2( 7578, 56 )
 scale = Vector2( 1, 0.984375 )
 
-[node name="KinematicBody2D14" parent="." index="88" instance=ExtResource( 15 )]
+[node name="KinematicBody2D14" parent="." index="107" instance=ExtResource( 15 )]
 
 position = Vector2( 8166, 52 )
 scale = Vector2( 1, 0.984375 )
 
-[node name="KinematicBody2D15" parent="." index="89" instance=ExtResource( 15 )]
+[node name="KinematicBody2D15" parent="." index="108" instance=ExtResource( 15 )]
 
 position = Vector2( 8959, 53 )
 scale = Vector2( 1, 0.984375 )
 
-[node name="PartsWind" parent="." index="90" instance=ExtResource( 16 )]
+[node name="PartsWind" parent="." index="109" instance=ExtResource( 16 )]
 
-[node name="PartsRain" parent="." index="91" instance=ExtResource( 17 )]
+[node name="PartsRain" parent="." index="110" instance=ExtResource( 17 )]
 
-[node name="Music" type="AudioStreamPlayer" parent="." index="92"]
+[node name="Music" type="AudioStreamPlayer" parent="." index="111"]
 
 stream = ExtResource( 18 )
 volume_db = -4.0
@@ -558,7 +636,7 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="SoundWind" type="AudioStreamPlayer" parent="." index="93"]
+[node name="SoundWind" type="AudioStreamPlayer" parent="." index="112"]
 
 stream = ExtResource( 19 )
 volume_db = -8.0
@@ -567,7 +645,7 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="SoundRain" type="AudioStreamPlayer" parent="." index="94"]
+[node name="SoundRain" type="AudioStreamPlayer" parent="." index="113"]
 
 stream = ExtResource( 20 )
 volume_db = 0.0
@@ -576,19 +654,20 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="Sprite" type="Sprite" parent="." index="95"]
+[node name="Sprite" type="Sprite" parent="." index="114"]
 
 modulate = Color( 0.465775, 0.577497, 0.644531, 1 )
 position = Vector2( 9557, 243 )
 texture = ExtResource( 21 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="Iris" parent="." index="96" instance=ExtResource( 22 )]
+[node name="Iris" parent="." index="115" instance=ExtResource( 22 )]
 
 position = Vector2( 9502, 310 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 second_level = true
 
-[node name="LevelStartOverlay" parent="." index="97" instance=ExtResource( 23 )]
+[node name="LevelStartOverlay" parent="." index="116" instance=ExtResource( 23 )]
 
 
+[editable path="LevelStartOverlay"]
