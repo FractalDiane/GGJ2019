@@ -97,6 +97,8 @@ shape = SubResource( 2 )
 
 [connection signal="body_entered" from="StaticBody2D2" to="." method="_on_StaticBody2D2_body_entered"]
 
+[connection signal="body_exited" from="StaticBody2D2" to="." method="_on_StaticBody2D2_body_exited"]
+
 [connection signal="body_entered" from="CameraView" to="." method="_on_CameraView_body_entered"]
 
 
