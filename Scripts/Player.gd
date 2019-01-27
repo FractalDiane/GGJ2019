@@ -13,6 +13,7 @@ export(State) var state = State.STATE_IN_GAME
 
 # Variables
 var expression = Expression.EXPRESSION_NEUTRAL
+var gamepad_pressed = false
 
 onready var sprite = $Sprite
 onready var collider = $CollisionShape2D
@@ -30,7 +31,8 @@ func _ready():
 func _process(delta):
 	match state:
 		State.STATE_IN_GAME:
-			poll_for_input()
+			#poll_for_input()
+			pass
 
 func _physics_process(delta):
 	match state:
@@ -90,3 +92,20 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 func _on_AreaDanger_body_exited(body):
 	if "Enemy" in body.get_groups():
 		expression = Expression.EXPRESSION_NEUTRAL
+
+func _input(ev):
+	if ev is InputEventKey:
+		if ev.scancode == KEY_ESCAPE:
+			Controller.change_scene("res://Scenes/TitleScreen.tscn")
+		else:
+			if ev.pressed and not ev.echo:
+				jump()
+	if ev is InputEventJoypadButton:
+		if ev.button_index == JOY_START:
+			Controller.change_scene("res://Scenes/TitleScreen.tscn")
+		else:
+			if ev.pressed and not gamepad_pressed:
+				gamepad_pressed = true
+				jump()
+		if not ev.pressed:
+			gamepad_pressed = false

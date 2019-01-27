@@ -1,6 +1,7 @@
 extends Node
 
 var player
+var wr_player
 
 func get_player():
     if player == null:
@@ -11,3 +12,6 @@ func change_scene(to):
     player = null
     get_tree().change_scene(to)
     player = find_node("Player")
+
+func set_player(player):
+	player
