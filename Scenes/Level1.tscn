@@ -255,7 +255,7 @@ position = Vector2( 1310, 295 )
 
 [node name="EnemySeagull" parent="." index="18" instance=ExtResource( 12 )]
 
-position = Vector2( 1823, 200 )
+position = Vector2( 1861, 268 )
 speed = 500.0
 
 [node name="EnemySeagull2" parent="." index="19" instance=ExtResource( 12 )]
