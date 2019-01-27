@@ -28,3 +28,10 @@ func _on_CameraView_body_entered(body):
 		body.start = true
 	if "Ball" in body.get_groups():
 		body.throw()
+
+
+func _on_StaticBody2D2_body_entered(body):
+	if "Player" in body.get_groups():
+		body.linear_velocity.y = -50
+		body.animator.play("jump")
+		body.get_node("SoundBounce").play()

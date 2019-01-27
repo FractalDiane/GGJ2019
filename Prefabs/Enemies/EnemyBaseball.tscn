@@ -18,8 +18,8 @@ custom_solver_bias = 0.0
 radius = 9.05539
 
 [node name="EnemyBaseball" type="RigidBody2D" groups=[
-"Enemy",
 "Ball",
+"Enemy",
 ]]
 
 input_pickable = false

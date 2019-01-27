@@ -1,0 +1,1 @@
+$AnimationPlayer.play("SpriteFrames")

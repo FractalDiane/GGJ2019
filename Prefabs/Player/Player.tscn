@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/ScaredFloaty.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/HappyFloaty2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/HappyFloaty2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/ScaredFloaty.png" type="Texture" id=3]
 [ext_resource path="res://Prefabs/Player/String.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Particles/Pop parts full.png" type="Texture" id=5]
 [ext_resource path="res://Audio/Jump new.ogg" type="AudioStream" id=6]
@@ -37,7 +37,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:vframes")
@@ -92,7 +92,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:vframes")
@@ -135,7 +135,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:vframes")
@@ -202,7 +202,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:vframes")
@@ -289,7 +289,7 @@ _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Dampi
 custom_solver_bias = 0.0
 extents = Vector2( 33.3518, 51.8195 )
 
-[node name="Player" type="RigidBody2D" index="0" groups=[
+[node name="Player" type="RigidBody2D" groups=[
 "Player",
 ]]
 
@@ -322,7 +322,7 @@ state = 1
 
 position = Vector2( 0, -1 )
 texture = ExtResource( 2 )
-hframes = 14
+hframes = 15
 region_rect = Rect2( 0, 0, 32, 29 )
 _sections_unfolded = [ "Animation", "Material", "Region", "Transform" ]
 
@@ -392,7 +392,7 @@ __meta__ = {
 [node name="SoundJump" type="AudioStreamPlayer" parent="." index="5"]
 
 stream = ExtResource( 6 )
-volume_db = 8.0
+volume_db = 2.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
