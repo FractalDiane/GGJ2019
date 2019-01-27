@@ -28,4 +28,3 @@ func reset():
 		for node in get_tree().get_root().get_children():
 			if node is Node2D:
 				node.add_child(new_player)
-		new_player.set_process(false)
