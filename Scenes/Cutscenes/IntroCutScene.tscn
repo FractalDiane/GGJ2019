@@ -25,7 +25,7 @@ tracks/0/keys = {
 "values": [ 3, 4 ]
 }
 
-[node name="IntroCutScene" type="Node2D"]
+[node name="IntroCutScene" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -89,7 +89,7 @@ bus = "Master"
 [node name="TimerGust" type="Timer" parent="." index="5"]
 
 process_mode = 1
-wait_time = 1.35
+wait_time = 1.1
 one_shot = true
 autostart = true
 

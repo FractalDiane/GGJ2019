@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func _on_TimerFade_timeout():
-	$SoundGust.play()
+	#$SoundGust.play()
 	fade = false
 
 func _on_Timer_timeout():
