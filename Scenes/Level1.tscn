@@ -247,7 +247,7 @@ position = Vector2( 3575, 185 )
 
 [node name="EnemyHotAirBalloon" parent="." index="15" instance=ExtResource( 9 )]
 
-position = Vector2( 1310, 295 )
+position = Vector2( 1256, 254 )
 
 [node name="PartsWind" parent="." index="16" instance=ExtResource( 10 )]
 
@@ -270,12 +270,35 @@ speed = 1.0
 
 [node name="EnemyBee2" parent="EnemySeagull2" index="6" instance=ExtResource( 13 )]
 
-position = Vector2( 1960.97, 87.0635 )
+position = Vector2( 1967.77, 125.154 )
 speed = 1.0
 
 [node name="EnemyBee3" parent="EnemySeagull2" index="7" instance=ExtResource( 13 )]
 
-position = Vector2( 2360.92, 85.7032 )
+position = Vector2( 2276.58, 20.4055 )
 speed = 1.0
+
+[node name="EnemySeagull3" parent="." index="20" instance=ExtResource( 12 )]
+
+position = Vector2( 5232, 214 )
+speed = 500.0
+
+[node name="EnemyBee2" parent="EnemySeagull3" index="5" instance=ExtResource( 13 )]
+
+position = Vector2( 1967.77, 125.154 )
+speed = 1.0
+
+[node name="EnemyBee3" parent="EnemySeagull3" index="6" instance=ExtResource( 13 )]
+
+position = Vector2( 2276.58, 20.4055 )
+speed = 1.0
+
+[node name="EnemyCrow12" parent="." index="21" instance=ExtResource( 8 )]
+
+position = Vector2( 4817, 264 )
+
+[node name="EnemyCrow13" parent="." index="22" instance=ExtResource( 8 )]
+
+position = Vector2( 4985, 73 )
 
 

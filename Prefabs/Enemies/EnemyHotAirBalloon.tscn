@@ -28,7 +28,6 @@ height = 16.0
 
 [node name="EnemyHotAirBalloon" type="KinematicBody2D" groups=[
 "Enemy",
-"HotAirBalloon",
 ]]
 
 input_pickable = false
