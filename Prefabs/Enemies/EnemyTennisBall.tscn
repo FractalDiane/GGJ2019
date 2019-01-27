@@ -17,7 +17,10 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 8.06226
 
-[node name="KinematicBody2D" type="RigidBody2D"]
+[node name="KinematicBody2D" type="RigidBody2D" groups=[
+"Enemy",
+"Ball",
+]]
 
 input_pickable = false
 collision_layer = 1

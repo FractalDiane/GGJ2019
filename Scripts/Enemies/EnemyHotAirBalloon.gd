@@ -5,8 +5,11 @@ extends KinematicBody2D
 # var b = "textvar"
 export var speed = -50
 
+var start = false
+
 func _ready():
 	pass
 
 func _process(delta):
-	translate(Vector2(0,speed*delta))
+	if start:
+		translate(Vector2(0,-speed*delta))

@@ -1,10 +1,58 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/playbutton.png" type="Texture" id=2]
 [ext_resource path="res://playButton.gd" type="Script" id=3]
+[ext_resource path="res://Audio/Intro gust.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Audio/Select.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Audio/Intro.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sprites/creditsbutton.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/font_credits.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "idle"
+length = 5.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2.6, 3.6, 5.1, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 321.062, 212.789 ), Vector2( 321.011, 158.549 ), Vector2( 321.011, 158.549 ), Vector2( 321.062, 212.789 ), Vector2( 321.062, 212.789 ), Vector2( 321.011, 158.549 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "fadeout"
+length = 4.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
 
 [node name="TitleScreen" type="Node2D" index="0"]
+
+__meta__ = {
+"_edit_vertical_guides_": [ 320.0 ]
+}
 
 [node name="bgSprite" type="Sprite" parent="." index="0"]
 
@@ -14,9 +62,237 @@ _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="playButton" type="Sprite" parent="." index="1"]
 
-position = Vector2( 321.075, 186.403 )
+position = Vector2( 321.008, 155.47 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="playButton" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/idle = SubResource( 1 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="ClickArea" type="Area2D" parent="playButton" index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="playButton/ClickArea" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 102.925, -124.403, 93.925, -118.403, 83.925, -83.403, 83.925, -20.403, 89.925, 15.597, 94.925, 20.597, 107.925, 20.597, 188.925, -15.403, 226.925, -42.403, 226.925, -51.403, 207.925, -70.403, 171.925, -93.403, 127.925, -116.403 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SoundGust" type="AudioStreamPlayer" parent="playButton" index="2"]
+
+stream = ExtResource( 4 )
+volume_db = 8.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="SoundClick" type="AudioStreamPlayer" parent="playButton" index="3"]
+
+stream = ExtResource( 5 )
+volume_db = 10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Music" type="AudioStreamPlayer" parent="playButton" index="4"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AnimMusicFade" type="AnimationPlayer" parent="playButton/Music" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/fadeout = SubResource( 2 )
+blend_times = [  ]
+
+[node name="creditsButton" type="Sprite" parent="." index="2"]
+
+position = Vector2( 73, 314 )
+texture = ExtResource( 7 )
+
+[node name="ClickAreaCredits" type="Area2D" parent="creditsButton" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="creditsButton/ClickAreaCredits" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 46, -37, 53, 34, -42, 42, -49, 25, -46, -30, -40, -35 )
+
+[node name="Overlay" type="ColorRect" parent="." index="3"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 640.0
+margin_bottom = 360.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+_sections_unfolded = [ "Mouse" ]
+
+[node name="TimerFade" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.75
+one_shot = true
+autostart = true
+
+[node name="TimerMusic" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.5
+one_shot = true
+autostart = false
+
+[node name="TimerEndWind" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
+[node name="TimerWind2" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 0.55
+one_shot = true
+autostart = false
+
+[node name="TimerStartGame" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = true
+autostart = false
+
+[node name="TimerBuffer" type="Timer" parent="." index="9"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = true
+autostart = false
+
+[node name="Credits" type="ColorRect" parent="." index="10"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 640.0
+margin_bottom = 360.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.619608, 0.796078, 0.87451, 1 )
+_sections_unfolded = [ "Mouse" ]
+
+[node name="Label" type="Label" parent="Credits" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 175.0
+margin_top = 8.0
+margin_right = 465.0
+margin_bottom = 347.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 8 )
+text = "Ramie Shreim
+Tyler Witten
+Benjamin Sheh
+Duncan Sparks
+Sabrina Yang
+Shirley Nieto
+Henry Nguyen
+Riley Champion
+Lilian Wang"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "Visibility", "custom_fonts" ]
+
+[node name="PartsWind" parent="." index="11" instance=ExtResource( 9 )]
+
+scale = Vector2( 2, 2 )
+emitting = false
+follow_player = false
+
+[connection signal="mouse_entered" from="playButton/ClickArea" to="playButton" method="_on_ClickArea_mouse_entered"]
+
+[connection signal="mouse_exited" from="playButton/ClickArea" to="playButton" method="_on_ClickArea_mouse_exited"]
+
+[connection signal="mouse_entered" from="creditsButton/ClickAreaCredits" to="playButton" method="_on_ClickAreaCredits_mouse_entered"]
+
+[connection signal="mouse_exited" from="creditsButton/ClickAreaCredits" to="playButton" method="_on_ClickAreaCredits_mouse_exited"]
+
+[connection signal="timeout" from="TimerFade" to="playButton" method="_on_TimerFade_timeout"]
+
+[connection signal="timeout" from="TimerMusic" to="playButton" method="_on_TimerMusic_timeout"]
+
+[connection signal="timeout" from="TimerEndWind" to="playButton" method="_on_TimerEndWind_timeout"]
+
+[connection signal="timeout" from="TimerWind2" to="playButton" method="_on_TimerWind2_timeout"]
+
+[connection signal="timeout" from="TimerStartGame" to="playButton" method="_on_TimerStartGame_timeout"]
+
+[connection signal="timeout" from="TimerBuffer" to="playButton" method="_on_TimerBuffer_timeout"]
 
 

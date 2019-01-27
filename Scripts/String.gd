@@ -5,11 +5,13 @@ export var sections = 0
 export(PackedScene) var root_node
 export(PackedScene) var section_node
 
+var root_inst
+
 var sections_list = []
-var positions = PoolVector2Array()
+#var positions = PoolVector2Array()
+var curve = Curve2D.new()
 func _ready():
 	#spawn_nodes()
-	pass
 	sections_list = [
 		$String_Root,
 		$String_Section,
@@ -18,6 +20,10 @@ func _ready():
 		$String_Section4,
 		$String_Section5
 	]
+	for section in sections_list:
+		curve.add_point(section.position)
+	curve.bake_interval = 1
+	root_inst = $String_Root
 
 func _process(delta):
 	#translate(Vector2(100 * delta, 0))
@@ -25,15 +31,16 @@ func _process(delta):
 	update()
 
 func _draw():
-	draw_multiline(positions, Color(0, 0, 0))
+	var previous_point = curve.get_point_position(0)
+	for i in range(curve.get_baked_length()):
+		var point = curve.interpolate_baked(i, true)
+		draw_line(previous_point, point, Color(0, 0, 0), 1.0, true)
+		previous_point = point
+	
 
 func update_positions():
-	positions = PoolVector2Array()
-	positions.append(sections_list[0].position)
-	for i in range(1, len(sections_list)):
-		positions.append(sections_list[i].position)
-		positions.append(sections_list[i].position)
-	positions.remove(len(positions) - 1)
+	for i in range(len(sections_list)):
+		curve.set_point_position(i, sections_list[i].position)
 
 func spawn_nodes():
 	var total_offset = 0

@@ -1,6 +1,6 @@
 extends "res://Scripts/Enemies/EnemyAir.gd"
 
-export(float) var delay_before_attack = 0.75
+export(float) var delay_before_attack = 2
 export(float) var attack_cooldown = 1.5
 
 var rot_speed = 0
@@ -25,6 +25,7 @@ func _movement(delta):
 
 
 func twirl():
+	$SoundSwoop.play()
 	spr.play("twirl")
 	target_angle = get_angle_to(Controller.get_player().get_position())
 	spr.set_rotation(target_angle + deg2rad(70))
@@ -38,6 +39,7 @@ func twirl():
 
 
 func attack(direction):
+	$SoundAttack.play()
 	spr.play("attack")
 	motion.x = speed * cos(direction)
 	motion.y = speed * sin(direction)
