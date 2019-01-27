@@ -67,10 +67,7 @@ func jump():
 		animator.play("jump")
 	elif expression == Expression.EXPRESSION_SCARED:
 		animator.play("scared_jump")
-	if linear_velocity.y < 0:
-		linear_velocity.y = jump_force
-	else:
-		apply_impulse(global_position, Vector2(0, jump_force))
+	linear_velocity.y = jump_force
 
 func move_right(delta):
 	if linear_velocity.x <= right_move_speed:
