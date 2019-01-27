@@ -21,6 +21,8 @@ onready var string_root = $Node2D/String_Root
 onready var animator = sprite.get_node("AnimationPlayer")
 onready var area_danger = $AreaDanger
 
+var enemies_in_view = 0
+
 # Signals
 signal on_player_death
 
@@ -32,7 +34,16 @@ func _process(delta):
 	match state:
 		State.STATE_IN_GAME:
 			#poll_for_input()
-			pass
+			if enemies_in_view > 0 and expression != Expression.EXPRESSION_SCARED:
+				expression = Expression.EXPRESSION_SCARED
+			if enemies_in_view == 0 and expression != Expression.EXPRESSION_NEUTRAL:
+				expression = Expression.EXPRESSION_NEUTRAL
+			if expression == Expression.EXPRESSION_SCARED:
+				if animator.current_animation == 'idle':
+					animator.play('scared_idle')
+			elif expression == Expression.EXPRESSION_NEUTRAL:
+				if animator.current_animation == 'scared_idle':
+					animator.play('idle')
 
 func _physics_process(delta):
 	match state:
@@ -45,8 +56,9 @@ func _on_Player_body_entered(body):
 		die()
 
 func _on_AreaDanger_body_entered(body):
-	if "Enemy" in body.get_groups():
-		expression = Expression.EXPRESSION_SCARED
+	print(body)
+	if "Enemy" in body.get_groups() and not "Trees" in body.get_groups():
+		enemies_in_view += 1
 
 
 # Functions
@@ -90,8 +102,9 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_AreaDanger_body_exited(body):
-	if "Enemy" in body.get_groups():
-		expression = Expression.EXPRESSION_NEUTRAL
+	print(body)
+	if "Enemy" in body.get_groups() and not "Trees" in body.get_groups():
+		enemies_in_view -= 1
 
 func _input(ev):
 	if ev is InputEventKey:
@@ -99,13 +112,15 @@ func _input(ev):
 			Controller.change_scene("res://Scenes/TitleScreen.tscn")
 		else:
 			if ev.pressed and not ev.echo:
-				jump()
+				if state == State.STATE_IN_GAME:
+					jump()
 	if ev is InputEventJoypadButton:
 		if ev.button_index == JOY_START:
 			Controller.change_scene("res://Scenes/TitleScreen.tscn")
 		else:
 			if ev.pressed and not gamepad_pressed:
-				gamepad_pressed = true
-				jump()
+				if state == State.STATE_IN_GAME:
+					gamepad_pressed = true
+					jump()
 		if not ev.pressed:
 			gamepad_pressed = false
