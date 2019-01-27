@@ -44,7 +44,7 @@ radius = 13.1529
 custom_solver_bias = 0.0
 radius = 133.015
 
-[node name="EnemySeagull" type="KinematicBody2D" index="0" groups=[
+[node name="EnemySeagull" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 
@@ -62,7 +62,7 @@ attack_cooldown = 0.75
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 7
+frame = 6
 playing = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -114,7 +114,7 @@ autostart = false
 
 stream = ExtResource( 13 )
 volume_db = 0.0
-pitch_scale = 1.0
+pitch_scale = 0.7
 autoplay = false
 mix_target = 0
 bus = "Master"
