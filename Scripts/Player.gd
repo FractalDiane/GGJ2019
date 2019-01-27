@@ -2,7 +2,7 @@ extends RigidBody2D
 
 # Constants
 const JUMP_BUTTON = "player_jump"
-enum State {STATE_NO_INPUT, STATE_IN_GAME, STATE_DEAD}
+enum State {STATE_NO_INPUT, STATE_IN_GAME, STATE_NEAR_GIRL, STATE_DEAD}
 enum Expression {EXPRESSION_NEUTRAL, EXPRESSION_SCARED, EXPRESSION_OUCH}
 
 # Exports
@@ -49,7 +49,9 @@ func _process(delta):
 func _physics_process(delta):
 	match state:
 		State.STATE_IN_GAME:
-			move_right(delta)
+			move_right()
+		State.STATE_NEAR_GIRL:
+			linear_velocity.x = lerp(linear_velocity.x, 0, 2 * delta)
 
 func _on_Player_body_entered(body):
 	if "Enemy" in body.get_groups():
@@ -69,9 +71,10 @@ func jump():
 		animator.play("scared_jump")
 	linear_velocity.y = jump_force
 
-func move_right(delta):
+func move_right():
 	if linear_velocity.x <= right_move_speed:
-		apply_impulse(global_position, Vector2(right_move_force * delta, 0))
+		#apply_impulse(global_position, Vector2(right_move_force * delta, 0))
+		linear_velocity.x = right_move_force
 
 func poll_for_input():
 	if Input.is_action_just_pressed(JUMP_BUTTON):
@@ -107,7 +110,7 @@ func _input(ev):
 			Controller.change_scene("res://Scenes/TitleScreen.tscn")
 		else:
 			if ev.pressed and not ev.echo:
-				if state == State.STATE_IN_GAME:
+				if state == State.STATE_IN_GAME or state == State.STATE_NEAR_GIRL:
 					jump()
 				else:
 					Controller.reset()
@@ -116,7 +119,7 @@ func _input(ev):
 			Controller.change_scene("res://Scenes/TitleScreen.tscn")
 		else:
 			if ev.pressed and not gamepad_pressed:
-				if state == State.STATE_IN_GAME:
+				if state == State.STATE_IN_GAME or state == State.STATE_NEAR_GIRL:
 					gamepad_pressed = true
 					jump()
 				else:

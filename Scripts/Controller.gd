@@ -14,7 +14,6 @@ func change_scene(to):
 
 func set_player(p):
 	if p != null:
-		print(p.name)
 		wr_player = weakref(p)
 		p.connect("on_player_death", self, "_on_player_death")
 

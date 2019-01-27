@@ -57,7 +57,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ReachArea" index="0"]
 
-position = Vector2( -80.346, -66.046 )
+position = Vector2( 47.5763, -207.905 )
+scale = Vector2( 0.835222, 1.47644 )
 shape = SubResource( 1 )
 
 [node name="GrabArea" type="Area2D" parent="." index="2"]
@@ -74,6 +75,8 @@ audio_bus_name = "Master"
 
 position = Vector2( -7.34601, -10.046 )
 shape = SubResource( 2 )
+
+[connection signal="body_entered" from="ReachArea" to="." method="_on_ReachArea_body_entered"]
 
 [connection signal="body_entered" from="GrabArea" to="." method="_on_GrabArea_body_entered"]
 
