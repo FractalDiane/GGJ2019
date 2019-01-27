@@ -45,7 +45,7 @@ _sections_unfolded = [ "Emission Shape", "Gravity", "Initial Velocity" ]
 
 [node name="PartsRain" type="Particles2D"]
 
-self_modulate = Color( 0.773438, 0.920349, 1, 1 )
+self_modulate = Color( 0.773438, 0.920349, 1, 0.342549 )
 position = Vector2( 418, -34 )
 emitting = true
 amount = 156

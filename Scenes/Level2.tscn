@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Sprites/Props and Scenery/Sky base.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Props and Scenery/Sky overlay.png" type="Texture" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://Prefabs/Enemies/EnemyLightning.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Prefabs/PartsRain.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Audio/Level 2.ogg" type="AudioStream" id=20]
+[ext_resource path="res://Audio/Wind.ogg" type="AudioStream" id=21]
+[ext_resource path="res://Audio/Rain.ogg" type="AudioStream" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -511,5 +514,32 @@ position = Vector2( 1846, 60 )
 [node name="PartsWind" parent="." index="72" instance=ExtResource( 18 )]
 
 [node name="PartsRain" parent="." index="73" instance=ExtResource( 19 )]
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="74"]
+
+stream = ExtResource( 20 )
+volume_db = -4.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="SoundWind" type="AudioStreamPlayer" parent="." index="75"]
+
+stream = ExtResource( 21 )
+volume_db = -8.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="SoundRain" type="AudioStreamPlayer" parent="." index="76"]
+
+stream = ExtResource( 22 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 
