@@ -450,7 +450,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Iris" type="StaticBody2D" parent="." index="3"]
 
-position = Vector2( 6858, 320 )
+position = Vector2( 1700, 326 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -534,24 +534,18 @@ position = Vector2( 3575, 185 )
 
 [node name="EnemyHotAirBalloon" parent="." index="15" instance=ExtResource( 9 )]
 
-position = Vector2( 1256, 254 )
-speed = 200
+position = Vector2( 1310, 295 )
 
-[node name="EnemyHotAirBalloon2" parent="." index="16" instance=ExtResource( 9 )]
+[node name="PartsWind" parent="." index="16" instance=ExtResource( 10 )]
 
-position = Vector2( 5677, 270 )
-speed = 200
+[node name="DebugObject" parent="." index="17" instance=ExtResource( 11 )]
 
-[node name="PartsWind" parent="." index="17" instance=ExtResource( 10 )]
+[node name="EnemySeagull" parent="." index="18" instance=ExtResource( 12 )]
 
-[node name="DebugObject" parent="." index="18" instance=ExtResource( 11 )]
-
-[node name="EnemySeagull" parent="." index="19" instance=ExtResource( 12 )]
-
-position = Vector2( 1861, 268 )
+position = Vector2( 1823, 200 )
 speed = 500.0
 
-[node name="EnemySeagull2" parent="." index="20" instance=ExtResource( 12 )]
+[node name="EnemySeagull2" parent="." index="19" instance=ExtResource( 12 )]
 
 position = Vector2( 2222, 103 )
 speed = 500.0
@@ -563,7 +557,7 @@ speed = 1.0
 
 [node name="EnemyBee2" parent="EnemySeagull2" index="6" instance=ExtResource( 13 )]
 
-position = Vector2( 1967.77, 125.154 )
+position = Vector2( 1960.97, 87.0635 )
 speed = 1.0
 
 [node name="EnemyBee3" parent="EnemySeagull2" index="7" instance=ExtResource( 13 )]
