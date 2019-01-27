@@ -60,7 +60,7 @@ attack_cooldown = 0.75
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 6
+frame = 7
 playing = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {

@@ -163,7 +163,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Iris" type="StaticBody2D" parent="." index="3"]
 
-position = Vector2( 1700, 326 )
+position = Vector2( 6858, 320 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -248,17 +248,23 @@ position = Vector2( 3575, 185 )
 [node name="EnemyHotAirBalloon" parent="." index="15" instance=ExtResource( 9 )]
 
 position = Vector2( 1256, 254 )
+speed = 200
 
-[node name="PartsWind" parent="." index="16" instance=ExtResource( 10 )]
+[node name="EnemyHotAirBalloon2" parent="." index="16" instance=ExtResource( 9 )]
 
-[node name="DebugObject" parent="." index="17" instance=ExtResource( 11 )]
+position = Vector2( 5677, 270 )
+speed = 200
 
-[node name="EnemySeagull" parent="." index="18" instance=ExtResource( 12 )]
+[node name="PartsWind" parent="." index="17" instance=ExtResource( 10 )]
+
+[node name="DebugObject" parent="." index="18" instance=ExtResource( 11 )]
+
+[node name="EnemySeagull" parent="." index="19" instance=ExtResource( 12 )]
 
 position = Vector2( 1861, 268 )
 speed = 500.0
 
-[node name="EnemySeagull2" parent="." index="19" instance=ExtResource( 12 )]
+[node name="EnemySeagull2" parent="." index="20" instance=ExtResource( 12 )]
 
 position = Vector2( 2222, 103 )
 speed = 500.0
@@ -278,7 +284,7 @@ speed = 1.0
 position = Vector2( 2276.58, 20.4055 )
 speed = 1.0
 
-[node name="EnemySeagull3" parent="." index="20" instance=ExtResource( 12 )]
+[node name="EnemySeagull3" parent="." index="21" instance=ExtResource( 12 )]
 
 position = Vector2( 5232, 214 )
 speed = 500.0
@@ -293,11 +299,56 @@ speed = 1.0
 position = Vector2( 2276.58, 20.4055 )
 speed = 1.0
 
-[node name="EnemyCrow12" parent="." index="21" instance=ExtResource( 8 )]
+[node name="EnemySeagull4" parent="." index="22" instance=ExtResource( 12 )]
+
+position = Vector2( 6106, 118 )
+speed = 500.0
+
+[node name="EnemyBee2" parent="EnemySeagull4" index="5" instance=ExtResource( 13 )]
+
+position = Vector2( 1967.77, 125.154 )
+speed = 1.0
+
+[node name="EnemyBee3" parent="EnemySeagull4" index="6" instance=ExtResource( 13 )]
+
+position = Vector2( 2276.58, 20.4055 )
+speed = 1.0
+
+[node name="EnemySeagull5" parent="." index="23" instance=ExtResource( 12 )]
+
+position = Vector2( 6345, 230 )
+speed = 500.0
+
+[node name="EnemyBee2" parent="EnemySeagull5" index="5" instance=ExtResource( 13 )]
+
+position = Vector2( 1967.77, 125.154 )
+speed = 1.0
+
+[node name="EnemyBee3" parent="EnemySeagull5" index="6" instance=ExtResource( 13 )]
+
+position = Vector2( 2276.58, 20.4055 )
+speed = 1.0
+
+[node name="EnemySeagull6" parent="." index="24" instance=ExtResource( 12 )]
+
+position = Vector2( 6577, 102 )
+speed = 500.0
+
+[node name="EnemyBee2" parent="EnemySeagull6" index="5" instance=ExtResource( 13 )]
+
+position = Vector2( 1967.77, 125.154 )
+speed = 1.0
+
+[node name="EnemyBee3" parent="EnemySeagull6" index="6" instance=ExtResource( 13 )]
+
+position = Vector2( 2276.58, 20.4055 )
+speed = 1.0
+
+[node name="EnemyCrow12" parent="." index="25" instance=ExtResource( 8 )]
 
 position = Vector2( 4817, 264 )
 
-[node name="EnemyCrow13" parent="." index="22" instance=ExtResource( 8 )]
+[node name="EnemyCrow13" parent="." index="26" instance=ExtResource( 8 )]
 
 position = Vector2( 4985, 73 )
 
