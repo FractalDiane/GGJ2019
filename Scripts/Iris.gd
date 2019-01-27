@@ -30,3 +30,7 @@ func _on_TimerChangeLevel_timeout():
 		Controller.change_scene("res://Scenes/TitleScreen.tscn")
 	else:
 		Controller.change_scene("res://Scenes/Level2.tscn")
+
+func _on_ReachArea2_body_entered(body):
+	if "Player" in body.get_groups():
+		$Sprite/AnimationPlayer.play("Reach")
