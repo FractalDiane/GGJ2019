@@ -12,4 +12,5 @@ func _physics_process(delta):
 
 
 func _movement(delta):
+	#motion.x = -50 * delta
 	movement = move_and_collide(motion)
