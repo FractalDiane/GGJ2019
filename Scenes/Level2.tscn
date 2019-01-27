@@ -672,6 +672,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 0, -5 )
 smoothing_enabled = true
 _sections_unfolded = [ "Smoothing", "Transform" ]
+camera_offset = 160
 
 [node name="Player" parent="." index="2" instance=ExtResource( 8 )]
 
