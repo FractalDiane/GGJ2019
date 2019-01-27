@@ -132,7 +132,8 @@ func _on_TimerWind2_timeout():
 	
 
 func _on_TimerStartGame_timeout():
-	Controller.change_scene("res://Scenes/Level1.tscn")
+	#Controller.change_scene("res://Scenes/Level1.tscn")
+	Controller.change_scene("res://Scenes/Cutscenes/IntroCutScene.tscn")
 
 
 func _on_TimerBuffer_timeout():
