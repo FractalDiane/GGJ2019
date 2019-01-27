@@ -49,11 +49,11 @@ func _process(delta):
 			if Input.is_action_just_pressed("ui_click"):
 				start()
 
-		if over_credits:
+		if over_credits and not credits_open:
 			if Input.is_action_just_pressed("ui_click") and not buffer:
 				credits()
 
-		if Input.is_action_just_pressed("ui_gamepad_click"):
+		if Input.is_action_just_pressed("ui_gamepad_click") and not credits_open:
 			start()
 
 	if credits_open and not buffer:
