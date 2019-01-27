@@ -28,6 +28,7 @@ signal on_player_death
 
 # Overrides
 func _ready():
+	Controller.set_player(self)
 	animator.play("idle")
 
 func _process(delta):
@@ -111,6 +112,8 @@ func _input(ev):
 			if ev.pressed and not ev.echo:
 				if state == State.STATE_IN_GAME:
 					jump()
+				else:
+					Controller.reset()
 	if ev is InputEventJoypadButton:
 		if ev.button_index == JOY_START:
 			Controller.change_scene("res://Scenes/TitleScreen.tscn")
@@ -119,5 +122,7 @@ func _input(ev):
 				if state == State.STATE_IN_GAME:
 					gamepad_pressed = true
 					jump()
+				else:
+					Controller.reset()
 		if not ev.pressed:
 			gamepad_pressed = false

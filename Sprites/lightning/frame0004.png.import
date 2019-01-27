@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Storm Cloud (Back).png-0a6aedd06e9db139ad32c8e82c9ef557.stex"
+path="res://.import/frame0004.png-c6c3c74ae7ba7358bb3401bf4c4e5769.stex"
 
 [deps]
 
-source_file="res://Sprites/Storm Cloud (Back).png"
-dest_files=[ "res://.import/Storm Cloud (Back).png-0a6aedd06e9db139ad32c8e82c9ef557.stex" ]
+source_file="res://Sprites/lightning/frame0004.png"
+dest_files=[ "res://.import/frame0004.png-c6c3c74ae7ba7358bb3401bf4c4e5769.stex" ]
 
 [params]
 
@@ -15,7 +15,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
