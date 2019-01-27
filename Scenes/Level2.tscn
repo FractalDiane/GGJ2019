@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Sprites/Props and Scenery/Sky base.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Props and Scenery/Sky overlay.png" type="Texture" id=2]
@@ -13,15 +13,14 @@
 [ext_resource path="res://Prefabs/Enemies/EnemyCrow.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Prefabs/Enemies/EnemyHelicopter.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Prefabs/Enemies/EnemySuperman.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Prefabs/Enemies/EnemyBaseball.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Prefabs/Enemies/EnemyTennisBall.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Prefabs/Enemies/EnemyLightning.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Prefabs/PartsRain.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Audio/Level 2.ogg" type="AudioStream" id=20]
-[ext_resource path="res://Audio/Wind.ogg" type="AudioStream" id=21]
-[ext_resource path="res://Audio/Rain.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Prefabs/Enemies/EnemyBaseball.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Prefabs/Enemies/EnemyTennisBall.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Prefabs/Enemies/EnemyLightning.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Prefabs/PartsRain.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Audio/Level 2.ogg" type="AudioStream" id=19]
+[ext_resource path="res://Audio/Wind.ogg" type="AudioStream" id=20]
+[ext_resource path="res://Audio/Rain.ogg" type="AudioStream" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -350,192 +349,225 @@ position = Vector2( 1041, 129 )
 
 position = Vector2( 1233, 73 )
 
-[node name="EnemyCrow29" parent="." index="36" instance=ExtResource( 11 )]
+[node name="EnemyCrow33" parent="." index="36" instance=ExtResource( 11 )]
+
+position = Vector2( 1340, 302 )
+
+[node name="EnemyCrow34" parent="." index="37" instance=ExtResource( 11 )]
+
+position = Vector2( 1391, 256 )
+
+[node name="EnemyCrow35" parent="." index="38" instance=ExtResource( 11 )]
+
+position = Vector2( 1454, 228 )
+
+[node name="EnemyCrow39" parent="." index="39" instance=ExtResource( 11 )]
+
+position = Vector2( 1833, 258 )
+
+[node name="EnemyCrow40" parent="." index="40" instance=ExtResource( 11 )]
+
+position = Vector2( 1907, 304 )
+
+[node name="EnemyCrow36" parent="." index="41" instance=ExtResource( 11 )]
+
+position = Vector2( 1530, 213 )
+
+[node name="EnemyCrow37" parent="." index="42" instance=ExtResource( 11 )]
+
+position = Vector2( 1618, 177 )
+
+[node name="EnemyCrow38" parent="." index="43" instance=ExtResource( 11 )]
+
+position = Vector2( 1731, 211 )
+
+[node name="EnemyCrow29" parent="." index="44" instance=ExtResource( 11 )]
 
 position = Vector2( 1210, 27 )
 
-[node name="EnemyCrow4" parent="." index="37" instance=ExtResource( 11 )]
+[node name="EnemyCrow4" parent="." index="45" instance=ExtResource( 11 )]
 
 position = Vector2( 785, 104 )
 
-[node name="EnemySeagull2" parent="." index="38" instance=ExtResource( 12 )]
+[node name="EnemySeagull2" parent="." index="46" instance=ExtResource( 12 )]
 
 position = Vector2( 2222, 96 )
 speed = 600.0
 
-[node name="EnemySeagull3" parent="." index="39" instance=ExtResource( 12 )]
+[node name="EnemySeagull3" parent="." index="47" instance=ExtResource( 12 )]
 
 position = Vector2( 2342, 94 )
 speed = 600.0
 
-[node name="EnemySeagull4" parent="." index="40" instance=ExtResource( 12 )]
+[node name="EnemySeagull4" parent="." index="48" instance=ExtResource( 12 )]
 
 position = Vector2( 2474, 93 )
 speed = 600.0
 
-[node name="EnemySeagull5" parent="." index="41" instance=ExtResource( 12 )]
+[node name="EnemySeagull5" parent="." index="49" instance=ExtResource( 12 )]
 
 position = Vector2( 2828, 227 )
 speed = 600.0
 
-[node name="EnemySeagull6" parent="." index="42" instance=ExtResource( 12 )]
+[node name="EnemySeagull6" parent="." index="50" instance=ExtResource( 12 )]
 
 position = Vector2( 2963, 212 )
 speed = 600.0
 
-[node name="EnemySeagull14" parent="." index="43" instance=ExtResource( 12 )]
+[node name="EnemySeagull14" parent="." index="51" instance=ExtResource( 12 )]
 
 position = Vector2( 2896, 290 )
 speed = 600.0
 
-[node name="EnemySeagull13" parent="." index="44" instance=ExtResource( 12 )]
+[node name="EnemySeagull13" parent="." index="52" instance=ExtResource( 12 )]
 
 position = Vector2( 2925, 188 )
 speed = 600.0
 
-[node name="EnemySeagull12" parent="." index="45" instance=ExtResource( 12 )]
+[node name="EnemySeagull12" parent="." index="53" instance=ExtResource( 12 )]
 
 position = Vector2( 3026, 158 )
 speed = 600.0
 
-[node name="EnemySeagull7" parent="." index="46" instance=ExtResource( 12 )]
+[node name="EnemySeagull7" parent="." index="54" instance=ExtResource( 12 )]
 
 position = Vector2( 3092, 210 )
 speed = 600.0
 
-[node name="EnemySeagull15" parent="." index="47" instance=ExtResource( 12 )]
+[node name="EnemySeagull15" parent="." index="55" instance=ExtResource( 12 )]
 
 position = Vector2( 3033, 293 )
 speed = 600.0
 
-[node name="EnemySeagull11" parent="." index="48" instance=ExtResource( 12 )]
+[node name="EnemySeagull11" parent="." index="56" instance=ExtResource( 12 )]
 
 position = Vector2( 3154, 156 )
 speed = 600.0
 
-[node name="EnemySeagull8" parent="." index="49" instance=ExtResource( 12 )]
+[node name="EnemySeagull8" parent="." index="57" instance=ExtResource( 12 )]
 
 position = Vector2( 3218, 213 )
 speed = 600.0
 
-[node name="EnemySeagull16" parent="." index="50" instance=ExtResource( 12 )]
+[node name="EnemySeagull16" parent="." index="58" instance=ExtResource( 12 )]
 
 position = Vector2( 3155, 280 )
 speed = 600.0
 
-[node name="EnemySeagull9" parent="." index="51" instance=ExtResource( 12 )]
+[node name="EnemySeagull9" parent="." index="59" instance=ExtResource( 12 )]
 
 position = Vector2( 5378, 279 )
 speed = 600.0
 
-[node name="EnemySeagull10" parent="." index="52" instance=ExtResource( 12 )]
+[node name="EnemySeagull10" parent="." index="60" instance=ExtResource( 12 )]
 
 position = Vector2( 5910, 96 )
 speed = 600.0
 
-[node name="Helicopter" parent="." index="53" instance=ExtResource( 13 )]
+[node name="Helicopter" parent="." index="61" instance=ExtResource( 13 )]
 
 position = Vector2( 4583, 64 )
 speed = 5
 
-[node name="Helicopter2" parent="." index="54" instance=ExtResource( 13 )]
+[node name="Helicopter2" parent="." index="62" instance=ExtResource( 13 )]
 
 position = Vector2( 3894, 62 )
 speed = 5
 
-[node name="SuperMan" parent="." index="55" instance=ExtResource( 14 )]
-
-position = Vector2( 1686, 174 )
-
-[node name="EnemyBaseball" parent="." index="56" instance=ExtResource( 15 )]
+[node name="EnemyBaseball" parent="." index="63" instance=ExtResource( 14 )]
 
 position = Vector2( 6934, 128 )
 
-[node name="EnemyBaseball9" parent="." index="57" instance=ExtResource( 15 )]
+[node name="EnemyBaseball9" parent="." index="64" instance=ExtResource( 14 )]
 
 position = Vector2( 6737, 158 )
 
-[node name="EnemyBaseball2" parent="." index="58" instance=ExtResource( 15 )]
+[node name="EnemyBaseball2" parent="." index="65" instance=ExtResource( 14 )]
 
 position = Vector2( 7033, 224 )
 
-[node name="EnemyBaseball3" parent="." index="59" instance=ExtResource( 15 )]
+[node name="EnemyBaseball3" parent="." index="66" instance=ExtResource( 14 )]
 
 position = Vector2( 7686, 144 )
 
-[node name="EnemyBaseball7" parent="." index="60" instance=ExtResource( 15 )]
+[node name="EnemyBaseball7" parent="." index="67" instance=ExtResource( 14 )]
 
 position = Vector2( 7661, 192 )
 
-[node name="EnemyBaseball4" parent="." index="61" instance=ExtResource( 15 )]
+[node name="EnemyBaseball4" parent="." index="68" instance=ExtResource( 14 )]
 
 position = Vector2( 7814, 108 )
 
-[node name="EnemyBaseball5" parent="." index="62" instance=ExtResource( 15 )]
+[node name="EnemyBaseball5" parent="." index="69" instance=ExtResource( 14 )]
 
 position = Vector2( 7856, 127 )
 
-[node name="EnemyBaseball6" parent="." index="63" instance=ExtResource( 15 )]
+[node name="EnemyBaseball6" parent="." index="70" instance=ExtResource( 14 )]
 
 position = Vector2( 8092, 280 )
 
-[node name="EnemyBaseball8" parent="." index="64" instance=ExtResource( 15 )]
+[node name="EnemyBaseball8" parent="." index="71" instance=ExtResource( 14 )]
 
 position = Vector2( 8006, 202 )
 
-[node name="KinematicBody2D" parent="." index="65" instance=ExtResource( 16 )]
+[node name="KinematicBody2D" parent="." index="72" instance=ExtResource( 15 )]
 
-position = Vector2( 7263, 125 )
+position = Vector2( 7263, 124 )
+speed = 400.0
 
-[node name="KinematicBody2D2" parent="." index="66" instance=ExtResource( 16 )]
+[node name="KinematicBody2D2" parent="." index="73" instance=ExtResource( 15 )]
 
 position = Vector2( 7473, 201 )
+speed = 400.0
 
-[node name="KinematicBody2D3" parent="." index="67" instance=ExtResource( 16 )]
+[node name="KinematicBody2D3" parent="." index="74" instance=ExtResource( 15 )]
 
 position = Vector2( 8154, 233 )
+speed = 400.0
 
-[node name="KinematicBody2D4" parent="." index="68" instance=ExtResource( 16 )]
+[node name="KinematicBody2D4" parent="." index="75" instance=ExtResource( 15 )]
 
 position = Vector2( 8235, 180 )
+speed = 400.0
 
-[node name="KinematicBody2D5" parent="." index="69" instance=ExtResource( 16 )]
+[node name="KinematicBody2D5" parent="." index="76" instance=ExtResource( 15 )]
 
 position = Vector2( 8320, 143 )
+speed = 400.0
 
-[node name="KinematicBody2D6" parent="." index="70" instance=ExtResource( 17 )]
+[node name="KinematicBody2D6" parent="." index="77" instance=ExtResource( 16 )]
 
-position = Vector2( 1397, 56 )
+position = Vector2( 1470, 55 )
 
-[node name="KinematicBody2D7" parent="." index="71" instance=ExtResource( 17 )]
+[node name="KinematicBody2D7" parent="." index="78" instance=ExtResource( 16 )]
 
-position = Vector2( 1846, 60 )
+position = Vector2( 1794, 58 )
 
-[node name="PartsWind" parent="." index="72" instance=ExtResource( 18 )]
+[node name="PartsWind" parent="." index="79" instance=ExtResource( 17 )]
 
-[node name="PartsRain" parent="." index="73" instance=ExtResource( 19 )]
+[node name="PartsRain" parent="." index="80" instance=ExtResource( 18 )]
 
-[node name="Music" type="AudioStreamPlayer" parent="." index="74"]
+[node name="Music" type="AudioStreamPlayer" parent="." index="81"]
 
-stream = ExtResource( 20 )
+stream = ExtResource( 19 )
 volume_db = -4.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="SoundWind" type="AudioStreamPlayer" parent="." index="75"]
+[node name="SoundWind" type="AudioStreamPlayer" parent="." index="82"]
 
-stream = ExtResource( 21 )
+stream = ExtResource( 20 )
 volume_db = -8.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="SoundRain" type="AudioStreamPlayer" parent="." index="76"]
+[node name="SoundRain" type="AudioStreamPlayer" parent="." index="83"]
 
-stream = ExtResource( 22 )
+stream = ExtResource( 21 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
