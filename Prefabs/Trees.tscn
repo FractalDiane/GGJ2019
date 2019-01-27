@@ -16,12 +16,13 @@ bounce = 0.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+modulate = Color( 0.398039, 0.639569, 1, 1 )
 position = Vector2( 60, 46 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 60, 0, 540, 360 )
-_sections_unfolded = [ "Offset", "Region", "Transform" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." index="1"]
 
