@@ -51,12 +51,10 @@ func _physics_process(delta):
 			move_right(delta)
 
 func _on_Player_body_entered(body):
-	print(body.get_groups())
 	if "Enemy" in body.get_groups():
 		die()
 
 func _on_AreaDanger_body_entered(body):
-	print(body)
 	if "Enemy" in body.get_groups() and not "Trees" in body.get_groups():
 		enemies_in_view += 1
 
@@ -102,7 +100,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_AreaDanger_body_exited(body):
-	print(body)
 	if "Enemy" in body.get_groups() and not "Trees" in body.get_groups():
 		enemies_in_view -= 1
 

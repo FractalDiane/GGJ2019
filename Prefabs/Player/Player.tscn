@@ -287,7 +287,7 @@ _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Dampi
 [sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
-extents = Vector2( 70.6884, 95.8834 )
+extents = Vector2( 33.3518, 51.8195 )
 
 [node name="Player" type="RigidBody2D" index="0" groups=[
 "Player",
@@ -373,7 +373,7 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
 
 [node name="AreaDanger" type="Area2D" parent="." index="4"]
 
-position = Vector2( 69, 0 )
+position = Vector2( 27, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -381,9 +381,6 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDanger" index="0"]
 
