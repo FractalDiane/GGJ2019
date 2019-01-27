@@ -1,17 +1,15 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Prefabs/Player/String.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/HappyFloaty2.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/ScaredFloaty.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/HappyFloaty2.png" type="Texture" id=4]
+[ext_resource path="res://Prefabs/Player/String.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Particles/Pop parts full.png" type="Texture" id=5]
+[ext_resource path="res://Audio/Jump.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Audio/Bounce.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Audio/Balloon pop.ogg" type="AudioStream" id=8]
 
-[sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 12.1867
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 
 resource_name = "idle"
 length = 4.0
@@ -39,7 +37,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:vframes")
@@ -66,7 +64,7 @@ tracks/3/keys = {
 "values": [ 15 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 resource_name = "jump"
 length = 0.4
@@ -94,7 +92,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:vframes")
@@ -121,7 +119,7 @@ tracks/3/keys = {
 "values": [ 15 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 
 resource_name = "scared_idle"
 length = 0.4
@@ -176,7 +174,7 @@ tracks/3/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 resource_name = "scared_jump"
 length = 0.6
@@ -231,6 +229,11 @@ tracks/3/keys = {
 "values": [ 14 ]
 }
 
+[sub_resource type="CircleShape2D" id=5]
+
+custom_solver_bias = 0.0
+radius = 10.7891
+
 [sub_resource type="Gradient" id=6]
 
 offsets = PoolRealArray( 0, 0.871795, 1 )
@@ -281,10 +284,10 @@ anim_offset_random = 1.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Radial Accel", "Scale", "Spread", "Tangential Accel" ]
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
-radius = 118.29
+extents = Vector2( 33.3518, 51.8195 )
 
 [node name="Player" type="RigidBody2D" groups=[
 "Player",
@@ -315,20 +318,11 @@ right_move_speed = 100
 right_move_force = 100
 state = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
-
-position = Vector2( 0, -2 )
-shape = SubResource( 1 )
-
-[node name="Node2D" parent="." index="1" instance=ExtResource( 2 )]
-
-position = Vector2( 0, 13 )
-
-[node name="Sprite" type="Sprite" parent="." index="2"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( 0, -1 )
-texture = ExtResource( 3 )
-hframes = 14
+texture = ExtResource( 2 )
+hframes = 15
 region_rect = Rect2( 0, 0, 32, 29 )
 _sections_unfolded = [ "Animation", "Material", "Region", "Transform" ]
 
@@ -339,12 +333,21 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 2 )
-anims/jump = SubResource( 3 )
-anims/scared_idle = SubResource( 4 )
-anims/scared_jump = SubResource( 5 )
+anims/idle = SubResource( 1 )
+anims/jump = SubResource( 2 )
+anims/scared_idle = SubResource( 3 )
+anims/scared_jump = SubResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0, -2 )
+shape = SubResource( 5 )
+
+[node name="Node2D" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 0, 13 )
 
 [node name="PartsPop" type="Particles2D" parent="." index="3"]
 
@@ -370,6 +373,7 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
 
 [node name="AreaDanger" type="Area2D" parent="." index="4"]
 
+position = Vector2( 27, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -377,9 +381,6 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDanger" index="0"]
 
@@ -387,6 +388,33 @@ shape = SubResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="SoundJump" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 6 )
+volume_db = -6.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="SoundBounce" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 7 )
+volume_db = 6.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="SoundPop" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 8 )
+volume_db = 8.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 

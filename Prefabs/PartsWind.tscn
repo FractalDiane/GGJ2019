@@ -54,7 +54,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Gravity", "Hue Variation", "Initial Velocity", "Scale", "Spread", "Tangential Accel" ]
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="ParticlesMaterial" id=4]
 
 render_priority = 0
 trail_divisor = 1
@@ -118,6 +118,7 @@ h_frames = 1
 v_frames = 1
 script = ExtResource( 2 )
 _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+follow_player = true
 
 [node name="PartsWind2" type="Particles2D" parent="." index="0"]
 
@@ -134,7 +135,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 6 )
+process_material = SubResource( 4 )
 texture = null
 normal_map = null
 h_frames = 1

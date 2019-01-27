@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Swoop.ogg-ff2d26033329a20d31d411c6a3954d47.oggstr"
+
+[deps]
+
+source_file="res://Audio/Swoop.ogg"
+dest_files=[ "res://.import/Swoop.ogg-ff2d26033329a20d31d411c6a3954d47.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

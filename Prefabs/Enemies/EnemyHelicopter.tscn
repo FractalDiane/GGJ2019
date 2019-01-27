@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/helicopter/helicopter1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/helicopter/helicopter2.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[node name="Helicopter" type="KinematicBody2D" groups=[
+"Enemy",
+]]
+
+position = Vector2( 717.323, 84.5861 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+speed = -40
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "default"
+frame = 1
+playing = true
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+scale = Vector2( -1, 1 )
+build_mode = 0
+polygon = PoolVector2Array( -40.8554, -1.96654, -20.4552, -22.5326, -3.53798, -32.1522, -3.86969, -43.5962, -21.9479, -43.9279, -38.5334, -47.245, -59.7629, -55.3719, -39.3627, -60.6792, -16.6405, -62.8354, 18.0232, -63.9963, 36.599, -61.8402, 54.3454, -57.8597, 61.1455, -55.7036, 26.6476, -46.084, 1.93524, -43.5962, 1.60353, -34.1424, 21.5061, -34.1424, 31.7892, -30.6595, 42.0722, -21.2057, 46.7161, -12.5813, 48.5405, -6.61048, 55.8382, -4.95193, 59.9845, -1.63483, 61.3114, 8.64819, 59.6528, 21.2532, 53.8479, 35.185, 46.2186, 38.1704, 49.7015, 42.1509, 57.6626, 41.3216, 48.043, 48.951, 22.9988, 56.0827, 1.76938, 57.5754, -18.9625, 53.5949, -25.5967, 48.2876, -19.2942, 47.2924, -18.6308, 43.3119, -30.0748, 35.5167, -38.3676, 23.5751, -46.3286, 21.5849, -54.1238, 33.3606, -58.2702, 36.6777, -60.5921, 20.9215, -61.919, 3.34082, -58.6019, -12.2496, -51.9677, -18.8838, -49.9774, -10.2593, -44.8359, -3.62509, -42.1822, -2.96167 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+

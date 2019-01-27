@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/Particles/Rain.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Utility/PartsRain.gd" type="Script" id=2]
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="ParticlesMaterial" id=1]
 
 render_priority = 0
 trail_divisor = 1
 emission_shape = 2
-emission_box_extents = Vector3( 350, 1, 1 )
+emission_box_extents = Vector3( 450, 1, 1 )
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
@@ -44,13 +45,13 @@ _sections_unfolded = [ "Emission Shape", "Gravity", "Initial Velocity" ]
 
 [node name="PartsRain" type="Particles2D"]
 
-self_modulate = Color( 0.773438, 0.920349, 1, 1 )
-position = Vector2( 320, -34 )
+self_modulate = Color( 0.773438, 0.920349, 1, 0.342549 )
+position = Vector2( 418, -34 )
 emitting = true
-amount = 128
+amount = 156
 lifetime = 3.0
 one_shot = false
-preprocess = 0.0
+preprocess = 2.0
 speed_scale = 1.0
 explosiveness = 0.0
 randomness = 0.0
@@ -59,11 +60,12 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 6 )
+process_material = SubResource( 1 )
 texture = ExtResource( 1 )
 normal_map = null
 h_frames = 1
 v_frames = 1
+script = ExtResource( 2 )
 _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 

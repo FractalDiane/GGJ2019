@@ -7,9 +7,16 @@ export var speed = -50
 
 var start = false
 
+var start_pos
+
 func _ready():
-	pass
+	Controller.connect("level_reset", self, "_on_game_reset")
+	start_pos = global_position
 
 func _process(delta):
 	if start:
-		translate(Vector2(0,speed*delta))
+		translate(Vector2(0,-speed*delta))
+
+func _on_game_reset():
+	global_position = start_pos
+	start = false

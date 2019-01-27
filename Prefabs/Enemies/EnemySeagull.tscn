@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Enemies/EnemySeagull.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Seagull/seagull1.png" type="Texture" id=2]
@@ -10,8 +10,10 @@
 [ext_resource path="res://Sprites/Seagull/seagull7.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Seagull/seagull8.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Seagull/seagull9.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Seagull/seagull loop.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Seagull/seagull straight.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Seagull/seagull straight.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Seagull/seagull loop.png" type="Texture" id=12]
+[ext_resource path="res://Audio/Swoop.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Audio/Seagull.ogg" type="AudioStream" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -23,12 +25,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "twirl",
+"name": "attack",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "attack",
+"name": "twirl",
 "speed": 5.0
 } ]
 
@@ -60,7 +62,7 @@ attack_cooldown = 0.75
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 6
+frame = 7
 playing = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -107,6 +109,24 @@ process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = false
+
+[node name="SoundSwoop" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 13 )
+volume_db = 16.0
+pitch_scale = 0.7
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="SoundAttack" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 14 )
+volume_db = 12.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="AttackRadius" to="." method="_on_AttackRadius_body_entered"]
 

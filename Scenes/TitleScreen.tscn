@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/playbutton.png" type="Texture" id=2]
 [ext_resource path="res://playButton.gd" type="Script" id=3]
+[ext_resource path="res://Audio/Select.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Sprites/creditsbutton.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -23,7 +25,30 @@ tracks/0/keys = {
 "values": [ Vector2( 321.062, 212.789 ), Vector2( 321.011, 158.549 ), Vector2( 321.011, 158.549 ), Vector2( 321.062, 212.789 ), Vector2( 321.062, 212.789 ), Vector2( 321.011, 158.549 ) ]
 }
 
+[sub_resource type="Animation" id=2]
+
+resource_name = "fadeout"
+length = 4.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+
 [node name="TitleScreen" type="Node2D"]
+
+__meta__ = {
+"_edit_vertical_guides_": [ 320.0 ]
+}
 
 [node name="bgSprite" type="Sprite" parent="." index="0"]
 
@@ -33,7 +58,7 @@ _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="playButton" type="Sprite" parent="." index="1"]
 
-position = Vector2( 321.005, 151.774 )
+position = Vector2( 321.008, 155.47 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
@@ -70,8 +95,72 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="SoundGust" type="AudioStreamPlayer" parent="playButton" index="2"]
+
+stream = ExtResource( 4 )
+volume_db = 8.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="SoundClick" type="AudioStreamPlayer" parent="playButton" index="3"]
+
+stream = ExtResource( 5 )
+volume_db = 10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Music" type="AudioStreamPlayer" parent="playButton" index="4"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AnimMusicFade" type="AnimationPlayer" parent="playButton/Music" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/fadeout = SubResource( 2 )
+blend_times = [  ]
+
+[node name="creditsButton" type="Sprite" parent="." index="2"]
+
+position = Vector2( 73, 314 )
+texture = ExtResource( 7 )
+
+[node name="ClickAreaCredits" type="Area2D" parent="creditsButton" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="creditsButton/ClickAreaCredits" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 46, -37, 53, 34, -42, 42, -49, 25, -46, -30, -40, -35 )
+
 [connection signal="mouse_entered" from="playButton/ClickArea" to="playButton" method="_on_ClickArea_mouse_entered"]
 
 [connection signal="mouse_exited" from="playButton/ClickArea" to="playButton" method="_on_ClickArea_mouse_exited"]
+
+[connection signal="mouse_entered" from="creditsButton/ClickAreaCredits" to="playButton" method="_on_ClickAreaCredits_mouse_entered"]
+
+[connection signal="mouse_exited" from="creditsButton/ClickAreaCredits" to="playButton" method="_on_ClickAreaCredits_mouse_exited"]
 
 
