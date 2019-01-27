@@ -22,6 +22,7 @@ height = 24.0
 "Enemy",
 ]]
 
+position = Vector2( 541.351, 68.664 )
 input_pickable = false
 collision_layer = 2
 collision_mask = 1

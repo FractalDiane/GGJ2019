@@ -12,10 +12,12 @@ func _ready():
 	start_y = get_position().y
 
 func _process(delta):
-	t += 10 * delta * speed
+	translate(Vector2(-20*delta,30*delta))
+#	t += 10 * delta * speed
 
 func _movement(delta):
-	if horizontal:
-		position.x = start_x + (sin(t) * amplitude)
-	else:
-		position.y = start_y + (sin(t) * amplitude)
+	pass
+#	if horizontal:
+#		position.x = start_x + (sin(t) * amplitude)
+#	else:
+#		position.y = start_y + (sin(t) * amplitude)
