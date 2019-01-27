@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Sprites/Props and Scenery/Sky base.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Props and Scenery/Sky overlay.png" type="Texture" id=2]
@@ -9,33 +9,19 @@
 [ext_resource path="res://Sprites/Props and Scenery/clouds1.png" type="Texture" id=7]
 [ext_resource path="res://Prefabs/PlayerCamera.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Sprites/Iris.png" type="Texture" id=10]
-[ext_resource path="res://Prefabs/Enemies/EnemyCrow.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Prefabs/Enemies/EnemyHotAirBalloon.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Prefabs/DebugObject.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Prefabs/Enemies/EnemyBee.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Prefabs/Trees.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Audio/Wind.ogg" type="AudioStream" id=18]
-[ext_resource path="res://Audio/Level 1.ogg" type="AudioStream" id=19]
-[ext_resource path="res://Prefabs/LevelStartOverlay.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Prefabs/Enemies/EnemyCrow.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Prefabs/Enemies/EnemyHotAirBalloon.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Prefabs/DebugObject.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Prefabs/Enemies/EnemySeagull.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Prefabs/Enemies/EnemyBee.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Prefabs/Trees.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Prefabs/PartsWind.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Audio/Wind.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Audio/Level 1.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Prefabs/LevelStartOverlay.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Prefabs/Iris.tscn" type="PackedScene" id=20]
 
-[sub_resource type="SpriteFrames" id=1]
-
-animations = [ {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 37, 50 )
-
-[node name="Scene" type="Node2D" index="0"]
+[node name="Scene" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
@@ -1031,249 +1017,213 @@ position = Vector2( 172, 206 )
 z_index = 1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Iris" type="StaticBody2D" parent="." index="3"]
-
-position = Vector2( 6858, 320 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Sprite" type="AnimatedSprite" parent="Iris" index="0"]
-
-frames = SubResource( 1 )
-animation = "default"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Area2D" type="Area2D" parent="Iris" index="1"]
-
-editor/display_folded = true
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Iris/Area2D" index="0"]
-
-position = Vector2( -11, -18 )
-shape = SubResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="EnemyCrow" parent="." index="4" instance=ExtResource( 11 )]
+[node name="EnemyCrow" parent="." index="3" instance=ExtResource( 10 )]
 
 position = Vector2( 739, 49 )
 
-[node name="EnemyCrow2" parent="." index="5" instance=ExtResource( 11 )]
+[node name="EnemyCrow2" parent="." index="4" instance=ExtResource( 10 )]
 
 position = Vector2( 795, 100 )
 
-[node name="EnemyCrow3" parent="." index="6" instance=ExtResource( 11 )]
+[node name="EnemyCrow3" parent="." index="5" instance=ExtResource( 10 )]
 
 position = Vector2( 853, 150 )
 
-[node name="EnemyCrow4" parent="." index="7" instance=ExtResource( 11 )]
+[node name="EnemyCrow4" parent="." index="6" instance=ExtResource( 10 )]
 
 position = Vector2( 916, 188 )
 
-[node name="EnemyCrow5" parent="." index="8" instance=ExtResource( 11 )]
+[node name="EnemyCrow5" parent="." index="7" instance=ExtResource( 10 )]
 
 position = Vector2( 3073, 309 )
 
-[node name="EnemyCrow6" parent="." index="9" instance=ExtResource( 11 )]
+[node name="EnemyCrow6" parent="." index="8" instance=ExtResource( 10 )]
 
 position = Vector2( 3128, 270 )
 
-[node name="EnemyCrow7" parent="." index="10" instance=ExtResource( 11 )]
+[node name="EnemyCrow7" parent="." index="9" instance=ExtResource( 10 )]
 
 position = Vector2( 3192, 226 )
 
-[node name="EnemyCrow8" parent="." index="11" instance=ExtResource( 11 )]
+[node name="EnemyCrow8" parent="." index="10" instance=ExtResource( 10 )]
 
 position = Vector2( 3262, 180 )
 
-[node name="EnemyCrow9" parent="." index="12" instance=ExtResource( 11 )]
+[node name="EnemyCrow9" parent="." index="11" instance=ExtResource( 10 )]
 
 position = Vector2( 3720, 66 )
 
-[node name="EnemyCrow10" parent="." index="13" instance=ExtResource( 11 )]
+[node name="EnemyCrow10" parent="." index="12" instance=ExtResource( 10 )]
 
 position = Vector2( 3645, 129 )
 
-[node name="EnemyCrow11" parent="." index="14" instance=ExtResource( 11 )]
+[node name="EnemyCrow11" parent="." index="13" instance=ExtResource( 10 )]
 
 position = Vector2( 3575, 185 )
 
-[node name="EnemyHotAirBalloon" parent="." index="15" instance=ExtResource( 12 )]
+[node name="EnemyHotAirBalloon" parent="." index="14" instance=ExtResource( 11 )]
 
 position = Vector2( 1256, 254 )
 speed = 40
 
-[node name="EnemyHotAirBalloon2" parent="." index="16" instance=ExtResource( 12 )]
+[node name="EnemyHotAirBalloon2" parent="." index="15" instance=ExtResource( 11 )]
 
 position = Vector2( 5677, 270 )
 speed = 40
 
-[node name="DebugObject" parent="." index="17" instance=ExtResource( 13 )]
+[node name="DebugObject" parent="." index="16" instance=ExtResource( 12 )]
 
-[node name="EnemySeagull" parent="." index="18" instance=ExtResource( 14 )]
+[node name="EnemySeagull" parent="." index="17" instance=ExtResource( 13 )]
 
 position = Vector2( 1861, 268 )
 speed = 500.0
 
-[node name="EnemySeagull2" parent="." index="19" instance=ExtResource( 14 )]
+[node name="EnemySeagull2" parent="." index="18" instance=ExtResource( 13 )]
 
 position = Vector2( 2222, 103 )
 speed = 500.0
 
-[node name="EnemySeagull3" parent="." index="20" instance=ExtResource( 14 )]
+[node name="EnemySeagull3" parent="." index="19" instance=ExtResource( 13 )]
 
 position = Vector2( 5232, 214 )
 speed = 500.0
 
-[node name="EnemyBee" parent="." index="21" instance=ExtResource( 15 )]
+[node name="EnemyBee" parent="." index="20" instance=ExtResource( 14 )]
 
 position = Vector2( 2683.84, 161.496 )
 speed = 1.0
 
-[node name="EnemyBee2" parent="." index="22" instance=ExtResource( 15 )]
+[node name="EnemyBee2" parent="." index="21" instance=ExtResource( 14 )]
 
 position = Vector2( 4189.77, 228.154 )
 speed = 1.0
 
-[node name="EnemyBee3" parent="." index="23" instance=ExtResource( 15 )]
+[node name="EnemyBee3" parent="." index="22" instance=ExtResource( 14 )]
 
 position = Vector2( 4498.58, 123.406 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 speed = 1.0
 
-[node name="EnemySeagull4" parent="." index="24" instance=ExtResource( 14 )]
+[node name="EnemySeagull4" parent="." index="23" instance=ExtResource( 13 )]
 
 position = Vector2( 6106, 118 )
 speed = 500.0
 
-[node name="EnemySeagull5" parent="." index="25" instance=ExtResource( 14 )]
+[node name="EnemySeagull5" parent="." index="24" instance=ExtResource( 13 )]
 
 position = Vector2( 6345, 230 )
 speed = 500.0
 
-[node name="EnemySeagull6" parent="." index="26" instance=ExtResource( 14 )]
+[node name="EnemySeagull6" parent="." index="25" instance=ExtResource( 13 )]
 
 position = Vector2( 6577, 102 )
 speed = 500.0
 
-[node name="EnemyCrow12" parent="." index="27" instance=ExtResource( 11 )]
+[node name="EnemyCrow12" parent="." index="26" instance=ExtResource( 10 )]
 
 position = Vector2( 4817, 264 )
 
-[node name="EnemyCrow13" parent="." index="28" instance=ExtResource( 11 )]
+[node name="EnemyCrow13" parent="." index="27" instance=ExtResource( 10 )]
 
 position = Vector2( 4985, 73 )
 
-[node name="DebugObject2" parent="." index="29" instance=ExtResource( 13 )]
+[node name="DebugObject2" parent="." index="28" instance=ExtResource( 12 )]
 
-[node name="Trees" parent="." index="30" instance=ExtResource( 16 )]
+[node name="Trees" parent="." index="29" instance=ExtResource( 15 )]
 
 position = Vector2( -97, -40 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees14" parent="." index="31" instance=ExtResource( 16 )]
+[node name="Trees14" parent="." index="30" instance=ExtResource( 15 )]
 
 position = Vector2( -583, -42 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees2" parent="." index="32" instance=ExtResource( 16 )]
+[node name="Trees2" parent="." index="31" instance=ExtResource( 15 )]
 
 position = Vector2( 387, -39 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees3" parent="." index="33" instance=ExtResource( 16 )]
+[node name="Trees3" parent="." index="32" instance=ExtResource( 15 )]
 
 position = Vector2( 863, -41 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees4" parent="." index="34" instance=ExtResource( 16 )]
+[node name="Trees4" parent="." index="33" instance=ExtResource( 15 )]
 
 position = Vector2( 1353, -39 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees5" parent="." index="35" instance=ExtResource( 16 )]
+[node name="Trees5" parent="." index="34" instance=ExtResource( 15 )]
 
 position = Vector2( 1843, -32 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees6" parent="." index="36" instance=ExtResource( 16 )]
+[node name="Trees6" parent="." index="35" instance=ExtResource( 15 )]
 
 position = Vector2( 2340, -32 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees7" parent="." index="37" instance=ExtResource( 16 )]
+[node name="Trees7" parent="." index="36" instance=ExtResource( 15 )]
 
 position = Vector2( 2829, -28 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees8" parent="." index="38" instance=ExtResource( 16 )]
+[node name="Trees8" parent="." index="37" instance=ExtResource( 15 )]
 
 position = Vector2( 3321, -26 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees9" parent="." index="39" instance=ExtResource( 16 )]
+[node name="Trees9" parent="." index="38" instance=ExtResource( 15 )]
 
 position = Vector2( 3810, -19 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees10" parent="." index="40" instance=ExtResource( 16 )]
+[node name="Trees10" parent="." index="39" instance=ExtResource( 15 )]
 
 position = Vector2( 4303, -26 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees11" parent="." index="41" instance=ExtResource( 16 )]
+[node name="Trees11" parent="." index="40" instance=ExtResource( 15 )]
 
 position = Vector2( 4790, -23 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees12" parent="." index="42" instance=ExtResource( 16 )]
+[node name="Trees12" parent="." index="41" instance=ExtResource( 15 )]
 
 position = Vector2( 5277, -23 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trees13" parent="." index="43" instance=ExtResource( 16 )]
+[node name="Trees13" parent="." index="42" instance=ExtResource( 15 )]
 
 position = Vector2( 5769, -22 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="PartsWind" parent="." index="44" instance=ExtResource( 17 )]
+[node name="PartsWind" parent="." index="43" instance=ExtResource( 16 )]
 
-[node name="SoundWind" type="AudioStreamPlayer" parent="." index="45"]
+[node name="SoundWind" type="AudioStreamPlayer" parent="." index="44"]
 
-stream = ExtResource( 18 )
+stream = ExtResource( 17 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="Music" type="AudioStreamPlayer" parent="." index="46"]
+[node name="Music" type="AudioStreamPlayer" parent="." index="45"]
 
-stream = ExtResource( 19 )
+stream = ExtResource( 18 )
 volume_db = -8.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="LevelStartOverlay" parent="." index="47" instance=ExtResource( 20 )]
+[node name="LevelStartOverlay" parent="." index="46" instance=ExtResource( 19 )]
+
+[node name="Iris" parent="." index="47" instance=ExtResource( 20 )]
+
+position = Vector2( 6858, 320 )
+_sections_unfolded = [ "Transform" ]
 
 

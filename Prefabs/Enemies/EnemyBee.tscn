@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Enemies/EnemyBee.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/bee1.png" type="Texture" id=2]
@@ -19,11 +19,60 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 8.06226
 
+[sub_resource type="Gradient" id=3]
+
+offsets = PoolRealArray( 0, 0.600733, 1 )
+colors = PoolColorArray( 1, 0.892609, 0.191406, 1, 1, 0.890196, 0.188235, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+
+flags = 4
+gradient = SubResource( 3 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=5]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 0.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 2.0
+scale_random = 0.0
+color_ramp = SubResource( 4 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Hue Variation", "Initial Velocity", "Scale", "Spread" ]
+
 [node name="EnemyBee" type="KinematicBody2D" index="0" groups=[
 "Enemy",
 ]]
 
-rotation = -0.0141669
 input_pickable = false
 collision_layer = 2
 collision_mask = 1
@@ -36,10 +85,8 @@ petal_constant = 3
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
-rotation = 0.0174533
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
 playing = true
 _sections_unfolded = [ "Material", "Transform", "Z Index" ]
 __meta__ = {
@@ -49,6 +96,31 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PartsTrail" type="Particles2D" parent="." index="2"]
+
+emitting = true
+amount = 32
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 5 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
 __meta__ = {
 "_edit_lock_": true
 }
