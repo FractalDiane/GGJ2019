@@ -17,15 +17,7 @@
 [ext_resource path="res://Prefabs/Enemies/EnemySuperman.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Prefabs/Enemies/EnemyBaseball.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Prefabs/Enemies/EnemyTennisBall.tscn" type="PackedScene" id=17]
-
-[sub_resource type="SpriteFrames" id=1]
-
-animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[ext_resource path="res://Prefabs/Enemies/EnemyLightning.tscn" type="PackedScene" id=18]
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -101,7 +93,7 @@ __meta__ = {
 
 [node name="Sprite2" type="Sprite" parent="CanvasLayer/ParallaxBackground/Background" index="0"]
 
-modulate = Color( 0.101961, 0.34902, 0.494118, 0.68502 )
+modulate = Color( 0.101961, 0.34902, 0.494118, 0.44502 )
 position = Vector2( -121, 87 )
 texture = ExtResource( 3 )
 centered = false
@@ -140,7 +132,7 @@ __meta__ = {
 
 [node name="Sprite8" type="Sprite" parent="CanvasLayer/ParallaxBackground/MidBackground" index="1"]
 
-modulate = Color( 0.761176, 0.913725, 1, 0.66502 )
+modulate = Color( 0.761176, 0.913725, 1, 0.56 )
 position = Vector2( 8635, 174 )
 texture = ExtResource( 5 )
 region_enabled = true
@@ -170,11 +162,6 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 18000, 360 )
 _sections_unfolded = [ "Offset", "Region", "Visibility" ]
 
-[node name="lightning" type="AnimatedSprite" parent="CanvasLayer/ParallaxBackground/Midground" index="1"]
-
-frames = SubResource( 1 )
-animation = "default"
-
 [node name="Foreground" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="3"]
 
 motion_scale = Vector2( 3, 0 )
@@ -184,7 +171,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="PlayerCamera" parent="." index="1" instance=ExtResource( 7 )]
 
-position = Vector2( -609, -38 )
+position = Vector2( 1, 2 )
 smoothing_enabled = true
 _sections_unfolded = [ "Smoothing", "Transform" ]
 
@@ -446,7 +433,7 @@ speed = 600.0
 
 [node name="Helicopter" parent="." index="54" instance=ExtResource( 14 )]
 
-position = Vector2( 4425, 60 )
+position = Vector2( 4583, 64 )
 speed = 5
 
 [node name="Helicopter2" parent="." index="55" instance=ExtResource( 14 )]
@@ -462,36 +449,64 @@ position = Vector2( 1686, 174 )
 
 position = Vector2( 6934, 128 )
 
-[node name="EnemyBaseball2" parent="." index="58" instance=ExtResource( 16 )]
+[node name="EnemyBaseball9" parent="." index="58" instance=ExtResource( 16 )]
+
+position = Vector2( 6737, 158 )
+
+[node name="EnemyBaseball2" parent="." index="59" instance=ExtResource( 16 )]
 
 position = Vector2( 7033, 224 )
 
-[node name="EnemyBaseball3" parent="." index="59" instance=ExtResource( 16 )]
+[node name="EnemyBaseball3" parent="." index="60" instance=ExtResource( 16 )]
 
 position = Vector2( 7686, 144 )
 
-[node name="EnemyBaseball4" parent="." index="60" instance=ExtResource( 16 )]
+[node name="EnemyBaseball7" parent="." index="61" instance=ExtResource( 16 )]
+
+position = Vector2( 7661, 192 )
+
+[node name="EnemyBaseball4" parent="." index="62" instance=ExtResource( 16 )]
 
 position = Vector2( 7814, 108 )
 
-[node name="EnemyBaseball5" parent="." index="61" instance=ExtResource( 16 )]
+[node name="EnemyBaseball5" parent="." index="63" instance=ExtResource( 16 )]
 
 position = Vector2( 7856, 127 )
 
-[node name="EnemyBaseball6" parent="." index="62" instance=ExtResource( 16 )]
+[node name="EnemyBaseball6" parent="." index="64" instance=ExtResource( 16 )]
 
-position = Vector2( 8092, 281 )
+position = Vector2( 8092, 280 )
 
-[node name="KinematicBody2D" parent="." index="63" instance=ExtResource( 17 )]
+[node name="EnemyBaseball8" parent="." index="65" instance=ExtResource( 16 )]
 
-position = Vector2( 7341, 115 )
+position = Vector2( 8006, 202 )
 
-[node name="KinematicBody2D2" parent="." index="64" instance=ExtResource( 17 )]
+[node name="KinematicBody2D" parent="." index="66" instance=ExtResource( 17 )]
 
-position = Vector2( 7507, 211 )
+position = Vector2( 7263, 125 )
 
-[node name="KinematicBody2D3" parent="." index="65" instance=ExtResource( 17 )]
+[node name="KinematicBody2D2" parent="." index="67" instance=ExtResource( 17 )]
 
-position = Vector2( 8153, 233 )
+position = Vector2( 7473, 201 )
+
+[node name="KinematicBody2D3" parent="." index="68" instance=ExtResource( 17 )]
+
+position = Vector2( 8154, 233 )
+
+[node name="KinematicBody2D4" parent="." index="69" instance=ExtResource( 17 )]
+
+position = Vector2( 8235, 180 )
+
+[node name="KinematicBody2D5" parent="." index="70" instance=ExtResource( 17 )]
+
+position = Vector2( 8320, 143 )
+
+[node name="KinematicBody2D6" parent="." index="71" instance=ExtResource( 18 )]
+
+position = Vector2( 1397, 56 )
+
+[node name="KinematicBody2D7" parent="." index="72" instance=ExtResource( 18 )]
+
+position = Vector2( 1846, 60 )
 
 
