@@ -11,7 +11,7 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 15.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -19,7 +19,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 8.06226
 
-[node name="EnemyBee" type="KinematicBody2D" groups=[
+[node name="EnemyBee" type="KinematicBody2D" index="0" groups=[
 "Enemy",
 ]]
 
@@ -39,6 +39,8 @@ petal_constant = 3
 rotation = 0.0174533
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
+playing = true
 _sections_unfolded = [ "Material", "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true

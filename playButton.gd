@@ -44,12 +44,12 @@ func _process(delta):
 
 
 func start():
-	$SoundClick.play()
+	#$SoundClick.play()
 	Controller.change_scene("res://Scenes/Level1.tscn")
 
 
 func credits():
-	$SoundClick.play()
+	#$SoundClick.play()
 	Controller.change_scene("res://Scenes/Credits.tscn")
 
 func _on_ClickArea_mouse_entered():

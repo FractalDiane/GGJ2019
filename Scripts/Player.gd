@@ -49,6 +49,7 @@ func _on_AreaDanger_body_entered(body):
 
 # Functions
 func jump():
+	$SoundJump.play()
 	if expression == Expression.EXPRESSION_NEUTRAL:
 		animator.play("jump")
 	elif expression == Expression.EXPRESSION_SCARED:
