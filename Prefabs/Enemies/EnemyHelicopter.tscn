@@ -30,6 +30,7 @@ speed = -40
 
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
