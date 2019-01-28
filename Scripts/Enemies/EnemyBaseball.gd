@@ -2,7 +2,8 @@ extends "res://Scripts/Enemies/EnemyGravity.gd"
 
 onready var sprite = $Sprite
 
-onready var start_pos = global_position
+var start_pos 
+var prefab = preload("res://Prefabs/Enemies/EnemyBaseball.tscn")
 
 func _ready():
 	mode = MODE_STATIC
@@ -17,4 +18,7 @@ func throw():
 	set_linear_velocity(Vector2(-speed,0))
 
 func _on_game_reset():
-	global_position = start_pos
+	var new_ball = prefab.instance()
+	new_ball.global_position = start_pos
+	get_parent().add_child(new_ball)
+	queue_free()
